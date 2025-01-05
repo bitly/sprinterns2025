@@ -1,5 +1,5 @@
 # sprinterns2025
-Sprinternship 2024 Challenge Project
+Sprinternship 2025 Challenge Project
 
 ### Setup Your Local Go & SQL Environments
 Go to https://github.com/bitly/sprinterns2025
