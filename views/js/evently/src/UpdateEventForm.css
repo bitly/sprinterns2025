@@ -1,0 +1,79 @@
+.create-form {
+  font-family: "Bree Serif";
+  background: #f8f8f8;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 5rem;
+  width: 35rem;
+  border-radius: 1rem;
+  box-shadow: 2px 8px 4px #d8d8d8;
+  margin-bottom: 10%;
+}
+
+.exit-click {
+  margin-left: 95%;
+  font-size: 1.5em;
+  margin-bottom: 2%;
+  color: black;
+  font-family: "Bree Serif";
+}
+
+.exit-click:hover {
+  color: #387df5;
+}
+
+.update-form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.update-event-heading {
+  font-family: "Bree Serif";
+  text-align: center;
+}
+
+.location,
+.description,
+.image-url,
+.contact-info,
+.host-name,
+.update-event-title,
+.event-type-container {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.5em;
+}
+
+.update-event-title h4 {
+  float: left;
+}
+
+.create-input-boxes {
+  font-family: "Bree Serif";
+}
+
+.update-button {
+  background-color: #ff6116;
+  color: white;
+  font-size: 1.3rem;
+  text-decoration: none;
+  border-radius: 10px;
+  border: 1px;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  padding-left: 2%;
+  padding-right: 2%;
+  margin: 0 auto;
+  margin-top: 7%;
+  width: 20%;
+  align-items: center;
+  font-family: "Bree Serif";
+}
+
+.update-button:hover {
+  background-color: #fc5000;
+
+  cursor: pointer;
+}
