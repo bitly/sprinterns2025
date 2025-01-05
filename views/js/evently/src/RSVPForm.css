@@ -1,0 +1,115 @@
+.create-rsvp {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 4rem 0;
+}
+
+.rsvp-title {
+  text-align: center;
+  font-size: 1.8em;
+  font-family: "Bree Serif";
+}
+
+.rsvp-form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.rsvp-form {
+    background: #F8F8F8;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem;
+    width: 35rem;
+    border-radius: 1rem;
+    box-shadow: 2px 8px 4px #D8D8D8; 
+}
+
+.rsvp-input-boxes {
+  display: flex;
+  justify-content: center;
+  padding: 0.5rem;
+  border-radius: 10px;
+  border: 1px;
+  border-color: none;
+  font-size: 0.8em;
+  font-family: "Bree Serif";
+}
+
+.first-last-name-container,
+.phone-email-container,
+.eventid-rsvp-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5%;
+  font-size: 1.5em;
+  font-family: "Bree Serif";
+}
+
+.first-name,
+.last-name,
+.phone,
+.email,
+.eventId,
+.response-container {
+  display: flex;
+  flex-direction: column;
+  width: 48%;
+  font-family: "Bree Serif";
+}
+
+.rsvp-submit-btn {
+  background-color: #2a5db7;
+  color: white;
+  font-size: 1.3rem;
+  text-decoration: none;
+  border-radius: 10px;
+  border: 1px;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  padding-left: 2%;
+  padding-right: 2%;
+  margin: 0 auto;
+  margin-top: 7%;
+  width: 20%;
+  align-items: center;
+  font-family: "Bree Serif";
+}
+
+.rsvp-submit-btn:hover {
+  background-color: #387df5;
+  cursor: pointer;
+}
+
+.alert {
+  display: flex;
+  justify-content: center;
+  width: 95%;
+  background-color: #e2f1e0;
+  color: #00525f;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  margin-top: 1rem;
+  font-family: "Bree Serif";
+}
+
+.error-alert {
+  display: flex;
+  justify-content: center;
+  width: 95%;
+  background-color: #ff8383;
+  color: black;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  margin-top: 1rem;
+  font-family: "Bree Serif";
+}
+
+@media (max-width: 768px) {
+  .create-rsvp {
+    width: 100%;
+  }
+}

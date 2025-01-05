@@ -1,0 +1,54 @@
+.Header {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: 0.1rem 0 0 .5rem;
+  color: #00525f;
+}
+
+.nav {
+  display: flex;
+  flex-direction: row;
+  gap: 0 3rem;
+  list-style: none;
+  margin: 0 1rem 0 0;
+}
+
+.nav-links {
+  color: black;
+  font-size: 1.5rem;
+  text-decoration: none;
+  font-family: "Bree Serif";
+
+}
+.nav-links:hover {
+  color: #0C3EBB;
+  font-family: "Bree Serif";
+}
+
+.logo {
+  font-size: 4rem;
+  font-family: "Pacifico";  
+  color: #ff6116;
+  margin: 0 0 0 .5rem;
+}
+
+.EventlyLogoLink {
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .Header {
+    display: flex;
+    flex-direction: column;
+    padding-left: 0%;
+  }
+  .nav {
+    padding-left: 0;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+  }
+}

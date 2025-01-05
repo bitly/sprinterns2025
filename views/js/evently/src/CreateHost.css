@@ -1,0 +1,48 @@
+.row {
+    display: flex;
+    justify-content: center;
+    flex-direction: row; 
+    
+}
+
+.column {
+    float: left;
+    width: 50%;
+    padding-right: 17rem;
+    padding-top: 2rem;
+    padding-left: 14rem;
+}
+
+.input-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.create-host-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-image {
+    width: 10rem;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    border-radius: 100%;
+}
+
+.account-layout {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    align-self: baseline;
+}
+
+.button {
+    color: white;
+    background-color: #2A5DB7;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 1rem;
+}

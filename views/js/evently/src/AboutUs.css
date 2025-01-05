@@ -1,0 +1,59 @@
+.AboutUs {
+    text-align: center;
+    font-family: 'Proxima Nova';
+}
+.header{
+    text-align: center;
+    color: #FF6116;
+    font-size: 25px;
+    
+}
+.missionStatement {
+    text-align: center;
+    font-size: 20px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+ .profileImages-1 {
+    margin-bottom: 20px;  
+    float: left;
+    margin-right: 10px;
+    padding:10px;
+    padding-left: 15px;
+} 
+
+.profileImages-1 img {
+    width: 200px; /* Adjust the width of the profile images */
+    height: 200px; /* Adjust the height of the profile images */
+    object-fit: cover; /* Maintain aspect ratio */
+}
+.personInfo-1{
+    text-align: left;
+    text-align: justify; 
+    padding: 15px;
+}
+.container-1, .container-2 {
+    border-style: outset;
+    height: 200px;
+    padding:20px;
+    border-color: #FF6116;
+    margin-bottom: 10px;
+}
+
+.profileImages-2{
+    float: right;
+    margin-left: 10px;
+    padding:10px;
+    padding-right: 15px;
+}
+.profileImages-2 img {
+    width: 200px; /* Adjust the width of the profile images */
+    height: 200px; /* Adjust the height of the profile images */
+    object-fit: cover; /* Maintain aspect ratio */
+}
+.personInfo-2{
+    text-align: right;
+    text-align: justify;
+    padding: 15px;
+}

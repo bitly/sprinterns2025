@@ -1,0 +1,42 @@
+.header{
+    text-align: center;
+    font-family: "Bree Serif";
+}
+
+.host-button{
+    background-color: #2A5DB7;
+    margin-bottom: 3rem;
+    color: white;
+    font-size: 1.5rem;
+    text-decoration: none;
+    padding: 1.2rem 2rem;
+    border-radius: 0.8rem;
+}
+
+.column-names{
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+table{
+    border-collapse: collapse;
+    width: 100%;
+    table-layout: fixed;
+}
+td, th {
+    border: 1px solid #dddddd;
+    text-align: center;
+    padding: 15px;
+    font-family: "Bree Serif";
+  }
+.profile-img{
+    width: auto;
+    height: auto;
+    border: 1px solid #dddddd;
+    padding: 15px;
+}
+.profile-img img{
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+}
