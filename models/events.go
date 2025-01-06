@@ -19,20 +19,20 @@ type Event struct {
 
 // Defining the RSVP Struct
 type RSVP struct {
-	RSVPID 		int `json:"rsvp_id,omitempty"`
-	EventID 	int `json:"event_id"`
-	FirstName 	string `json:"first_name"`
-	LastName 	string `json:"last_name"`
+	RSVPID      int    `json:"rsvp_id,omitempty"`
+	EventID     int    `json:"event_id"`
+	FirstName   string `json:"first_name"`
+	LastName    string `json:"last_name"`
 	PhoneNumber string `json:"phone_number"`
-	Email 		string `json:"email"`
-	Response 	string `json:"rsvp_response"`
+	Email       string `json:"email"`
+	Response    string `json:"rsvp_response"`
 }
 
 //host struct
 type Host struct {
-	HostID 		int `json:"host_id,omitempty"`
-	FirstName 	string `json:"first_name"`
-	LastName 	string `json:"last_name"`
-	Email 		string `json:"email"`
-	ImageURL    string `json:"image_url"`
+	HostID    int    `json:"host_id,omitempty"`
+	FirstName string `json:"first_name"`
+	LastName  string `json:"last_name"`
+	Email     string `json:"email"`
+	ImageURL  string `json:"image_url"`
 }
