@@ -4,8 +4,9 @@ import (
 	"net/http"
 	"strconv"
 
+	"log"
+
 	"github.com/gin-gonic/gin"
-	"google.golang.org/appengine/log"
 	eventsdb "main.go/internal/database"
 	"main.go/models"
 )
@@ -32,14 +33,14 @@ func CreateEvent(c *gin.Context) {
 
 	// Call BindJSON to bind the received JSON to event +add error handling later
 	if err := c.BindJSON(&event); err != nil {
-		log.Errorf(c, "ERROR: %+v", err)
+		log.Printf("ERROR: %+v", err)
 		c.IndentedJSON(http.StatusBadRequest, nil) //bad data
 		return
 	}
 
 	createdEvent, err := eventsdb.CreateEvent(event)
 	if err != nil {
-		log.Errorf(c, "ERROR: %+v", err)
+		log.Printf("ERROR: %+v", err)
 		c.IndentedJSON(http.StatusInternalServerError, nil) //server error
 		return
 	}
@@ -53,14 +54,14 @@ func GetEvent(c *gin.Context) {
 	eventID := c.Param("eventID")
 	intEventID, err := strconv.Atoi(eventID)
 	if err != nil {
-		log.Errorf(c, "ERROR: %+v", err)
+		log.Printf("ERROR: %+v", err)
 		c.IndentedJSON(http.StatusBadRequest, nil) //bad data
 		return
 	}
 
 	event, err := eventsdb.GetEvent(intEventID)
 	if err != nil {
-		log.Errorf(c, "ERROR: %+v", err)
+		log.Printf("ERROR: %+v", err)
 		c.IndentedJSON(http.StatusInternalServerError, err) //server error
 		return
 	}
@@ -78,7 +79,7 @@ func GetPublicEvents(c *gin.Context) {
 	// Fetch all public events from the database
 	publicEvents, err := eventsdb.GetAllPublicEvents()
 	if err != nil {
-		log.Errorf(c, "ERROR: %+v", err)
+		log.Printf("ERROR: %+v", err)
 		c.IndentedJSON(http.StatusInternalServerError, nil) //server error
 		return
 	}
@@ -94,21 +95,21 @@ func UpdateEventByEventId(c *gin.Context) {
 	eventID := c.Param("eventID")
 	intEventID, err := strconv.Atoi(eventID)
 	if err != nil {
-		log.Errorf(c, "ERROR: %+v", err)
+		log.Printf("ERROR: %+v", err)
 		c.IndentedJSON(http.StatusBadRequest, nil)
 		return
 	}
 
 	// Call BindJSON to bind the received JSON to event +add error handling later
 	if err := c.BindJSON(&updatedEventData); err != nil {
-		log.Errorf(c, "ERROR: %+v", err)
+		log.Printf("ERROR: %+v", err)
 		c.IndentedJSON(http.StatusBadRequest, nil) //bad data
 		return
 	}
 
 	updatedEvent, err := eventsdb.UpdateEventByEventId(intEventID, updatedEventData)
 	if err != nil {
-		log.Errorf(c, "ERROR: %+v", err)
+		log.Printf("ERROR: %+v", err)
 		c.IndentedJSON(http.StatusInternalServerError, nil) //server error
 		return
 	}
@@ -125,7 +126,7 @@ func GetEventsByField(c *gin.Context) {
 
 	// Validate that both field and value are provided
 	if field == "" || value == "" {
-		log.Errorf(c, "ERROR: Both field and value query parameters are required")
+		log.Printf("ERROR: Both field and value query parameters are required")
 		c.IndentedJSON(http.StatusBadRequest, gin.H{"error": "Both 'field' and 'value' query parameters are required"})
 		return
 	}
@@ -133,7 +134,7 @@ func GetEventsByField(c *gin.Context) {
 	// Fetch events from the database based on the specified field and value
 	filteredEvents, err := eventsdb.GetEventsByField(field, value)
 	if err != nil {
-		log.Errorf(c, "ERROR: %+v", err)
+		log.Printf("ERROR: %+v", err)
 		c.IndentedJSON(http.StatusInternalServerError, nil) //server error
 		return
 	}
