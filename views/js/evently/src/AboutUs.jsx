@@ -1,6 +1,6 @@
 import React from 'react'
 import './AboutUs.css'
-import profileImage1 from './profile_img.jpg'; // Import your profile images
+import profileImage1 from './Images/headshot.JPG'; // Import your profile images
 
 
 function AboutUs() {
@@ -18,7 +18,7 @@ function AboutUs() {
             </div>
            <div className="container-1">
                 <div className="profileImages-1">
-                    <img src= "/views/js/evently/src/Images/headshot.JPG" alt="Person 1" />
+                    <img src={profileImage1} alt="Person 1" />
                 </div>
                 <div className="personInfo-1">
                     <h2>Juana Casey</h2>
