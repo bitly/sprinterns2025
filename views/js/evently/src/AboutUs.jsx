@@ -21,10 +21,10 @@ function AboutUs() {
                     <img src={profileImage1} alt="Person 1" />
                 </div>
                 <div className="personInfo-1">
-                    <h2>Sprintern 1</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur quas, sapiente, dignissimos eveniet provident non error, beatae dolorum cum doloremque molestias? Repudiandae sint saepe suscipit! Magnam saepe accusantium ullam aliquid labore debitis. Nulla culpa dicta repellat ex temporibus soluta magnam. Nostrum adipisci optio pariatur omnis dolorum voluptate! Tempore, aut. Veritatis?</p>
-                    <p>Connect with me on LinkedIn!</p>
-                    <a href="#">LinkedIn</a>
+                    <h2>Juana Casey</h2>
+                    <p>Hello, my name is Juana Casey! I am a second-year student at CUNY John Jay College of Criminal Justice, where I am majoring in Computer Science with a focus on Information Security. When I am not in school, you can usually find me at my computer working on video editing projects. I also enjoy creating floral arrangements and reading in my free time. I aspire to build a career in Front-End Development and Digital Forensics. </p>
+                    <p> Feel free to connect with me on LinkedIn!</p>
+                    <a href="https://www.linkedin.com/in/juana-casey/">LinkedIn</a>
                 </div>
            </div>  
         </div>
