@@ -4,13 +4,15 @@ import profileImage1 from './Images/headshot.JPG'; // Import your profile images
 import profileImageJennifer from './jenniferPerez-Juarez_Profile.jpg'; // Import your profile images
 import profileImageTS from './Images/TS_headshot.png'; // Import your profile images
 import profileImageTran from './Images/tran-photo.jpeg'; // Import your profile images
+import profileImageSara from './Images/sara.jpg'; // Import your profile images
 
 
 
 function AboutUs() {
     return (
         
-        <><div className="AboutUs">
+        <>
+        <div className="AboutUs">
             <div className="header">
                 <h1>Our Mission</h1>
             </div>
@@ -29,9 +31,22 @@ function AboutUs() {
                     <p>Hello, my name is Juana Casey! I am a second-year student at CUNY John Jay College of Criminal Justice, where I am majoring in Computer Science with a focus on Information Security. When I am not in school, you can usually find me at my computer working on video editing projects. I also enjoy creating floral arrangements and reading in my free time. I aspire to build a career in Front-End Development and Digital Forensics. </p>
                     <p> Feel free to connect with me on LinkedIn!</p>
                     <a href="https://www.linkedin.com/in/juana-casey/">LinkedIn</a>
+                  
                 </div>
             </div>
+            <div className="container-1">
+            <div className="profileImages-1">
+            <img src={profileImageSara} alt="Sara Abdulla" />
+            </div>
+            <div className="personInfo-1">
 
+                    <h2>Sara Abdulla</h2>
+                    <p>I'm a sophomore at CUNY Lehman College and Macaulay Honors College studying Computer Graphics and Imaging with a minor in Media Communications Systems. I aspire to work in a space where I can leverage my creativity to craft designs and campaigns that deliver impactful experiences, connecting with and inspiring diverse audiences.</p>
+                    <p>Connect with me on LinkedIn!</p>
+                    <a href="https://www.linkedin.com/in/sara-abdulla-0ba97b292">LinkedIn</a>
+                </div>
+           
+             </div>
             <div className="container-1">
                 <div className="profileImages-1">
                     <img src={profileImageJennifer} alt="Jennifer Perez-Juarez" />
@@ -55,7 +70,8 @@ function AboutUs() {
                     <a href="https://www.linkedin.com/in/tanzina-sumona/">LinkedIn</a>
                 </div>
             </div>
-        </div><div className="container-1">
+        
+        <div className="container-1">
                 <>
                     <div className="profileImages-1">
                         <img src={profileImageTran} alt="Person 1" />
@@ -71,7 +87,9 @@ function AboutUs() {
                         <a href="https://www.linkedin.com/in/tran-v-73812b321/">LinkedIn</a>
                     </div>
                 </>
-            </div></>
+            </div>
+            </div>
+            </>
 )
 };
 
