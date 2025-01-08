@@ -1,6 +1,7 @@
 import React from 'react'
 import './AboutUs.css'
 import profileImage1 from './Images/headshot.JPG'; // Import your profile images
+import profileImageSara from './Images/sara.jpg'; // Import your profile images
 
 
 function AboutUs() {
@@ -25,6 +26,18 @@ function AboutUs() {
                     <p>Hello, my name is Juana Casey! I am a second-year student at CUNY John Jay College of Criminal Justice, where I am majoring in Computer Science with a focus on Information Security. When I am not in school, you can usually find me at my computer working on video editing projects. I also enjoy creating floral arrangements and reading in my free time. I aspire to build a career in Front-End Development and Digital Forensics. </p>
                     <p> Feel free to connect with me on LinkedIn!</p>
                     <a href="https://www.linkedin.com/in/juana-casey/">LinkedIn</a>
+                    
+                </div>
+           </div>  
+           <div className="container-1">
+                <div className="profileImages-1">
+                    <img src={profileImageSara} alt="Sara" />
+                </div>
+                <div className="personInfo-1">
+                    <h2>Sara Abdulla</h2>
+                    <p>I'm a sophomore at CUNY Lehman College and Macaulay Honors College studying Computer Graphics and Imaging with a minor in Media Communications Systems. I aspire to work in a space where I can leverage my creativity to craft designs and campaigns that deliver impactful experiences, connecting with and inspiring diverse audiences.</p>
+                    <p>Connect with me on LinkedIn!</p>
+                    <a href="https://www.linkedin.com/in/sara-abdulla-0ba97b292">LinkedIn</a>
                 </div>
            </div>  
         </div>
