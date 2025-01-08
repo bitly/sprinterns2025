@@ -1,5 +1,6 @@
 # sprinterns2025
 Sprinternship 2025 Challenge Project
+- Juana Casey
 
 ### Setup Your Local Go & SQL Environments
 Go to https://github.com/bitly/sprinterns2025
