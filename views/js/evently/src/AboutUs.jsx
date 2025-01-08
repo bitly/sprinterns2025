@@ -21,10 +21,10 @@ function AboutUs() {
                     <img src={profileImage1} alt="Person 1" />
                 </div>
                 <div className="personInfo-1">
-                    <h2>Sprintern 1</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur quas, sapiente, dignissimos eveniet provident non error, beatae dolorum cum doloremque molestias? Repudiandae sint saepe suscipit! Magnam saepe accusantium ullam aliquid labore debitis. Nulla culpa dicta repellat ex temporibus soluta magnam. Nostrum adipisci optio pariatur omnis dolorum voluptate! Tempore, aut. Veritatis?</p>
+                    <h2>Tanzina Sumona</h2>
+                    <p>My name is Tanzina, and I am a sophomore at CCNY majoring in computer science. I am interested in learn more about data science and analysis, or just working with large datasets and uncovering trends through predictive modeling.</p>
                     <p>Connect with me on LinkedIn!</p>
-                    <a href="#">LinkedIn</a>
+                    <a href="https://www.linkedin.com/in/tanzina-sumona/">LinkedIn</a>
                 </div>
            </div>  
         </div>
