@@ -1,6 +1,8 @@
 # sprinterns2025
 Sprinternship 2025 Challenge Project
 
+- Diana Bishop
+
 ### Setup Your Local Go & SQL Environments
 Go to https://github.com/bitly/sprinterns2025
 
