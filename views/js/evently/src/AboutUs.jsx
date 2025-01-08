@@ -1,6 +1,6 @@
 import React from 'react'
 import './AboutUs.css'
-import profileImage1 from './profile_img.jpg'; // Import your profile images
+import profileImage1 from 'jenniferPerez-Juarez_Profile'; // Import your profile images
 
 
 function AboutUs() {
@@ -18,13 +18,13 @@ function AboutUs() {
             </div>
            <div className="container-1">
                 <div className="profileImages-1">
-                    <img src={profileImage1} alt="Person 1" />
+                    <img src={profileImage1} alt="Jennifer Perez-Juarez" />
                 </div>
                 <div className="personInfo-1">
-                    <h2>Sprintern 1</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur quas, sapiente, dignissimos eveniet provident non error, beatae dolorum cum doloremque molestias? Repudiandae sint saepe suscipit! Magnam saepe accusantium ullam aliquid labore debitis. Nulla culpa dicta repellat ex temporibus soluta magnam. Nostrum adipisci optio pariatur omnis dolorum voluptate! Tempore, aut. Veritatis?</p>
+                    <h2>Jennifer Perez-Juarez</h2>
+                    <p>Hi, my name is Jennifer Perez-Juarez and I am currently a sopphmore studying computer science at CUNY Brooklyn College! One of my favorite things to do on campus is to find events on campus in search of free food and merchandise! Sometimes you'll even find me attending 2 - 3 events back-to-back on the same day! If you ever want to know the latest event to attend in hopes of gaining a free meal or merchandise to add to your collection, just reach out to me. </p>
                     <p>Connect with me on LinkedIn!</p>
-                    <a href="#">LinkedIn</a>
+                    <a href="http://www.linkedin.com/in/jennifer-perez-juarez" target="_blank">LinkedIn</a>
                 </div>
            </div>  
         </div>
