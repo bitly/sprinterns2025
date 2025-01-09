@@ -21,12 +21,16 @@
     margin-right: 10px;
     padding:10px;
     padding-left: 15px;
+
 } 
 
 .profileImages-1 img {
     width: 200px; /* Adjust the width of the profile images */
     height: 200px; /* Adjust the height of the profile images */
     object-fit: cover; /* Maintain aspect ratio */
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+
 }
 .personInfo-1{
     text-align: left;
