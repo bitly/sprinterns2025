@@ -2,6 +2,7 @@
 Sprinternship 2025 Challenge Project
 
 -Tran was here
+- sara abdulla
 
 ### Setup Your Local Go & SQL Environments
 Go to https://github.com/bitly/sprinterns2025
@@ -81,3 +82,19 @@ Would you like to run the app on another port instead? › (Y/n)
 ```
 
 Hit the "y" key on your keyboard and the FE will run on port 3001 instead and should automatically open the application in your browser. 
+added my name
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# interactive rebase in progress; onto e96742e
+# Last command done (1 command done):
+#    pick 39be453 added my name
+# Next commands to do (4 remaining commands):
+#    pick 6757751 added my bio
+#    pick 7c07d95 added my bio
+# You are currently rebasing branch 'sara-bio' on 'e96742e'.
+#
+# Changes to be committed:
+#	modified:   README.md
+#
