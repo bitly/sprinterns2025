@@ -2,6 +2,8 @@ import React from 'react'
 import './AboutUs.css'
 import profileImage1 from './Images/headshot.JPG'; // Import your profile images
 import profileImageJennifer from './jenniferPerez-Juarez_Profile.jpg'; // Import your profile images
+import profileImageTS from './Images/TS_headshot.png'; // Import your profile images
+
 
 
 function AboutUs() {
@@ -40,8 +42,21 @@ function AboutUs() {
                     <a href="http://www.linkedin.com/in/jennifer-perez-juarez" target="_blank">LinkedIn</a>
                 </div>
            </div>  
-        </div>
-    ) 
+
+           <div className="container-1">
+               <div className="profileImages-1">
+                   <img src={profileImageTS} alt="Tanzina" />
+               </div>
+               <div className="personInfo-1">
+                  <h2>Tanzina Sumona</h2>
+                  <p>My name is Tanzina, and I am a sophomore at CCNY majoring in computer science. I am interested in learning about data science and analysis, or just working with large datasets and uncovering trends through predictive modeling.</p>
+                  <p>Connect with me on LinkedIn!</p>
+                  <a href="https://www.linkedin.com/in/tanzina-sumona/">LinkedIn</a>
+               </div>
+          </div> 
+       </div>
+    )
+        
 }; 
 
 export default AboutUs;
