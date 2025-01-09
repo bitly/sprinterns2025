@@ -1,6 +1,6 @@
 import React from 'react'
 import './AboutUs.css'
-import profileImageTS from './Images/TS_headshot.png'; // Import your profile images
+import profileImage1 from './Images/headshot.JPG'; // Import your profile images
 
 
 function AboutUs() {
@@ -18,13 +18,13 @@ function AboutUs() {
             </div>
            <div className="container-1">
                 <div className="profileImages-1">
-                    <img src={profileImageTS} alt="Tanzina" />
+                    <img src={profileImage1} alt="Person 1" />
                 </div>
                 <div className="personInfo-1">
-                   <h2>Tanzina Sumona</h2>
-                   <p>My name is Tanzina, and I am a sophomore at CCNY majoring in computer science. I am interested in learning about data science and analysis, or just working with large datasets and uncovering trends through predictive modeling.</p>
-                   <p>Connect with me on LinkedIn!</p>
-                   <a href="https://www.linkedin.com/in/tanzina-sumona/">LinkedIn</a>
+                    <h2>Juana Casey</h2>
+                    <p>Hello, my name is Juana Casey! I am a second-year student at CUNY John Jay College of Criminal Justice, where I am majoring in Computer Science with a focus on Information Security. When I am not in school, you can usually find me at my computer working on video editing projects. I also enjoy creating floral arrangements and reading in my free time. I aspire to build a career in Front-End Development and Digital Forensics. </p>
+                    <p> Feel free to connect with me on LinkedIn!</p>
+                    <a href="https://www.linkedin.com/in/juana-casey/">LinkedIn</a>
                 </div>
            </div>  
         </div>
