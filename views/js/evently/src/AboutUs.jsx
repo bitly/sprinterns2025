@@ -1,6 +1,6 @@
 import React from 'react'
 import './AboutUs.css'
-import profileImage1 from 'jenniferPerez-Juarez_Profile.jpg'; // Import your profile images
+import profileImage1 from './jenniferPerez-Juarez_Profile.jpg'; // Import your profile images
 
 
 function AboutUs() {
