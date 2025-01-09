@@ -6,6 +6,7 @@ import profileImageTS from './Images/TS_headshot.png'; // Import your profile im
 
 
 
+
 function AboutUs() {
     return (
         
@@ -59,4 +60,43 @@ function AboutUs() {
         
 }; 
 
+    );
+    return (
+        <div className="AboutUs">
+      <div className="header">
+        <h1>Our Mission</h1>
+      </div>
+      <div className="missionStatement">
+        <p>
+          Our mission is to curate unforgettable experiences by seamlessly
+          connecting individuals and communities through innovative and diverse
+          events. We strive to inspire and empower event organizers, fostering a
+          platform that celebrates creativity, fosters meaningful connections,
+          and leaves a lasting impact on every participant.
+        </p>
+      </div>
+      <div className="header">
+        <h2>Meet the Creators!</h2>
+      </div>
+      <div className="container-1">
+        <div className="profileImages-1">
+          <img src={/Users/tranv/Documents/1725498175426.jpeg} alt="Person 1" />
+        </div>
+        <div className="personInfo-1">
+          <h2>Tran Vo</h2>
+          <p>
+            Hi, I’m Tran Vo! I’m currently studying Computer Science at BMCC,
+            and when I’m not buried in code or classwork, you’ll probably find
+            me hanging out with friends, exploring new restaurants, or getting
+            creative with art. I love painting with gouache or just sketching
+            whenever inspiration strikes.
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default AboutUs;
+        
+        
