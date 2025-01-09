@@ -40,7 +40,7 @@ function AboutUs() {
                 <img src={profileImageSara} alt="Sara Abdulla" />
                 </div>
                 <div className="personInfo-1">
-                <h2>Sara Abdulla</h2>
+                    <h2>Sara Abdulla</h2>
                     <p>I'm a sophomore at CUNY Lehman College and Macaulay Honors College studying Computer Graphics and Imaging with a minor in Media Communications Systems. I aspire to work in a space where I can leverage my creativity to craft designs and campaigns that deliver impactful experiences, connecting with and inspiring diverse audiences.</p>
                     <p>Let's Connect on LinkedIn!</p>
                     <a href="https://www.linkedin.com/in/sara-abdulla-0ba97b292">LinkedIn</a>
