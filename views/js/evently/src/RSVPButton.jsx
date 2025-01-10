@@ -7,6 +7,7 @@ import DefaultImage from "./Images/default.png";
 function RSVPButton() {
   const { eventId } = useParams();
   const [eventData, setEventDetails] = useState([]);
+  const [rsvps, setRSVPs] = useState([]); //allow user 
   const [error, setError] = useState("");
   const navigateTo = useNavigate();
 
@@ -35,13 +36,27 @@ function RSVPButton() {
         );
       }
     };
+    const fetchRSVPs = async () => { //function to fetch RSVPs
+      try {
+        const response = await fetch( //fetching RSVPs to get details
+          `http://localhost:3000/api/rsvp/${eventId}` //the webs url with event id parameter
+        );
+        const rsvpData = await response.json();  //getting the response in json format
+        setRSVPs(rsvpData); //uodating the state with the response
+      } catch (error) {
+        setError( //error message if there is an error n it failed to fetch RSVPs
+          "The server ran into an error getting the RSVPs, please try again!" //message
+        );
+      }
+    };
+    fetchRSVPs(); // Call fetchRSVPs to get RSVP data
     fetchEventDetails();
   }, [eventId]);
 
-  const handleRSVP = (e) => {
+  function handleRSVP(e) {
     e.preventDefault();
     navigateTo(`/rsvp-form/${eventData.event_id}`);
-  };
+  }
 
   const handleUpdateEvent = (e) => {
     e.preventDefault();
