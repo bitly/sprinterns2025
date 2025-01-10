@@ -17,7 +17,9 @@ function AboutUs() {
                 <h1>Our Mission</h1>
             </div>
             <div className="missionStatement">
-                <p>Our mission is to curate unforgettable experiences by seamlessly connecting individuals and communities through innovative and diverse events. We strive to inspire and empower event organizers, fostering a platform that celebrates creativity, fosters meaningful connections, and leaves a lasting impact on every participant.</p>
+                <div className = "missionStatement-wrapper ">
+                    <p>Our mission is to curate unforgettable experiences by seamlessly connecting individuals and communities through innovative and diverse events. We strive to inspire and empower event organizers, fostering a platform that celebrates creativity, fosters meaningful connections, and leaves a lasting impact on every participant.</p>
+                </div>
             </div>
             <div className="header">
                 <h2>Meet the Creators!</h2>

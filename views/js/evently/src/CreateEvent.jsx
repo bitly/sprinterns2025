@@ -1,4 +1,5 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './CreateEvent.css';
 
 function CreateEvent() {
@@ -14,6 +15,8 @@ function CreateEvent() {
   const [imageUrl, setImageUrl] = useState("");
   const [successMessage, setSuccessMessage] = useState("")
 
+  const navigate = useNavigate();
+
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
@@ -25,8 +28,13 @@ function CreateEvent() {
         }),
       });
       if (res.status === 201) {
+       const data = await res.json(); 
+       console.log(data);
        setSuccessMessage("Event created!")
-       setTimeout(window.location.replace("/"), 4000);
+       setTimeout(() =>
+       {
+          navigate (`/event/${data.id}`);
+       },1000);
       }
     }
     catch (err){
