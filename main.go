@@ -28,6 +28,10 @@ func main() {
 
 	// EVENTS
 
+	// GET RSVP for Event
+	api.GET("/event/:eventID/rsvps", handlers.GetRSVPbyEvents)
+	api.OPTIONS("/event/:eventID/rsvps", handlers.HandleCors)
+
 	// CREATE an event
 	api.POST("/events", handlers.CreateEvent)
 	api.OPTIONS("/events", handlers.HandleCors)
