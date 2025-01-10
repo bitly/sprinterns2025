@@ -29,8 +29,8 @@ function HostList() {
   return (
     <div>
     <div className= "header">
-        <h1>All Hosts</h1>
-        <Link to="/create-host" className="host-button"> Create Host</Link>
+        <h1>Attendees</h1>
+        <Link to="/create-host" className="host-button"> Create Attendee</Link>
     </div>  
       <table>
         <thead className= "column-names">

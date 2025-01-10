@@ -1,16 +1,46 @@
 .header{
-    text-align: center;
-    font-family: "Bree Serif";
+    
+    color:#252628;
+    font-family: "Bitly Display ExtraBold", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    display: block;
+    font-size: 40px;
+    line-height: 48px;
+    font-weight:800;
+    font-style: normal;
+    text-rendering: optimizeLegibility;
+    margin-top: 0;
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    unicode-bidi: isolate;
+
 }
 
 .host-button{
-    background-color: #2A5DB7;
-    margin-bottom: 3rem;
+    background: #2a5bd7;
+    margin: 0 0 1rem 0;
     color: white;
     font-size: 1.5rem;
+    font-weight: 400;
+    font-family: inherit;
     text-decoration: none;
     padding: 1.2rem 2rem;
-    border-radius: 0.8rem;
+    text-align: center;
+    cursor: pointer;
+    outline: none !important;
+    display: inline-block;
+    vertical-align: middle;
+    box-sizing: inherit;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    text-rendering: optimizeLegibility;
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing:antialiased;
+    
 }
 
 .column-names{
@@ -22,6 +52,7 @@ table{
     border-collapse: collapse;
     width: 100%;
     table-layout: fixed;
+    margin-top: 50px;
 }
 td, th {
     border: 1px solid #dddddd;
