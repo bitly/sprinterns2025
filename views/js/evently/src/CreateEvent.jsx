@@ -25,7 +25,7 @@ function CreateEvent() {
         method: "POST",
         mode: "cors",
         body: JSON.stringify({
-          title: EventTitle, date: DateForm, time: TimeForm, location: LocationForm, host_name: HostName, description: DescriptionForm, contact_info: ContactForm, public_private: "public", typeOfevent:EventType, max_attendees: parseInt(AttendeesForm), image_url: imageUrl,
+          title: EventTitle, date: DateForm, time: TimeForm, location: LocationForm, host_name: HostName, description: DescriptionForm, contact_info: ContactForm, public_private: "public", event_type:EventType, max_attendees: parseInt(AttendeesForm), image_url: imageUrl,
         }),
       });
       if (res.status === 201) {

@@ -125,14 +125,14 @@ function RSVPButton() {
 
             <div className="event-details">
               <div className="location-description">
-                <p> 📍 {eventData.location}</p>
+                <p> 📍{eventData.location}</p>
                 <p> {eventData.description}</p>
               </div>
 
-              <div className="contact-container">
+              <div className="contact-contasiner">
                 <p> Host Name: {eventData.host_name}</p>
                 <p>Contact: {eventData.contact_info}</p>
-                <p>Event Type: {eventData.event_type}</p>
+                <p>Event Type: {eventData.event_type}</p> 
               </div>
 
               <div className="date-time-container">
