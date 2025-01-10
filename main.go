@@ -47,6 +47,10 @@ func main() {
 	api.GET("/public-events", handlers.GetPublicEvents)
 	api.OPTIONS("/public-events", handlers.HandleCors)
 
+	//Get RSVP by ID
+	api.GET("/rsvp/:rsvpID", handlers.GetRSVP)
+	api.OPTIONS("/rsvp/:rsvpID", handlers.HandleCors)
+
 	// Start and run the server
 	router.Run(":3000")
 }
