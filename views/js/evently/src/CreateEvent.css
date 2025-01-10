@@ -60,7 +60,8 @@
 .image-url,
 .contact-info,
 .host-name,
-.event-title {
+.event-title,
+.event-type-selection {
   display: flex;
   flex-direction: column;
   font-size: 1.5em;
