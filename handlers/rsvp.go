@@ -1,9 +1,10 @@
 package handlers
 
 import (
+	"log"
 	"net/http"
-	 "strconv"
-	 "log"
+	"strconv"
+
 	"github.com/gin-gonic/gin"
 	eventsdb "main.go/internal/database"
 	"main.go/models"
@@ -24,7 +25,7 @@ func CreateRSVP(c *gin.Context) {
 	// populated with an event
 	getEvent, err := eventsdb.GetEvent(rsvp.EventID)
 	if err != nil {
-		log.Printf( "ERROR: %+v", err)
+		log.Printf("ERROR: %+v", err)
 		c.IndentedJSON(http.StatusInternalServerError, nil) //server error
 		return
 	}
@@ -52,7 +53,7 @@ func CreateRSVP(c *gin.Context) {
 	c.JSON(201, createdRSVP) //success
 }
 
-//Get RSVP by ID
+// Get RSVP by ID
 func GetRSVP(c *gin.Context) {
 	setCors(c)
 
@@ -76,4 +77,23 @@ func GetRSVP(c *gin.Context) {
 		return
 	}
 	c.JSON(200, rsvp) //success
+}
+
+func GetRSVPbyEvents(c *gin.Context) {
+	setCors(c)
+	eventID := c.Param("eventID")
+	inteventID, err := strconv.Atoi(eventID)
+	if err != nil {
+		log.Printf("ERROR: %+v", err)
+		c.IndentedJSON(http.StatusBadRequest, nil) //bad data
+		return
+	}
+	// Fetch all public events from the database
+	RSVPbyEvents, err := eventsdb.GetRSVPsByEventId(inteventID)
+	if err != nil {
+		log.Printf("ERROR: %+v", err)
+		c.IndentedJSON(http.StatusInternalServerError, nil) //server error
+		return
+	}
+	c.JSON(200, RSVPbyEvents) //success - return the list of rsvp by events
 }
