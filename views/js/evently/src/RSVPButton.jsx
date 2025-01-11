@@ -7,6 +7,7 @@ import DefaultImage from "./Images/default.png";
 function RSVPButton() {
   const { eventId } = useParams();
   const [eventData, setEventDetails] = useState([]);
+  const [rsvps, setRSVPs] = useState([]); //allow user 
   const [error, setError] = useState("");
   const navigateTo = useNavigate();
 
@@ -35,20 +36,35 @@ function RSVPButton() {
         );
       }
     };
+    const fetchRSVPs = async () => { //function to fetch RSVPs
+      console.log("is this running");
+      try {
+        const response = await fetch( //fetching RSVPs to get details
+          `http://localhost:3000/api/event/${eventId}/rsvps` //the webs url with event id parameter
+        );
+        const rsvpData = await response.json();  //getting the response in json format
+        console.log("hi", rsvpData);
+        setRSVPs(rsvpData); //uodating the state with the response
+      } catch (error) {
+        setError( //error message if there is an error n it failed to fetch RSVPs
+          "The server ran into an error getting the RSVPs, please try again!" // err message
+        );
+      }
+    };
+    fetchRSVPs(); // Call fetchRSVPs to get RSVP data */
     fetchEventDetails();
   }, [eventId]);
 
-  const handleRSVP = (e) => {
+  function handleRSVP(e) {
     e.preventDefault();
     navigateTo(`/rsvp-form/${eventData.event_id}`);
-  };
+  }
 
   const handleUpdateEvent = (e) => {
     e.preventDefault();
     navigateTo(`/update-event/${eventData.event_id}`);
 
   };
-
   return (
     <div className="rsvp-event">
       <div className="user-info">
@@ -106,6 +122,18 @@ function RSVPButton() {
           <div className="btns">
             <button className="rsvp-button" onClick={handleRSVP}> RSVP! </button>
             <button className="update-button" onClick={handleUpdateEvent}> Update </button>
+          </div>
+          <div className="rsvp-list">
+            <h3>RSVP List</h3>
+            <ul>
+              {rsvps.map((rsvp) => (
+                <li key={rsvp.user_id}>
+                  <p>{rsvp.first_name} {rsvp.last_name}</p>
+                  <p>{rsvp.email}</p>
+                  <p> {rsvp.phone_number}</p>
+                </li>
+              ))}
+            </ul>
           </div>
           </>
         )}
