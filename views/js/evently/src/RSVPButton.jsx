@@ -76,7 +76,7 @@ function RSVPButton() {
       }
       try 
         {
-          await axios.delete(`http://localhost:3000/api/event/${eventData.event_id}`);
+          await axios.delete(`http://localhost:3000/api/event/${eventData.event_id}/delete`);
           navigateTo('/community-page/');
           
         }
