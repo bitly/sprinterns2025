@@ -16,7 +16,7 @@ func CreateAttendeesTable() {
         log.Fatal(err) //exit if error is found
     }
     defer db.Close() //close the connection when the function ends
-
+	
     // SQL query to create the attendees table
     createTableQuery := `
     CREATE TABLE IF NOT EXISTS attendees (
