@@ -122,3 +122,24 @@ func GetEventsByField(field, value string) ([]models.Event, error) {
 
 	return filteredEvents, nil
 }
+
+// function to delete an event and RSVP by eventId
+func DeleteEventByEventId(eventID int) error {
+	_, err := dbmap.Exec(
+		"DELETE FROM rsvp WHERE event_id = ?",
+		eventID)
+
+	if err != nil {
+		return err
+	}
+
+	_, err = dbmap.Exec(
+		"DELETE FROM event WHERE event_id = ?",
+		eventID)
+
+	if err != nil {
+		return err
+	}
+
+	return nil
+}

@@ -15,15 +15,41 @@ func setCors(c *gin.Context) {
 	c.Writer.Header().Set("Access-Control-Allow-Origin", "*")
 	c.Writer.Header().Set("Access-Control-Allow-Credentials", "true")
 	c.Writer.Header().Set("Access-Control-Allow-Headers", "Content-Type, Content-Length, Accept-Encoding, X-CSRF-Token, Authorization, accept, origin, Cache-Control, X-Requested-With")
-	c.Writer.Header().Set("Access-Control-Allow-Methods", "POST, OPTIONS, GET, PUT")
+	c.Writer.Header().Set("Access-Control-Allow-Methods", "POST, OPTIONS, GET, PUT, DELETE")
 }
 
 func HandleCors(c *gin.Context) {
 	setCors(c)
 
 	c.AbortWithStatus(204)
-	return
 
+}
+
+// delete an RSVP by event
+// delete the Event itself
+
+// DeleteEvent was define in main.go in handlers
+// c *gin.Context --> gin is the api framework, context will contain the endpoint, will contain the event id, the api http method: DELETE, contains headers, sending large info of sql body in Json file
+func DeleteEvent(c *gin.Context) {
+	setCors(c)
+
+	// finding and getting an individual eventid, delete all rsvps assoicated with the event
+	eventID := c.Param("eventID")
+	intEventID, err := strconv.Atoi(eventID)
+	if err != nil {
+		log.Printf("ERROR: %+v", err)
+		c.IndentedJSON(http.StatusBadRequest, nil) //bad data
+		return
+	}
+
+	err = eventsdb.DeleteEventByEventId(intEventID) //eventsdb.DeleteEvent is diff from handlers.DeleteEvent
+	if err != nil {
+		log.Printf("ERROR: %+v", err)
+		c.IndentedJSON(http.StatusInternalServerError, nil) //server error
+		return
+	}
+
+	c.JSON(204, nil) //success
 }
 
 // creates a new event
