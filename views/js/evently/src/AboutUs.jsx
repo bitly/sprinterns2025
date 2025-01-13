@@ -14,10 +14,10 @@ function AboutUs() {
         <>
         <div className="AboutUs">
             <div className="header">
-                <h1>Our Mission</h1>
             </div>
             <div className="missionStatement">
                 <div className = "missionStatement-wrapper ">
+                    <h3>Our Mission</h3>
                     <p>Our mission is to curate unforgettable experiences by seamlessly connecting individuals and communities through innovative and diverse events. We strive to inspire and empower event organizers, fostering a platform that celebrates creativity, fosters meaningful connections, and leaves a lasting impact on every participant.</p>
                 </div>
             </div>
