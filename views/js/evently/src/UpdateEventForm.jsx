@@ -26,10 +26,13 @@ export default function UpdateEventForm() {
     axios
       .get(`http://localhost:3000/api/event/${eventId}`)
       .then((response) => {
-        setEventData(response.data); 
+        setEventData(response.data);
       })
       .catch((error) => {
-        setError("Something went wrong, please try again!");
+        setError(error);
+        setError(
+          "Something went wrong, please try again!"
+        );
       });
   }, [eventId]);
 
@@ -146,8 +149,6 @@ export default function UpdateEventForm() {
                   onChange={(e) => setAttendees(e.target.value)}
                 />
               </div>
-              
-  
 
               <div className="public-status">
                 <h4>Public/Private</h4>
