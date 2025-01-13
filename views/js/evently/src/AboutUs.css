@@ -2,18 +2,13 @@
     text-align: center;
     font-family: 'Lexend', sans-serif;
 }
-.header{
-    text-align: center;
-    color: #FF6116;
-    font-size: 25px;
-    
-}
 
 .missionStatement {
     text-align: center;
     font-size: 20px;
     padding: 10px;
     margin-bottom: 20px;
+    flex-direction: inline;
 }
 .missionStatement-wrapper
 {
@@ -22,6 +17,12 @@
     border-radius: 15px;
     
 }
+
+..profileSection-wrapper
+{
+    grid-auto-flow: ;
+}
+
  .profileImages-1 {
     margin-bottom: 20px;  
     float: left;
@@ -43,12 +44,12 @@
     text-align: left;
     text-align: justify; 
     padding: 15px;
+    
 }
 .container-1, .container-2 {
-    border-style: outset;
+    border-style: none;
     height: 200px;
     padding:20px;
-    border-color: #FF6116;
     margin-bottom: 10px;
 }
 
