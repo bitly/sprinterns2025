@@ -55,6 +55,10 @@ func main() {
 	api.GET("/rsvp/:rsvpID", handlers.GetRSVP)
 	api.OPTIONS("/rsvp/:rsvpID", handlers.HandleCors)
 
+	// DELETE an event
+	api.DELETE("/event/:eventID/delete", handlers.DeleteEvent) // api calls delete to an individual event by calling :eventID (path parameter) & /event/:eventID is a path to a specific event
+	api.OPTIONS("/event/:eventID/delete", handlers.HandleCors) // context works with api.DeLEte and does cool stuff
+
 	// Start and run the server
 	router.Run(":3000")
 }
