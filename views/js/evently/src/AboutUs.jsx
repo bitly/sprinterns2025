@@ -41,9 +41,10 @@ function AboutUs() {
                             <p>I'm a sophomore at CUNY Lehman College and Macaulay Honors College studying Computer Graphics and Imaging with a minor in Media Communications Systems. I aspire to work in a space where I can leverage my creativity to craft designs and campaigns that deliver impactful experiences, connecting with and inspiring diverse audiences.</p>
                             <a href="https://www.linkedin.com/in/sara-abdulla-0ba97b292">Connect with me on LinkedIn!</a>
                         </div>
-                    </div>
-                </div>
-
+             </div>
+           </div>  
+          
+     
                 <div className="profileContainer">
                     <div className="profileCard">
                         <div className="profileFront">
