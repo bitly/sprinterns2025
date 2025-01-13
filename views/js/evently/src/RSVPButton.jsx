@@ -115,7 +115,7 @@ function RSVPButton() {
 
               <div className="max-rsvp-container">
                 <p> Max Attendees: {eventData.max_attendees}</p>
-                <p> RSVPs: {eventData.num_of_RSVP}</p>
+                <p> RSVPs: {rsvps.length}</p>
               </div>
             </div>
 
