@@ -10,12 +10,12 @@ import (
 
 func InsertAttendee(eventID int, firstName, lastName, email, phoneNumber, imageURL string) {
     // Connect to the database
-    dsn := "root:admin123@tcp(localhost:3306)/events" // Data Source Name (DSN) with MySQL connection details
+    dsn := "root:admin123@tcp(localhost:3306)/events" // Data Source Name with MySQL connection details
     db, err := sql.Open("mysql", dsn) // Open a connection to the database
     if err != nil { // Check for connection errors
         log.Fatal(err) // Log and exit if there is an error
     }
-    defer db.Close() // Ensure the database connection is closed when the function exits
+    defer db.Close() // to make sure the database connection is closed when the function exits
 
     // SQL query to insert a new attendee
     insertQuery := `
