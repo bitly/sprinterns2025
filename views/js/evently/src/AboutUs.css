@@ -84,6 +84,8 @@
     padding:10px 20px;
     margin-left: 1rem;
     background-color: #0A1F37;
+    transform: scale(1);
+    transition: background-color 0.3s;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     height: 100%;
@@ -93,6 +95,7 @@
 .profileContainer:hover 
 {
     transform: scale(1.05);
+    background-color: #ff6f00;
 }
 
 .profileFront
@@ -175,12 +178,12 @@
 {
     padding: 0;
     margin: 0;
-    color: #ff6f00;
+    color: #ffffff;
     font-weight: bold;
     position: absolute;
-    transform: translateY(-18rem) translateX(-20px);
+    transform: translateY(-18rem);
+    right: 2rem;
     bottom: 5rem;
-    right: 20px;
 }
 
 .personInfo a:hover 
