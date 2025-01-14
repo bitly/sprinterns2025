@@ -77,6 +77,7 @@ function AboutUs() {
                             me hanging out with friends, exploring new restaurants, or getting
                             creative with art. I love painting with gouache or just sketching
                             whenever inspiration strikes.</p>
+                            <p>Connect with me on LinkedIn!</p>
                         <a href="https://www.linkedin.com/in/tran-v-73812b321/">LinkedIn</a>
                     </div>
                 </div>
