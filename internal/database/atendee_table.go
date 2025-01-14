@@ -20,15 +20,13 @@ func CreateAttendeesTable() {
     // SQL query to create the attendees table
     createTableQuery := `
     CREATE TABLE IF NOT EXISTS attendees (
-        id INT AUTO_INCREMENT PRIMARY KEY,
-        event_id INT,
-        first_name VARCHAR(255) NOT NULL,
-        last_name VARCHAR(255) NOT NULL,
-        email VARCHAR(255) NOT NULL,
-        phone_number VARCHAR(20),
-        image_url VARCHAR(255),
-        FOREIGN KEY (event_id) REFERENCES events(id)
-    );`
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    first_name VARCHAR(255) NOT NULL,
+    last_name VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    phone_number VARCHAR(20),
+    image_url VARCHAR(2048)
+);
 
     // Run the query
     _, err = db.Exec(createTableQuery) //run the sql query

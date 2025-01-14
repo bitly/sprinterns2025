@@ -19,7 +19,7 @@ func InsertAttendee(eventID int, firstName, lastName, email, phoneNumber, imageU
 
     // SQL query to insert a new attendee
     insertQuery := `
-    INSERT INTO attendees (event_id, first_name, last_name, email, phone_number, image_url)
+    INSERT INTO attendees (first_name, last_name, email, phone_number, image_url)
     VALUES (?, ?, ?, ?, ?, ?);`
 
     // Execute the query
@@ -33,7 +33,6 @@ func InsertAttendee(eventID int, firstName, lastName, email, phoneNumber, imageU
 
 func main() {
     // Example data to insert
-    eventID := 1
     firstName := "John"
     lastName := "Pork"
     email := "john.pork@example.com"
