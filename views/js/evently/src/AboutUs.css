@@ -46,6 +46,7 @@
     background-color: #0A1F37;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    height: 100%;
 }
 
 .profileContainer img 
@@ -54,7 +55,7 @@
 
 }
 
-.profileImages 
+.profileFront
 {
     width: 150px;
     height: 150px;
@@ -63,18 +64,43 @@
     margin-bottom: 8px;
 }
 
-.profileImages img 
+.profileFront img 
 {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.personInfo h2 {
+.profileFront h2
+ {
     color: white;
     text-align: center;
     font-size: 1.5rem;
     margin-bottom: 10px;
+    position: absolute;
+    align-items: center;
+
+}
+
+.profilesSection .profileContainer:nth-child(3) .profileFront h2
+{
+
+    transform: translateX(-20%);
+    margin-top: 20px;
+}
+
+.profilesSection .profileContainer:nth-child(4) .profileFront h2
+{
+
+    transform: translateX(-10%);
+    margin-top: 20px;
+}
+
+.profilesSection .profileContainer:nth-child(5) .profileFront h2
+{
+
+    transform: translateX(30%);
+    margin-top: 20px;
 }
 
 .personInfo p
@@ -82,6 +108,7 @@
     color: white;
     font-size: .9rem;
     margin-bottom: 10px;
+    margin-top: 70px;
 }
 
 .personInfo a 
