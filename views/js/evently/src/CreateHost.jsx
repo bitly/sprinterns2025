@@ -30,66 +30,89 @@ function CreateHost() {
         }
       }
 
-    return (
-
- <div className='create-host-container'> 
-
-     <div className='row'>
-
-      <form className="create-Form" onSubmit={handleSubmit}>
-          <div className='column'>
-              <div className='account-layout'>
-                  <img src={profileImage1}
-                  alt="Profile picture" className="profile-image" />
-                  <br />
-                  <label> Enter image url: </label>
-                  <input type="text" className='image-input' value = {ProfileImage} onChange={(e) => setProfileImage(e.target.value)}/>
-                  <br />
-                  <label>Do you want to add any links?</label>
-                  <br />
-                  <label> (Optional) </label>
-                  <input type="text" className='link-input' value = {Link} onChange={(e) => setLink(e.target.value)}/>
-                  <br />
-                  
-              </div>
-          </div>
+      return (
+        
+        <div className="create-host-container">
+          <form className="create-form" onSubmit={handleSubmit}>
+            <h2>Create Your Profile</h2>
       
-              <div className='column'>
-                  <div className='input-form'>
-                      <h4>Are you an individual or an organization?</h4>
-                      <select>
-                          <option value="Individual">Individual</option>
-                          <option value="Organization">Organization</option>
-                      </select>
-                      <br />
-                      <label> Name: </label>
-                      <input type="text" className='name-input' value = {Name} onChange={(e) => setName(e.target.value)}/>
-                      <label> Phone Number: </label>
-                      <input type="text" className='phone-input' value = {Phone} onChange={(e) => setPhone(e.target.value)}/>
-
-                      <h4>Do you want to make your phone number public?</h4>
-                      <select>
-                          <option value="Yes">Yes</option>
-                          <option value="No">No</option>
-                      </select>
-                      <br />
-                      <label> Email: </label>
-                      <input type="text" className='email-input' value = {Email} onChange={(e) => setEmail(e.target.value)}/>
-
-                      <h4>Do you want to make your email public?</h4>
-                      <select>
-                          <option value="Yes">Yes</option>
-                          <option value="No">No</option>
-                      </select>
-                      <button className= "button" type="submit">Create account</button>
-                  </div>
-              </div>
-      </form>
-    </div>
-
-</div>
+            {/* Profile Image Section */}
+            <div className="form-group">
+              <img 
+                src={profileImage1} 
+                alt="Profile picture" 
+                className="profile-image" 
+              />
+              <label htmlFor="image-input">Enter image URL:</label>
+              <input 
+                type="text" 
+                id="image-input" 
+                value={ProfileImage} 
+                onChange={(e) => setProfileImage(e.target.value)} 
+              />
+            </div>
       
-    )
+            {/* Name Input */}
+            <div className="form-group">
+              <label htmlFor="name-input">Name:</label>
+              <input 
+                type="text" 
+                id="name-input" 
+                value={Name} 
+                onChange={(e) => setName(e.target.value)} 
+              />
+            </div>
+      
+            {/* Phone Number Input */}
+            <div className="form-group">
+              <label htmlFor="phone-input">Phone Number:</label>
+              <input 
+                type="text" 
+                id="phone-input" 
+                value={Phone} 
+                onChange={(e) => setPhone(e.target.value)} 
+              />
+            </div>
+      
+            {/* Email Input */}
+            <div className="form-group">
+              <label htmlFor="email-input">Email:</label>
+              <input 
+                type="text" 
+                id="email-input" 
+                value={Email} 
+                onChange={(e) => setEmail(e.target.value)} 
+              />
+            </div>
+
+            {/* Role Selection */}
+            <div className="form-group">
+              <label htmlFor="role-select">Are you an attendee or host?</label>
+              <select id="role-select">
+                <option value="Attendee">Attendee</option>
+                <option value="Host">Host</option>
+                <option value="Both">Both</option>
+              </select>
+            </div>
+
+            {/* Links Section */}
+            <div className="form-group">
+              <label htmlFor="link-input">Add any links (Optional):</label>
+              <input 
+                type="text" 
+                id="link-input" 
+                value={Link} 
+                onChange={(e) => setLink(e.target.value)} 
+              />
+            </div>
+
+            {/* Submit Button */}
+            <button className="button" type="submit">Create Account</button>
+          </form>
+        </div>
+      );
+      
+      
 }
 
 export default CreateHost;
