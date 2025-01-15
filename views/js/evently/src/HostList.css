@@ -70,6 +70,7 @@ td, th {
 >>>>>>> 941a3d7 (Trying my best to implement changes to the front end of the Host page)
     font-family: "Bree Serif";
   }
+<<<<<<< HEAD
   
   .search-bar {
     margin-left: 4rem;
@@ -195,5 +196,95 @@ td, th {
       font-size: 1.5rem;
       padding: 0.75rem;
     }
+=======
+.profile-img{
+    width: auto;
+    height: auto;
+    border: 1px solid #dddddd;
+    padding: 15px;
+}
+.profile-img img{
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+}
+
+/* General Reset */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f5f2;
+    color: #333;
+  }
+  
+  
+  .cta-button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+  
+  .cta-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .illustration img {
+    margin-top: 20px;
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* Search & Grid */
+  .search-grid {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .search-bar input {
+    width: 80%;
+    max-width: 600px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+    padding: 0 20px;
+  }
+  
+  .card {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card img {
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    margin-bottom: 10px;
+  }
+  
+  .card .name {
+    font-weight: bold;
+    margin: 5px 0;
+  }
+  
+  .card .email {
+    color: #666;
+    font-size: 0.9rem;
+>>>>>>> d3c9750 (Worked on frontend for people page + form page to play around with design implmenetation)
   }
   
