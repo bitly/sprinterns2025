@@ -3,15 +3,14 @@ import { useNavigate } from 'react-router-dom';
 import './CreateEvent.css';
 
 function CreateEvent() {
-  const [EventTitle, setEventTitle ] = useState("");
+  const [EventTitle, setEventTitle ] = useState('Untitled Event');
   const [DateForm, setDateForm] = useState("");
   const [TimeForm, setTimeForm] = useState("");
-  const [LocationForm, setLocationForm] = useState("");
-  const [DescriptionForm, setDescriptionForm] = useState("");
+  const [LocationForm, setLocationForm] = useState("Location");
+  const [DescriptionForm, setDescriptionForm] = useState("Description");
   const [AttendeesForm, setAttendeesForm] = useState("");
   const [PublicPrivate, setPublicPrivate] = useState("");
-  const [EventType, setEventType] = useState(""); // TS
-  const [HostName, setHostName] = useState("");
+  const [HostName, setHostName] = useState('Host Name');
   const [ContactForm, setContactForm] = useState("");
   const [imageUrl, setImageUrl] = useState("");
   const [successMessage, setSuccessMessage] = useState("")
@@ -53,30 +52,34 @@ function CreateEvent() {
             <div className='event-title'>
              <h4>Event title</h4>
            </div>
-
+          
               <input value={EventTitle} className = "create-input-boxes" onChange={(e) => {
-                setEventTitle(e.target.value)}}/> 
+                  setEventTitle(e.target.value)}}/> 
+                  <div className="date">
+                    <input type="date" value={DateForm} className = "create-input-boxes" placeholder='(mm/dd/yyyy)' onChange={(e) => setDateForm(e.target.value)}/> 
+                  </div>
+               </div> 
+            </div>
+              
 
-              <div className="date-time-container">
-                <div className="date">
-                  <h4>Date</h4>
-                  <input type="date" value={DateForm} className = "create-input-boxes" placeholder='(mm/dd/yyyy)' onChange={(e) => setDateForm(e.target.value)}/> 
+              <div className="hostName-time-location-description-container">
+                <div className='host-name'>
+                  <input value={HostName} className = "create-input-boxes" onChange={(e) => setHostName(e.target.value)}/>
                 </div>
-                <div className="time">
-                  <h4>Time</h4>
-                  <input type="time" value={TimeForm} className = "create-input-boxes time-input" onChange={(e) => setTimeForm(e.target.value)}/>
+                
+                  <div className="time">
+                    <input type="time" value={TimeForm} className = "create-input-boxes time-input" onChange={(e) => setTimeForm(e.target.value)}/>
+                  </div>
+
+                  <div className='location'>
+                    <input value={LocationForm} className = "create-input-boxes" onChange={(e) => setLocationForm(e.target.value)}/>
+                  </div>
+
+                  <div className='description'>
+                    <input value={DescriptionForm} className = "create-input-boxes" onChange={(e) => setDescriptionForm(e.target.value)}/>
                 </div>
               </div>
 
-               <div className='location'>
-                  <h4>Location</h4>
-              <input value={LocationForm} className = "create-input-boxes" onChange={(e) => setLocationForm(e.target.value)}/>
-                </div>
-
-              <div className='description'>
-              <h4>Description</h4>
-              <input value={DescriptionForm} className = "create-input-boxes" onChange={(e) => setDescriptionForm(e.target.value)}/>
-              </div>
 
               <div className="max-attendees-private-public-container">
                 <div className="max-attendees">
@@ -96,17 +99,6 @@ function CreateEvent() {
                 <div className='host-name'>
               <h4>Host name</h4>
               <input value={HostName} className = "create-input-boxes" onChange={(e) => setHostName(e.target.value)}/>
-                </div>
-
-                <div className='event-type-selection'> 
-              <h4>What type of event is this?</h4>
-              <select className = "create-input-boxes" value={EventType} onChange={(e) => setEventType(e.target.value)}>
-                    <option name="blank" value="blank" >    </option>
-                    <option name="social" value="social" > Social</option>
-                    <option name="business" value="business" >Business</option>
-                    <option name="education" value="education" >Education</option>
-                    <option name="recreation" value="recreation" >Recreation</option>
-                  </select>
                 </div>
               
               <div className='contact-info'> 
