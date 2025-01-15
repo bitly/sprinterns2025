@@ -3,13 +3,14 @@ import "./RSVPButton.css";
 import { useParams } from "react-router-dom";
 import { useNavigate, Link } from "react-router-dom";
 import DefaultImage from "./Images/default.png";
+import axios from 'axios';
 
 function RSVPButton() {
   const { eventId } = useParams();
+  const navigateTo = useNavigate();
   const [eventData, setEventDetails] = useState([]);
   const [rsvps, setRSVPs] = useState([]); //allow user 
   const [error, setError] = useState("");
-  const navigateTo = useNavigate();
 
   const eventDateTime = new Date(eventData.date + " " + eventData.time);
   const formatDate = eventDateTime.toLocaleDateString("en-US", {
@@ -44,7 +45,7 @@ function RSVPButton() {
         );
         const rsvpData = await response.json();  //getting the response in json format
         console.log("hi", rsvpData);
-        setRSVPs(rsvpData); //uodating the state with the response
+        setRSVPs(rsvpData); //updating the state with the response
       } catch (error) {
         setError( //error message if there is an error n it failed to fetch RSVPs
           "The server ran into an error getting the RSVPs, please try again!" // err message
@@ -65,6 +66,32 @@ function RSVPButton() {
     navigateTo(`/update-event/${eventData.event_id}`);
 
   };
+
+  const deleteEvent = async () =>
+    {
+      if (!eventData || !eventData.event_id)
+      {
+        console.error("Event data is missing or event_id is undefined");
+        return;
+      }
+      try 
+        {
+          await axios.delete(`http://localhost:3000/api/event/${eventData.event_id}/delete`);
+          navigateTo('/community-page/');
+          
+        }
+
+        catch(error)
+        {
+          console.error('An error has occured trying to delete this item.', error);
+        }
+        
+        if (!eventData) {
+          return <p>Loading...</p>;
+        }
+    };
+  
+
   return (
     <div className="rsvp-event">
       <div className="user-info">
@@ -121,6 +148,7 @@ function RSVPButton() {
 
           <div className="btns">
             <button className="rsvp-button" onClick={handleRSVP}> RSVP! </button>
+            <button className="delete-button" onClick={deleteEvent}> Delete! </button>
             <button className="update-button" onClick={handleUpdateEvent}> Update </button>
           </div>
           <div className="rsvp-list">
