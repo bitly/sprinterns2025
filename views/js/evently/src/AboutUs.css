@@ -9,7 +9,7 @@
     text-align: center;
     font-size: 20px;
     padding: 50px 20px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .missionStatement-wrapper 
@@ -61,17 +61,18 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    
 }
 
 .profilesSection 
 {
     perspective: 1000px;
-    margin-top: 5rem;
+    margin-top: 2rem;
     background-color:#d9d9d9;
     display: grid;
     grid-template-columns: repeat(3, 1fr); 
     gap: 30px;
-    padding: 30px 10px 140px 0px;
+    padding: 30px 10px 140px 20px;
 
 
 }
@@ -103,7 +104,6 @@
     width: 275px;
     height: 275px;
     overflow: hidden;
-    transform: translateX();
     border-radius: 50%;
     margin-bottom: 8px;
     
@@ -118,12 +118,19 @@
 
 .profileFront h2
  {
-    color: white;
+    margin: 0;
+    padding: 10px 40px;
+    color: black;
+    background-color:#d9d9d9;
+    border-radius: 50px;
     text-align: center;
     font-size: 1.5rem; 
-    transform: translateX(3rem);
+    transform: translateX(1.3rem);
     margin-bottom: 10px;
+    box-shadow: 9px 6px 5px rgba(255, 116, 23, 0.461); 
     position: absolute;
+    font-family: 'Lexend';
+    font-weight: 400;
     bottom: 20px;
      
 }
@@ -143,24 +150,24 @@
 
 .profilesSection .profileContainer:nth-last-child(1)
 {
-    transform: translate(245px,55px);
+    transform: translate(305px,55px);
 }
 
 .profilesSection .profileContainer:nth-last-child(2)
 {
-    transform: translate(135px,55px);
+    transform: translate(185px,55px);
 }
 
 
 /*Applied Hover Effect to the last two elements */
 .profilesSection .profileContainer:nth-last-child(1):hover
 {
-    transform: translate(245px, 55px) scale(1.09); 
+    transform: translate(305px, 55px) scale(1.09); 
 }
 
 .profilesSection .profileContainer:nth-last-child(2):hover
 {
-    transform: translate(135px, 55px) scale(1.09); 
+    transform: translate(15px, 55px) scale(1.09); 
 }
 
 .profileBack p
@@ -186,7 +193,7 @@
     bottom: 5rem;
 }
 
-.personInfo a:hover 
+.profileBack a:hover 
 {
     text-decoration: underline;
     color: #ffa569;
