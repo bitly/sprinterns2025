@@ -27,41 +27,49 @@ function HostList() {
     
 
   return (
-    <div>
+    <div className="all-hosts-container">
       <div className="header">
-        <h1>Discover New People</h1>
-        <Link to="/create-host" className="host-button">Join now</Link>
-      </div>  
+        <h1>All Hosts</h1>
+        <Link to="/create-host" className="host-button">
+          Create Host
+        </Link>
+      </div>
   
       <table>
-        <thead className="column-names">
+        <thead>
           <tr>
             <th>Profile</th>
             <th>First Name</th>
             <th>Last Name</th>
-            <th>Email</th> 
+            <th>Email</th>
           </tr>
         </thead>
         <tbody>
-          {hosts.map(host => (
-            <tr key={host.host_id}>
-              <td>
-                <div className="profile-img">
+          {hosts.length > 0 ? (
+            hosts.map((host) => (
+              <tr key={host.host_id}>
+                <td className="profile-img">
                   <img
                     src={
                       host.image_url !== "" ? host.image_url : "default.png"
                     }
                     alt={`Image for ${host.first_name} ${host.last_name}`}
                   />
-                </div>
+                </td>
+                <td>{host.first_name}</td>
+                <td>{host.last_name}</td>
+                <td>{host.email}</td>
+              </tr>
+            ))
+          ) : (
+            <tr>
+              <td colSpan="4" style={{ textAlign: "center" }}>
+                No hosts available
               </td>
-              <td>{host.first_name}</td>
-              <td>{host.last_name}</td>
-              <td>{host.email}</td>    
             </tr>
-          ))}
+          )}
         </tbody>
-      </table>  
+      </table>
     </div>
   );
   
