@@ -4,6 +4,7 @@ import './CreateEvent.css';
 
 function CreateEvent() {
   const [EventTitle, setEventTitle ] = useState('Untitled Event');
+  const [image, setImage] = useState(null);
   const [DateForm, setDateForm] = useState("Set a Date...");
   const [TimeForm, setTimeForm] = useState("");
   const [LocationForm, setLocationForm] = useState("Location");
@@ -41,6 +42,22 @@ function CreateEvent() {
       console.log(err);
     }
   }
+
+  const defaultImage = 'https://images.pexels.com/photos/16220888/pexels-photo-16220888/free-photo-of-birthday-party-catering.jpeg';
+
+  const handleImageChange = (e) => 
+  {
+    const file = e.target.files[0];
+    if (file)
+    {
+      const reader = new FileReader();
+      reader.onloadend = () =>
+      {
+        setImage(reader.result);
+      };
+      reader.readAsDataURL(file);
+    }
+  };
 
     return (
       <div className="create-event"> 
@@ -91,19 +108,35 @@ function CreateEvent() {
                 </div>
                 
                </div> 
+   
+              <div className='image-url'>
+                <img
+                  src = {image || defaultImage}
+                  alt = "Uploaded Preview"
+                  width = "500"
+                  height = "350"
+                />
+
+                <input 
+                  className = "img-input-boxes"
+                  type = "file"
+                  accept = "image"
+                  onChange = {handleImageChange}
+                />
+
+                <h4>Image URL</h4>
+               <input value={imageUrl} className = "create-input-boxes" onChange={(e) => setImageUrl(e.target.value)}/>
+              </div>
 
   
-              
+                            
               <div className='contact-info'>
-              <h4>Contact info</h4>
-              <input value={ContactForm} className = "create-input-boxes" onChange={(e) => setContactForm(e.target.value)}/>
+                <h4>Contact info</h4>
+                <input value={ContactForm} className = "create-input-boxes" onChange={(e) => setContactForm(e.target.value)}/>
               </div>
-              
-              <div className='image-url'>
-              <h4>Image URL</h4>
-              <input value={imageUrl} className = "create-input-boxes" onChange={(e) => setImageUrl(e.target.value)}/>
-              </div>
-              
+
+
+              {/* Submit Button */}
               <br />
               <button type="submit" className="create-save-button">Publish</button>
             </form>

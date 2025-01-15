@@ -19,6 +19,22 @@
 {
   padding-top: 10px;
 }
+.img-input-boxes
+{
+  color: white;
+
+}
+.contact-info h4
+{
+  margin: 0;
+  transform: translateY(2rem);
+}
+
+.image-url h4
+{
+  margin: 0;
+  transform:translateY(2rem);
+}
 
 .description
 {
