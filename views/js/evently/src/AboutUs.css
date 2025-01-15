@@ -172,7 +172,7 @@
 
 .profilesSection .profileContainer:nth-last-child(2):hover
 {
-    transform: translate(15px, 55px) scale(1.09); 
+    transform: translate(185px, 55px) scale(1.09); 
 }
 
 .profileBack p
