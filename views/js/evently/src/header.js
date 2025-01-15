@@ -26,6 +26,7 @@ function Header() {
               Create
             </NavLink>
           </li>
+<<<<<<< HEAD
           <li>
             <NavLink
               to="/hosts"
@@ -37,6 +38,8 @@ function Header() {
           <li className = "nav-wrapper">
             <Link to="/community-page" className="nav-links">Community</Link>
             </li>
+=======
+>>>>>>> 9fa083d (Got rid of the duplicates in the header)
           <li>
             <Link to="/community-page" className="nav-links">Events</Link>
           </li>
