@@ -28,12 +28,13 @@ function HostList() {
 
   return (
     <div>
-    <div className= "header">
-        <h1>All Hosts</h1>
-        <Link to="/create-host" className="host-button"> Create Host</Link>
-    </div>  
+      <div className="header">
+        <h1>Discover New People</h1>
+        <Link to="/create-host" className="host-button">Join now</Link>
+      </div>  
+  
       <table>
-        <thead className= "column-names">
+        <thead className="column-names">
           <tr>
             <th>Profile</th>
             <th>First Name</th>
@@ -44,16 +45,16 @@ function HostList() {
         <tbody>
           {hosts.map(host => (
             <tr key={host.host_id}>
-              <div className="profile-img">
               <td>
-                <img
+                <div className="profile-img">
+                  <img
                     src={
-                        host.image_url !== "" ? host.image_url : "default.png"
+                      host.image_url !== "" ? host.image_url : "default.png"
                     }
                     alt={`Image for ${host.first_name} ${host.last_name}`}
-                />
+                  />
+                </div>
               </td>
-              </div>  
               <td>{host.first_name}</td>
               <td>{host.last_name}</td>
               <td>{host.email}</td>    
@@ -63,6 +64,7 @@ function HostList() {
       </table>  
     </div>
   );
+  
 }
 
 export default HostList;

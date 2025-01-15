@@ -24,6 +24,12 @@ function Header() {
           </li>
           <li className = "nav-wrapper">
             <Link to="/community-page" className="nav-links">Community</Link>
+            </li>
+          <li>
+            <Link to="/hosts" className="nav-links">People</Link>
+          </li>
+          <li>
+            <Link to="/community-page" className="nav-links">Events</Link>
           </li>
           <li className = "nav-wrapper">
             <Link to="/about-us" className="nav-links">About Us</Link>
