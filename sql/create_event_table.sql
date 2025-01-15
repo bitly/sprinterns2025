@@ -1,6 +1,6 @@
 use events;
 CREATE TABLE IF NOT EXISTS `event` (
-	`event_id` integer PRIMARY KEY AUTO_INCREMENT,
+    `event_id` integer PRIMARY KEY AUTO_INCREMENT,
 	`title` text NOT NULL,
 	`date` text NOT NULL,
 	`time` text NOT NULL,

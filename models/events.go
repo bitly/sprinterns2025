@@ -36,3 +36,13 @@ type Host struct {
 	Email     string `json:"email"`
 	ImageURL  string `json:"image_url"`
 }
+
+//attendee struct
+type Attendee struct {
+    AttendeeID  int    `json:"attendee_id"`
+    FirstName   string `json:"first_name"`
+    LastName    string `json:"last_name"`
+    Email       string `json:"email"`
+    PhoneNumber string `json:"phone_number"`
+    ImageURL    string `json:"image_url"`
+}
