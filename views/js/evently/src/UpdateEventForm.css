@@ -1,13 +1,11 @@
 .create-form {
-  font-family: "Bree Serif";
-  background: #f8f8f8;
+  font-family: "Work Sans";
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 5rem;
+  padding: 1rem;
   width: 35rem;
   border-radius: 1rem;
-  box-shadow: 2px 8px 4px #d8d8d8;
   margin-bottom: 10%;
 }
 
@@ -16,7 +14,7 @@
   font-size: 1.5em;
   margin-bottom: 2%;
   color: black;
-  font-family: "Bree Serif";
+  font-family: "Work Sans";
 }
 
 .exit-click:hover {
@@ -27,11 +25,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.update-event-heading {
-  font-family: "Bree Serif";
-  text-align: center;
 }
 
 .location,
@@ -51,7 +44,9 @@
 }
 
 .create-input-boxes {
-  font-family: "Bree Serif";
+  font-family: "Work Sans";
+  border: none;
+  background-color: aqua;
 }
 
 .update-button {
@@ -74,6 +69,5 @@
 
 .update-button:hover {
   background-color: #fc5000;
-
   cursor: pointer;
 }

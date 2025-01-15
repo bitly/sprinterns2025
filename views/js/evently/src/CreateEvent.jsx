@@ -4,7 +4,7 @@ import './CreateEvent.css';
 
 function CreateEvent() {
   const [EventTitle, setEventTitle ] = useState('Untitled Event');
-  const [DateForm, setDateForm] = useState("");
+  const [DateForm, setDateForm] = useState("Set a Date...");
   const [TimeForm, setTimeForm] = useState("");
   const [LocationForm, setLocationForm] = useState("Location");
   const [DescriptionForm, setDescriptionForm] = useState("Description");
@@ -45,14 +45,9 @@ function CreateEvent() {
     return (
       <div className="create-event"> 
           <div className = "create-form-container">
-             <div className='enter-details'>
-            <h2> Enter the details of your event:</h2>
-            </div>
-            <form className="create-form" onSubmit={handleSubmit}> 
-            <div className='event-title'>
-             <h4>Event title</h4>
-           </div>
-          
+            <form className="create-form" onSubmit={handleSubmit}>
+            <div className = "event-and-date">
+              <div className='event-title'>
               <input value={EventTitle} className = "create-input-boxes" onChange={(e) => {
                   setEventTitle(e.target.value)}}/> 
                   <div className="date">
@@ -94,14 +89,12 @@ function CreateEvent() {
                     <option name="private" value="private" >private</option>
                   </select>
                 </div>
+                
                </div> 
 
-                <div className='host-name'>
-              <h4>Host name</h4>
-              <input value={HostName} className = "create-input-boxes" onChange={(e) => setHostName(e.target.value)}/>
-                </div>
+  
               
-              <div className='contact-info'> 
+              <div className='contact-info'>
               <h4>Contact info</h4>
               <input value={ContactForm} className = "create-input-boxes" onChange={(e) => setContactForm(e.target.value)}/>
               </div>

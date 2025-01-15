@@ -1,31 +1,36 @@
+
 .create-event {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: justify;
+
   margin: 4rem 0;
 }
 
-.create-form-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.date
+{
+  padding: 15px 0px 100px 0px;
 }
-.create-form {
-  background-color: #f8f8f8;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 2rem;
-  width: 35rem;
-  border-radius: 1rem;
+
+.hostName,
+.time,
+.location,
+.description
+{
+  padding-top: 10px;
+}
+
+.description
+{
+  padding-bottom: 15rem;
+  background-color: rgb(255, 0, 0);
+  margin-top: 1rem;
 }
 
 .create-input-boxes {
   display: flex;
   justify-content: center;
   padding: 0.5rem;
-  border-radius: 10px;
-  border: 1px;
   border-color: none;
   font-size: 0.8em;
 }
