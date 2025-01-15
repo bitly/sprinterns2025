@@ -19,12 +19,6 @@ function Header() {
           <li className = "nav-wrapper">
             <Link to="/create-event" className="nav-links">Create</Link>
           </li>
-          <li className = "nav-wrapper">
-            <Link to="/hosts" className="nav-links">Hosts</Link>
-          </li>
-          <li className = "nav-wrapper">
-            <Link to="/community-page" className="nav-links">Community</Link>
-            </li>
           <li>
             <Link to="/hosts" className="nav-links">People</Link>
           </li>
