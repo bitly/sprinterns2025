@@ -36,3 +36,13 @@ type Host struct {
 	Email     string `json:"email"`
 	ImageURL  string `json:"image_url"`
 }
+
+//attendee struct
+type Attendee struct {
+    AttendeeID  int    `db:"attendee_id"`
+    FirstName   string `db:"first_name"`
+    LastName    string `db:"last_name"`
+    Email       string `db:"email"`
+    PhoneNumber string `db:"phone_number"`
+    ImageURL    string `db:"image_url"`
+}
