@@ -45,7 +45,7 @@ function RSVPButton() {
         );
         const rsvpData = await response.json();  //getting the response in json format
         console.log("hi", rsvpData);
-        setRSVPs(rsvpData); //updating the state with the response
+        setRSVPs(rsvpData ?? []); //updating the state with the response
       } catch (error) {
         setError( //error message if there is an error n it failed to fetch RSVPs
           "The server ran into an error getting the RSVPs, please try again!" // err message
@@ -142,7 +142,7 @@ function RSVPButton() {
 
               <div className="max-rsvp-container">
                 <p> Max Attendees: {eventData.max_attendees}</p>
-                <p> RSVPs: {rsvps.length}</p>
+                <p> RSVPs: {rsvps.length}</p> 
               </div>
             </div>
 
