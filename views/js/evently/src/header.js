@@ -19,11 +19,11 @@ function Header() {
           <li className = "nav-wrapper">
             <Link to="/create-event" className="nav-links">Create</Link>
           </li>
-          <li className = "nav-wrapper">
-            <Link to="/hosts" className="nav-links">Hosts</Link>
+          <li>
+            <Link to="/hosts" className="nav-links">People</Link>
           </li>
-          <li className = "nav-wrapper">
-            <Link to="/community-page" className="nav-links">Community</Link>
+          <li>
+            <Link to="/community-page" className="nav-links">Events</Link>
           </li>
           <li className = "nav-wrapper">
             <Link to="/about-us" className="nav-links">About Us</Link>

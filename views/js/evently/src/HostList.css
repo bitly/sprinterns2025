@@ -1,16 +1,45 @@
 .header{
-    text-align: center;
-    font-family: "Bree Serif";
-}
+   
+    color:#252628;
+    font-family: "Bitly Display ExtraBold", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    display: block;
+    font-size: 40px;
+    line-height: 48px;
+    font-weight:800;
+    font-style: normal;
+    text-rendering: optimizeLegibility;
+    margin-top: 0;
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    unicode-bidi: isolate;
 
+}
 .host-button{
-    background-color: #2A5DB7;
-    margin-bottom: 3rem;
+
+    background: #2a5bd7;
+    margin: 0 0 1rem 0;
     color: white;
     font-size: 1.5rem;
+    font-weight: 400;
+    font-family: inherit;
     text-decoration: none;
     padding: 1.2rem 2rem;
-    border-radius: 0.8rem;
+    text-align: center;
+    cursor: pointer;
+    outline: none !important;
+    display: inline-block;
+    vertical-align: middle;
+    box-sizing: inherit;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    text-rendering: optimizeLegibility;
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing:antialiased;
 }
 
 .column-names{
@@ -22,6 +51,7 @@ table{
     border-collapse: collapse;
     width: 100%;
     table-layout: fixed;
+    font-weight: 400;
 }
 td, th {
     border: 1px solid #dddddd;
@@ -40,3 +70,82 @@ td, th {
     max-height: 100%;
     object-fit: cover;
 }
+
+/* General Reset */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f5f2;
+    color: #333;
+  }
+  
+  
+  .cta-button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+  
+  .cta-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .illustration img {
+    margin-top: 20px;
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* Search & Grid */
+  .search-grid {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .search-bar input {
+    width: 80%;
+    max-width: 600px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+    padding: 0 20px;
+  }
+  
+  .card {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card img {
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    margin-bottom: 10px;
+  }
+  
+  .card .name {
+    font-weight: bold;
+    margin: 5px 0;
+  }
+  
+  .card .email {
+    color: #666;
+    font-size: 0.9rem;
+  }
+  
