@@ -39,10 +39,10 @@ type Host struct {
 
 //attendee struct
 type Attendee struct {
-    AttendeeID  int    `db:"attendee_id"`
-    FirstName   string `db:"first_name"`
-    LastName    string `db:"last_name"`
-    Email       string `db:"email"`
-    PhoneNumber string `db:"phone_number"`
-    ImageURL    string `db:"image_url"`
+    AttendeeID  int    `json:"attendee_id"`
+    FirstName   string `json:"first_name"`
+    LastName    string `json:"last_name"`
+    Email       string `json:"email"`
+    PhoneNumber string `json:"phone_number"`
+    ImageURL    string `json:"image_url"`
 }
