@@ -38,7 +38,7 @@ function AboutUs() {
                             <h2>Sara Abdulla</h2>
                         </div>
                         <div className="profileBack">
-                            <p>I'm a sophomore at CUNY Lehman College and Macaulay Honors College studying Computer Graphics and Imaging with a minor in Media Communications Systems. I aspire to work in a space where I can leverage my creativity to craft designs and campaigns that deliver impactful experiences, connecting with and inspiring diverse audiences.</p>
+                            <p>Hi, I'm Sara! I'm a sophomore at CUNY Lehman College and Macaulay Honors College studying Computer Graphics and Imaging with a minor in Media Communications Studies. I hope to combine my creative and technical skills to pursue a career in product design. In my free time, I like to binge-watch shows, bake, visit new places, and spend time with family and friends.</p>
                             <a href="https://www.linkedin.com/in/sara-abdulla-0ba97b292">Connect with me on LinkedIn!</a>
                         </div>
                     </div>
