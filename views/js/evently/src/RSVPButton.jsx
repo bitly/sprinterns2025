@@ -7,10 +7,10 @@ import axios from 'axios';
 
 function RSVPButton() {
   const { eventId } = useParams();
-  const navigateTo = useNavigate();
   const [eventData, setEventDetails] = useState([]);
   const [rsvps, setRSVPs] = useState([]); //allow user 
   const [error, setError] = useState("");
+  const navigateTo = useNavigate();
 
   const eventDateTime = new Date(eventData.date + " " + eventData.time);
   const formatDate = eventDateTime.toLocaleDateString("en-US", {
@@ -45,7 +45,7 @@ function RSVPButton() {
         );
         const rsvpData = await response.json();  //getting the response in json format
         console.log("hi", rsvpData);
-        setRSVPs(rsvpData ?? []); //updating the state with the response
+        setRSVPs(rsvpData); //uodating the state with the response
       } catch (error) {
         setError( //error message if there is an error n it failed to fetch RSVPs
           "The server ran into an error getting the RSVPs, please try again!" // err message
@@ -66,32 +66,6 @@ function RSVPButton() {
     navigateTo(`/update-event/${eventData.event_id}`);
 
   };
-
-  const deleteEvent = async () =>
-    {
-      if (!eventData || !eventData.event_id)
-      {
-        console.error("Event data is missing or event_id is undefined");
-        return;
-      }
-      try 
-        {
-          await axios.delete(`http://localhost:3000/api/event/${eventData.event_id}/delete`);
-          navigateTo('/community-page/');
-          
-        }
-
-        catch(error)
-        {
-          console.error('An error has occured trying to delete this item.', error);
-        }
-        
-        if (!eventData) {
-          return <p>Loading...</p>;
-        }
-    };
-  
-
   return (
     <div className="rsvp-event">
       <div className="user-info">
@@ -125,14 +99,14 @@ function RSVPButton() {
 
             <div className="event-details">
               <div className="location-description">
-                <p> 📍{eventData.location}</p>
+                <p> 📍 {eventData.location}</p>
                 <p> {eventData.description}</p>
               </div>
 
-              <div className="contact-contasiner">
+              <div className="contact-container">
                 <p> Host Name: {eventData.host_name}</p>
                 <p>Contact: {eventData.contact_info}</p>
-                <p>Event Type: {eventData.event_type}</p> 
+                <p>Event Type: {eventData.event_type}</p>
               </div>
 
               <div className="date-time-container">
@@ -142,13 +116,12 @@ function RSVPButton() {
 
               <div className="max-rsvp-container">
                 <p> Max Attendees: {eventData.max_attendees}</p>
-                <p> RSVPs: {rsvps.length}</p> 
+                <p> RSVPs: {rsvps.length}</p>
               </div>
             </div>
 
           <div className="btns">
             <button className="rsvp-button" onClick={handleRSVP}> RSVP! </button>
-            <button className="delete-button" onClick={deleteEvent}> Delete! </button>
             <button className="update-button" onClick={handleUpdateEvent}> Update </button>
           </div>
           <div className="rsvp-list">

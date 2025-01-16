@@ -86,7 +86,7 @@ function CreateEvent() {
                 <div className="public-status">
                   <h4>Public/Private</h4>
                   <select className = "create-input-boxes" value={PublicPrivate} onChange={(e) => setPublicPrivate(e.target.value)}>
-                    <option name="Blank" value="Blank" >    </option>
+                    <option name="blank" value="blank" >    </option>
                     <option name="public" value="public" > public</option>
                     <option name="private" value="private" >private</option>
                   </select>
@@ -101,11 +101,11 @@ function CreateEvent() {
                 <div className='event-type-selection'> 
               <h4>What type of event is this?</h4>
               <select className = "create-input-boxes" value={EventType} onChange={(e) => setEventType(e.target.value)}>
-                    <option name="Blank" value="Blank" >    </option>
-                    <option name="Social" value="social" > Social</option>
-                    <option name="Business" value="business" >Business</option>
-                    <option name="Education" value="education" >Education</option>
-                    <option name="Arts & Recreation" value="arts & recreation" >Arts & Recreation</option>
+                    <option name="blank" value="blank" >    </option>
+                    <option name="social" value="social" > Social</option>
+                    <option name="business" value="business" >Business</option>
+                    <option name="education" value="education" >Education</option>
+                    <option name="recreation" value="recreation" >Recreation</option>
                   </select>
                 </div>
               
