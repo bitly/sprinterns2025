@@ -1,5 +1,6 @@
 # sprinterns2025
 Sprinternship 2025 Challenge Project
+- Juana Casey
 
 -Tran was here
 - sara abdulla
