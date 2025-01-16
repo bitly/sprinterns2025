@@ -37,7 +37,7 @@
   align-items: center;
 }
 
-.profilesSection:hover .profileCard
+.profileCard:hover 
 {
     transform: rotateY(180deg);
 }
