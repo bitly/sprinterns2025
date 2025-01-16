@@ -11,6 +11,7 @@ function CreateEvent() {
   const [DescriptionForm, setDescriptionForm] = useState("Description");
   const [AttendeesForm, setAttendeesForm] = useState("");
   const [PublicPrivate, setPublicPrivate] = useState("");
+  const [EventType, setEventType] = useState(""); // TS
   const [HostName, setHostName] = useState('Host Name');
   const [ContactForm, setContactForm] = useState("");
   const [imageUrl, setImageUrl] = useState("");
@@ -88,7 +89,13 @@ function CreateEvent() {
                   </div>
 
                   <div className='description'>
-                    <input value={DescriptionForm} className = "create-input-boxes" onChange={(e) => setDescriptionForm(e.target.value)}/>
+                    <textarea
+                      value={DescriptionForm} 
+                      className = "create-input-boxes"
+                      onChange={(e) => setDescriptionForm(e.target.value)}
+                      rows = "5"
+                      cols = "50"
+                    />
                 </div>
               </div>
 
