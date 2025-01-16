@@ -29,12 +29,14 @@ function HostList() {
   return (
     <div className="all-hosts-container">
       <div className="header">
-        <h1>All Hosts</h1>
-        <Link to="/create-host" className="host-button">
-          Create Host
-        </Link>
+        <h1>Discover New People</h1>
+       
       </div>
   
+      <Link to="/create-host" className="host-button">
+          Join now
+        </Link>
+
       <table>
         <thead>
           <tr>
