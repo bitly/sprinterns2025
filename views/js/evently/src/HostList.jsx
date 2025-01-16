@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import "./HostList.css";
 import axios from 'axios';
 import { useNavigate, Link } from "react-router-dom";
+import profileImage1 from "./profile_img.jpg"
 
 function HostList() {
   const [hosts, setHosts] = useState([]);
@@ -30,14 +31,12 @@ function HostList() {
     <div className="all-hosts-container">
       <div className="header">
         <h1>Discover New People</h1>
-       
       </div>
-  
       <Link to="/create-host" className="host-button">
           Join now
-        </Link>
+      </Link>
 
-      <table>
+     {/* <table>
         <thead>
           <tr>
             <th>Profile</th>
@@ -72,6 +71,93 @@ function HostList() {
           )}
         </tbody>
       </table>
+*/}
+
+
+        <div className="search-bar">
+        <button className="search-btn"> 🔍 </button>
+          <input type="text" placeholder="Start Your Search Here!" />
+        </div>
+
+
+        <div class="peopleSection">
+
+
+        <div class="accountContainer">
+          <div class="accountInfo">
+            <img src={profileImage1} alt="Profile picture" className="profile-image" />
+          </div>
+            <p>John Doe</p>
+        </div>
+
+
+        
+        <div class="accountContainer">
+          <div class="accountInfo">
+            <img src={profileImage1} alt="Profile picture" className="profile-image" />
+          </div>
+            <p>John Doe</p>
+        </div>
+
+        <div class="accountContainer">
+          <div class="accountInfo">
+            <img src={profileImage1} alt="Profile picture" className="profile-image" />
+          </div>
+            <p>John Doe</p>
+        </div>
+
+        <div class="accountContainer">
+          <div class="accountInfo">
+            <img src={profileImage1} alt="Profile picture" className="profile-image" />
+          </div>
+            <p>John Doe</p>
+        </div>
+
+
+        
+
+        <div class="accountContainer">
+          <div class="accountInfo">
+            <img src={profileImage1} alt="Profile picture" className="profile-image" />
+          </div>
+            <p>John Doe</p>
+        </div>
+
+        <div class="accountContainer">
+          <div class="accountInfo">
+            <img src={profileImage1} alt="Profile picture" className="profile-image" />
+          </div>
+            <p>John Doe</p>
+        </div>
+
+        <div class="accountContainer">
+          <div class="accountInfo">
+            <img src={profileImage1} alt="Profile picture" className="profile-image" />
+          </div>
+            <p>John Doe</p>
+        </div>
+
+        <div class="accountContainer">
+          <div class="accountInfo">
+            <img src={profileImage1} alt="Profile picture" className="profile-image" />
+          </div>
+            <p>John Doe</p>
+        </div>
+
+        <div class="accountContainer">
+          <div class="accountInfo">
+            <img src={profileImage1} alt="Profile picture" className="profile-image" />
+          </div>
+            <p>John Doe</p>
+        </div>
+
+
+
+      </div>
+
+
+
+
     </div>
   );
   
