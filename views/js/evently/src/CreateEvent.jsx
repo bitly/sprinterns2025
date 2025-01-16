@@ -14,7 +14,7 @@ function CreateEvent() {
   const [EventType, setEventType] = useState(""); // TS
   const [HostName, setHostName] = useState('Host Name');
   const [ContactForm, setContactForm] = useState("");
-  const [imageUrl, setImageUrl] = useState("");
+  const [imageUrl, setImageUrl] = useState("Image URL");
   const [successMessage, setSuccessMessage] = useState("")
 
   const navigate = useNavigate();

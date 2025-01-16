@@ -2,15 +2,17 @@
 .create-event {
   display: flex;
   flex-direction: column;
-  align-items: justify;
   margin: 4rem 0;
   font-family: 'Work Sans';
 }
 
-.event-title
+.create-input-boxes
 {
-  
+  font-family: 'Work Sans';
+  border: none;
+  background-color: #d9d9d9;
 }
+
 /* 
 .date
 {
