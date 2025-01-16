@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./HostList.css";
 import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
+import profileImage1 from "./profile_img.jpg"
 
 function HostList() {
   const [attendeeData, setAttendeeData] = useState([]);
@@ -97,14 +98,12 @@ function HostList() {
 >>>>>>> ae54a67 (Trying to figure out how to revamp this page with ChatGPT, needs a lot of work)
       <div className="header">
         <h1>Discover New People</h1>
-       
       </div>
-  
       <Link to="/create-host" className="host-button">
           Join now
-        </Link>
+      </Link>
 
-      <table>
+     {/* <table>
         <thead>
           <tr>
             <th>Profile</th>
@@ -139,6 +138,93 @@ function HostList() {
           )}
         </tbody>
       </table>
+*/}
+
+
+        <div className="search-bar">
+        <button className="search-btn"> 🔍 </button>
+          <input type="text" placeholder="Start Your Search Here!" />
+        </div>
+
+
+        <div class="peopleSection">
+
+
+        <div class="accountContainer">
+          <div class="accountInfo">
+            <img src={profileImage1} alt="Profile picture" className="profile-image" />
+          </div>
+            <p>John Doe</p>
+        </div>
+
+
+        
+        <div class="accountContainer">
+          <div class="accountInfo">
+            <img src={profileImage1} alt="Profile picture" className="profile-image" />
+          </div>
+            <p>John Doe</p>
+        </div>
+
+        <div class="accountContainer">
+          <div class="accountInfo">
+            <img src={profileImage1} alt="Profile picture" className="profile-image" />
+          </div>
+            <p>John Doe</p>
+        </div>
+
+        <div class="accountContainer">
+          <div class="accountInfo">
+            <img src={profileImage1} alt="Profile picture" className="profile-image" />
+          </div>
+            <p>John Doe</p>
+        </div>
+
+
+        
+
+        <div class="accountContainer">
+          <div class="accountInfo">
+            <img src={profileImage1} alt="Profile picture" className="profile-image" />
+          </div>
+            <p>John Doe</p>
+        </div>
+
+        <div class="accountContainer">
+          <div class="accountInfo">
+            <img src={profileImage1} alt="Profile picture" className="profile-image" />
+          </div>
+            <p>John Doe</p>
+        </div>
+
+        <div class="accountContainer">
+          <div class="accountInfo">
+            <img src={profileImage1} alt="Profile picture" className="profile-image" />
+          </div>
+            <p>John Doe</p>
+        </div>
+
+        <div class="accountContainer">
+          <div class="accountInfo">
+            <img src={profileImage1} alt="Profile picture" className="profile-image" />
+          </div>
+            <p>John Doe</p>
+        </div>
+
+        <div class="accountContainer">
+          <div class="accountInfo">
+            <img src={profileImage1} alt="Profile picture" className="profile-image" />
+          </div>
+            <p>John Doe</p>
+        </div>
+
+
+
+      </div>
+
+
+
+
     </div>
 >>>>>>> d3c9750 (Worked on frontend for people page + form page to play around with design implmenetation)
   );
