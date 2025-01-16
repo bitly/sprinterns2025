@@ -66,6 +66,31 @@ function RSVPButton() {
     navigateTo(`/update-event/${eventData.event_id}`);
 
   };
+
+  const deleteEvent = async () =>
+    {
+      if (!eventData || !eventData.event_id)
+      {
+        console.error("Event data is missing or event_id is undefined");
+        return;
+      }
+      try 
+        {
+          await axios.delete(`http://localhost:3000/api/event/${eventData.event_id}/delete`);
+          navigateTo('/community-page/');
+
+        }
+
+        catch(error)
+        {
+          console.error('An error has occured trying to delete this item.', error);
+        }
+
+        if (!eventData) {
+          return <p>Loading...</p>;
+        }
+    };
+
   return (
     <div className="rsvp-event">
       <div className="user-info">
@@ -122,7 +147,8 @@ function RSVPButton() {
 
           <div className="btns">
             <button className="rsvp-button" onClick={handleRSVP}> RSVP! </button>
-            <button className="update-button" onClick={handleUpdateEvent}> Update </button>
+            <button className="update-button" onClick={handleUpdateEvent}> Update! </button>
+            <button className="delete-button" onClick={deleteEvent}> Delete! </button>
           </div>
           <div className="rsvp-list">
             <h3>RSVP List</h3>
