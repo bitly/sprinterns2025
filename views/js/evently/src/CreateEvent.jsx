@@ -34,7 +34,7 @@ function CreateEvent() {
        setSuccessMessage("Event created!")
        setTimeout(() =>
        {
-          navigate (`/event/${data.id}`);
+          navigate (`/RSVP/${data.event_id}`);
        },1000);
       }
     }
