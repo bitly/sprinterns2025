@@ -1,32 +1,54 @@
 import React from 'react';
 import './header.css';
-import {
-  Link
-} from "react-router-dom";
-
+import { NavLink } from 'react-router-dom'; // Import NavLink instead of Link
 
 function Header() {
   return (
     <div className="Header">
-      <Link to="/" className="EventlyLogoLink">
-        <h1 className="logo">event.ly</h1>
-      </Link>
+      <NavLink  to="/" className="EventlyLogoLink">
+        <h1 className="logo">event.ly</h1>     
+      </NavLink >
       <nav>
         <ul className="nav">
-          <li className = "nav-wrapper">
-            <Link to="/" className="nav-links">Home</Link>
+          <li>
+          <NavLink
+              to="/"
+              className={({ isActive }) => isActive ? 'nav-links active-link' : 'nav-links'}
+            >
+              Home
+            </NavLink>
           </li>
-          <li className = "nav-wrapper">
-            <Link to="/create-event" className="nav-links">Create</Link>
+          <li>
+            <NavLink
+              to="/create-event"
+              className={({ isActive }) => isActive ? 'nav-links active-link' : 'nav-links'}
+            >
+              Create
+            </NavLink>
           </li>
-          <li className = "nav-wrapper">
-            <Link to="/hosts" className="nav-links">Hosts</Link>
+          <li>
+            <NavLink
+              to="/hosts"
+              className={({ isActive }) => isActive ? 'nav-links active-link' : 'nav-links'}
+            >
+              People
+            </NavLink>
           </li>
-          <li className = "nav-wrapper">
-            <Link to="/community-page" className="nav-links">Community</Link>
+          <li>
+            <NavLink
+              to="/community-page"
+              className={({ isActive }) => isActive ? 'nav-links active-link' : 'nav-links'}
+            >
+              Events
+            </NavLink>
           </li>
-          <li className = "nav-wrapper">
-            <Link to="/about-us" className="nav-links">About Us</Link>
+          <li>
+            <NavLink
+              to="/about-us"
+              className={({ isActive }) => isActive ? 'nav-links active-link' : 'nav-links'}
+            > 
+              About Us
+            </NavLink>
           </li>
         </ul>
       </nav>

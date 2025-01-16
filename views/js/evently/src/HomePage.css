@@ -3,49 +3,96 @@ html {
     height: auto;
     overflow: auto;
 }
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600&display=swap');
+
 
 #MainText {
-    font-family: 'Proxima Nova';
+    font-family: "Work Sans"; /* instead of proxima nova */
+    font-size: 1rem;
     text-align: center;
     color: #273144;
-    margin-top: 5%;
+}
+
+
+@keyframes moveBackAndForth {
+    0% {
+      transform: translateX(0); /* Start at original position */
+    }
+    50% {
+      transform: translateX(20px); /* Move 20px to the right */
+    }
+    100% {
+      transform: translateX(0); /* Move back to original position */
+    }
+  }
+  
+
+.image-container {
+    width: 100%;           /* Container takes up full width */
+    display: flex;         /* Flexbox for centering */
+    justify-content: center; /* Center horizontally */
+    align-items: center;   /* Center vertically */
+ }
+ 
+ .bitly-animals {
+    width: 35%;            /* Image width adjusted to 50% of container */
+    height: auto;          /* Maintain aspect ratio */
+    animation: moveBackAndForth 2s ease-in-out infinite; /* Apply the animation */
 }
 
 .buttons {
-    background-color: #2A5DB7;
+    background-color: #0A1F37;
     color: white;
-    font-size: 1.5rem;
+    font-size: 1rem;
+    font-family: 'Work Sans';
+    font-weight: bold;
     text-decoration: none;
-    padding: 1.2rem 2rem;
-    border-radius: .8rem;
+    padding: .8rem 1.4rem;
+    border-radius: 20px;
+    position: relative;
+    top: -15px; 
+    
+
+}
+
+.buttons:hover {
+    background-color: #2d4054; /* Darker shade of the button color for hover */
+    color: #fff; /* Ensures text stays white on hover */
+    transform: scale(1.05); /* Slightly scale the button for a pop effect */
 }
 
 .Text {
     font-size: 3rem;
     padding-top: 3rem;
     color: black;
-    font-family: "Bree Serif";
+    font-family: "Pacifico";
+    font-size: 3.8rem; /* Increase the text size */
+    margin-top: -50px; 
+
+
 }
 
 .Text span {
     color: #ff6116;
     font-family: "Pacifico";
-    font-size: 1.2em;
+    font-size: 3.8rem;
 }
 
 .Home-P {
-    font-size: 1.5em;
+    margin-top: -40px; 
+    font-size: 1.3rem;
     color: black;
 }
 
 footer {
     text-align: center;
-    font-size: 1.2em;
+    font-size: 1rem;
     margin-top: 15%;
     margin-bottom: 2%;
-    font-family: "Bree Serif";
+    font-family: "Work Sans";
 }
 
-.HostEvent, .FindEvent {
-    margin-top: 6%;
+.HostEvent {
+    margin-top: 2%;
 }
+

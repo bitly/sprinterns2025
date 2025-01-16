@@ -1,15 +1,24 @@
 .Header {
   width: 100%;
+  position: fixed; /* Fix the navbar to the top of the viewport */
+  top: 0; /* Align it to the very top */
+  left: 0; /* Align it to the left edge */
+  z-index: 1000; /* Ensure it appears above other elements */
   display: flex;
   flex-direction: row;
-  align-items: baseline;
+  align-items: center; /* Center the content vertically for a thin navbar */
   justify-content: space-between;
-  padding: 0.1rem 0 0 .5rem;
   color: #00525f;
+  padding: 0.3rem 1rem; /*  reduced padding for a thinner navbar */
+  background-color: white; /* Add this line for the orange background */
+  box-sizing: border-box; /* Include padding in width calculations */
+
+
 }
 
 .nav {
   display: flex;
+  gap: 0 1.5rem; /* Adjust spacing between navigation links */
   flex-direction: row;
   gap: 0 3rem;
   list-style: none;
@@ -18,25 +27,48 @@
 
 .nav-links {
   color: black;
-  font-size: 1.5rem;
+  font-size: 1.2rem; /* Slightly smaller font for links */
   text-decoration: none;
-  font-family: "Bree Serif";
+  font-family: "Work Sans"; 
+  padding: 0.5rem 1rem; /* Add this line for spacing inside the container */
+  border-radius: 20px; /* Add this line to create rounded corners */
+  background-color: white; /* Add this line for the light background */
+  transition: all 0.3s ease; /* Add this line for hover transition */
 
 }
+
 .nav-links:hover {
-  color: #0C3EBB;
-  font-family: "Bree Serif";
+  color: white; /* White text on hover */
+  background-color: #ff6116; /* Orange background on hover */
 }
 
+.active-link {
+  color: white; /* White text for the active link */
+  background-color: #ff6116; /* Orange background for the active link */
+  font-weight: bold; /* Optional: make the active link bold */
+  border-radius: 20px; /* Match hover's rounded corners */
+  transition: all 0.3s ease; /* Smooth transition for consistency */
+}
+
+.active-link {
+  font-family: "Work Sans";
+  color: white; /* Active color */
+  font-weight: bold;
+  background-color: #ff6116; /* Add this line to change background color on hover */
+  border-color: white; /* Add this line to change border color on hover */
+  border-bottom: 2px solid #ff6116; /* Optional: underline for active state */
+}
 .logo {
-  font-size: 4rem;
+  font-size: 2.5rem; /* Smaller logo to fit the thinner navbar */
+  align-items: center;
   font-family: "Pacifico";  
   color: #ff6116;
-  margin: 0 0 0 .5rem;
+  margin: 0;
 }
 
 .EventlyLogoLink {
   text-decoration: none;
+
 }
 
 @media (max-width: 768px) {
@@ -51,4 +83,10 @@
     flex-wrap: wrap;
     margin-top: 1rem;
   }
+}
+body {
+  margin: 0;
+  padding: 0;
+  padding-top: 80px; /* Adjust based on the navbar height */
+  
 }
