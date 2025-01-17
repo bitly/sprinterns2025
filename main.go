@@ -30,6 +30,10 @@ func main() {
 
 	// EVENTS
 
+	// GET Attendee by ID
+	api.GET("/attendee/:attendeeID", handlers.GetAttendee)
+	api.OPTIONS("/attendee/:attendeeID", handlers.HandleCors)
+
 	// GET RSVP for Event
 	api.GET("/event/:eventID/rsvps", handlers.GetRSVPbyEvents)
 	api.OPTIONS("/event/:eventID/rsvps", handlers.HandleCors)

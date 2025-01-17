@@ -84,7 +84,6 @@ func GetEvent(c *gin.Context) {
 		c.IndentedJSON(http.StatusBadRequest, nil) //bad data
 		return
 	}
-
 	event, err := eventsdb.GetEvent(intEventID)
 	if err != nil {
 		log.Printf("ERROR: %+v", err)
