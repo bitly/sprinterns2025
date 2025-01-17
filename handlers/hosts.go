@@ -40,8 +40,6 @@ func GetAttendee(c *gin.Context) {
 	setCors(c)
 
 	attendeeID := c.Param("attendeeID")
-	fmt.Println("attendee", attendeeID)
-	fmt.Printf("%+v", c)
 	intattendeeID, err := strconv.Atoi(attendeeID)
 	if err != nil {
 		log.Printf("ERROR: %+v", err)

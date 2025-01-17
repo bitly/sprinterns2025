@@ -1,7 +1,6 @@
 package handlers
 
 import (
-	"fmt"
 	"net/http"
 	"strconv"
 
@@ -85,7 +84,6 @@ func GetEvent(c *gin.Context) {
 		c.IndentedJSON(http.StatusBadRequest, nil) //bad data
 		return
 	}
-	fmt.Println("event", intEventID)
 	event, err := eventsdb.GetEvent(intEventID)
 	if err != nil {
 		log.Printf("ERROR: %+v", err)
