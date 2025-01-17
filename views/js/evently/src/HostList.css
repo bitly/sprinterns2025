@@ -22,79 +22,158 @@
 
 /* General Reset */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f9f5f2;
-    color: #333;
-  }
-  
-  
-  .cta-button {
-    background-color: #007bff;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1rem;
-  }
-  
-  .cta-button:hover {
-    background-color: #0056b3;
-  }
-  
-  .illustration img {
-    margin-top: 20px;
-    max-width: 100%;
-    height: auto;
-  }
-  
-  /* Search & Grid */
-  .search-grid {
-    padding: 20px;
-    text-align: center;
-  }
-  
-  .search-bar input {
-    width: 80%;
-    max-width: 600px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 20px;
-    margin-top: 30px;
-    padding: 0 20px;
-  }
-  
-  .card {
-    background-color: white;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    padding: 15px;
-    text-align: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  }
-  
-  .card img {
-    border-radius: 50%;
-    width: 80px;
-    height: 80px;
-    margin-bottom: 10px;
-  }
-  
-  .card .name {
-    font-weight: bold;
-    margin: 5px 0;
-  }
-  
-  .card .email {
-    color: #666;
-    font-size: 0.9rem;
-  }
-  
+  font-family: Arial, sans-serif;
+  background-color: #ffffff; /* Matches the off-white background */
+}
+
+.header {
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  padding: 20px;
+}
+
+.header h1 {
+  font-size: 2.5rem;
+  color: #000;
+}
+
+.host-button {
+  background-color: #007bff; /* Button background color */
+  color: #fff; /* Button text color */
+  border: none; /* Remove border */
+  padding: 0.75rem 1rem; /* Adjust padding as needed */
+  border: none;
+  border-radius: 20px; /* Optional: Rounds the button edges */
+  font-size: 1.2rem;
+  outline: none;
+  margin: 2rem;
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background 0.25s;
+  text-decoration: none;
+}
+
+.host-button:hover {
+  background-color: #0056b3; /* Darker shade on hover */
+}
+
+table {
+  width: 100%;
+  margin: 0;
+  border-collapse: collapse;
+}
+
+table thead {
+  background-color: #0047ff;
+  color: #fff;
+}
+
+table th, table td {
+  text-align: left;
+  padding: 15px;
+  border: 1px solid #ccc;
+}
+
+.profile-img img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.peopleSection-container {
+  background-color: #ffffff; /* Ensure the background spans the full width */
+  background-attachment: fixed; /* Keeps the background fixed during scroll */
+  width: 100%; /* Ensures the background spans the full width of the viewport */
+  padding: 20px 0; /* Optional: Add vertical spacing inside the section */
+}
+
+.peopleSection {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Ensures 3 columns */
+  grid-auto-rows: minmax(100px, auto);
+  gap: 60px; /* Spacing between cards */
+  max-width: 1200px;
+  margin: 0 auto; /* Centers the grid inside the full-width section */
+  padding: 0 20px; /* Optional: Horizontal padding for content */
+}
+
+.accountContainer {
+  display: flex;
+  flex-direction: column; /* Ensures vertical stacking */
+  align-items: center; /* Centers content horizontally */
+  justify-content: center; /* Centers content vertically */
+  padding: 20px;
+  background-color: #F2ECE8;
+  border-radius: 80px;
+  text-align: center;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Optional shadow for card */
+}
+
+.accountInfo {
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+  border-radius: 50%; /* Circular image */
+  margin-bottom: 16px; /* Adds space between image and text */
+}
+
+.accountInfo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures image fits nicely in circle */
+}
+
+.accountInfo p {
+  margin: 0;
+  padding: 0;
+  font-size: 14px; /* Adjusts text size */
+  color: #ffffff; /* Text color for better contrast */
+  text-align: center; /* Centers text within container */
+}
+
+
+.nav-bar-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%; /* Full width */
+  background: #ffffff; /* Optional: Background color */
+  margin: 0; /* Remove default body margin if needed */
+}
+
+
+.account-search-bar {
+  --padding: 14px;
+
+  width: max-content;
+  display: flex;
+  align-items: center; /* Align items in the navbar vertically */
+  gap: 8px; /* Optional: Adds spacing between the button and the navbar content */
+  padding: var(--padding);
+  border-radius: 28px;
+  background: #f6f6f6;
+  transition: background 0.25s;
+}
+
+.account-search-bar:focus-within {
+  background: #f1f1f1;
+}
+
+.account-search-bar input {
+  font-size: 16px;
+  font-family: 'Lexend', sans-serif;
+  color: #333333;
+  margin-left: var(--padding);
+  outline: none;
+  border: none;
+  background: transparent;
+  flex: 1;
+  width: 300px;
+  padding: 0;
+  margin-bottom: 0;
+}
+
+.account-search-input::placeholder {
+  color: rgba(0, 0, 0, 0.2)
+}
+
