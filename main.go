@@ -70,7 +70,7 @@ func main() {
 	 api.OPTIONS("/attendees", handlers.HandleCors)
 
 	 //GET Attendee
-	api.GET("/attendees-all", handlers.GetAllAttendee)
+	api.GET("/attendees-all", handlers.GetAllAttendees)
 	api.OPTIONS("/attendees-all", handlers.HandleCors)
 	// Start and run the server
 	

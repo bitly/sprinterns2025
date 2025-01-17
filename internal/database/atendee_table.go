@@ -43,14 +43,13 @@ func GetAllAttendees() ([]models.Attendee, error) {
 	var attendees []models.Attendee
 
     // Query the database to fetch all attendees
-    rows, err := dbmap.Query(` // Query the database to fetch all attendees
+    rows, err := dbmap.Query(`
     SELECT id, first_name, last_name, email, phone_number, image_url
     FROM attendees`)
 	if err != nil { // Check for errors
 		return nil, err
 	}
 	defer rows.Close()
-
 	for rows.Next() {
 		var attendee models.Attendee // Create a new Attendee struct to hold the retrieved data
 		err := rows.Scan(&attendee.AttendeeID, &attendee.FirstName, &attendee.LastName, &attendee.Email, &attendee.PhoneNumber, &attendee.ImageURL)

@@ -34,7 +34,7 @@ func CreateAttendee(c *gin.Context) {
 }
 
 //GET All Attendees
-func GetAllAttendee(c *gin.Context) {
+func GetAllAttendees(c *gin.Context) {
 	setCors(c)
 
 	// Fetch all attendees from the database
