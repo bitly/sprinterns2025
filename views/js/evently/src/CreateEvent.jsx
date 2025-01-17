@@ -3,17 +3,17 @@ import { useNavigate } from 'react-router-dom';
 import './CreateEvent.css';
 
 function CreateEvent() {
-  const [EventTitle, setEventTitle ] = useState('Untitled Event');
+  const [EventTitle, setEventTitle ] = useState("Untitled Event");
   const [image, setImage] = useState(null);
   const [DateForm, setDateForm] = useState("Set a Date...");
-  const [TimeForm, setTimeForm] = useState("");
-  const [LocationForm, setLocationForm] = useState("Location");
-  const [DescriptionForm, setDescriptionForm] = useState("Description");
+  const [TimeForm, setTimeForm] = useState("TIME");
+  const [LocationForm, setLocationForm] = useState("LOCATION");
+  const [DescriptionForm, setDescriptionForm] = useState("DESCRIPTION");
   const [AttendeesForm, setAttendeesForm] = useState("");
   const [PublicPrivate, setPublicPrivate] = useState("");
   const [EventType, setEventType] = useState(""); // TS
-  const [HostName, setHostName] = useState('Host Name');
-  const [ContactForm, setContactForm] = useState("");
+  const [HostName, setHostName] = useState("HOST NAME");
+  const [ContactForm, setContactForm] = useState("Contact");
   const [imageUrl, setImageUrl] = useState("Image URL");
   const [successMessage, setSuccessMessage] = useState("")
 
@@ -131,14 +131,11 @@ function CreateEvent() {
                   onChange = {handleImageChange}
                 />
 
-                <h4>Image URL</h4>
                <input value={imageUrl} className = "create-input-boxes" onChange={(e) => setImageUrl(e.target.value)}/>
               </div>
-
   
                             
               <div className='contact-info'>
-                <h4>Contact info</h4>
                 <input value={ContactForm} className = "create-input-boxes" onChange={(e) => setContactForm(e.target.value)}/>
               </div>
 

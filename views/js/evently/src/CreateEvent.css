@@ -4,6 +4,7 @@
   flex-direction: column;
   margin: 4rem 0;
   font-family: 'Work Sans';
+  padding-left:1rem ;
 }
 
 .create-input-boxes
@@ -11,120 +12,72 @@
   font-family: 'Work Sans';
   border: none;
   background-color: #d9d9d9;
+  font-size: 1.4rem;
+  width: 100%;
 }
 
-/* 
+.event-and-date
+{
+  display: flex;;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width:150%;
+  margin-bottom: 35px;
+}
+
+.event-title input.create-input-boxes
+{
+  font-size:3rem;
+  width:145%;
+}
+.date input.create-input-boxes
+{
+  margin-top: 0.5rem;
+  margin-left:-0.6rem;
+  width:166%;
+}
+
+
+.hostName-time-location-description-container
+{
+  width: 75%;
+  margin-top: 25px;
+  align-items: center;
+  
+}
+
 .date
 {
-  padding: 15px 0px 100px 0px;
+  margin: 0px 55px 5px 10px;
 }
 
-.hostName,
-.time,
-.location,
-.description
+.max-attendees h4, .public-status h4
 {
-  padding-top: 10px;
+  font-weight: normal;
+  width: 100%;
+  margin-bottom: 5px;
+  align-items: center;
+  margin-bottom: 8px;
 }
-.img-input-boxes
+
+max-attendees-private-public-container
 {
-  color: white;
-
-}
-.contact-info h4
-{
-  margin: 0;
-  transform: translateY(2rem);
-}
-
-.image-url h4
-{
-  margin: 0;
-  transform:translateY(2rem);
-}
-
-.description
-{
-  padding-bottom: 15rem;
-  background-color: rgb(255, 0, 0);
-  margin-top: 1rem;
-}
-
-.create-input-boxes {
-  display: flex;
-  justify-content: center;
-  padding: 0.5rem;
-  border-color: none;
-  font-size: 0.8em;
-}
-
-.time-input {
-  padding: 0.417rem;
-}
-
-.date-time-container,
-.max-attendees-private-public-container {
   display: flex;
   justify-content: space-between;
-  margin-top: 5%;
-  font-size: 1.5em;
+  gap:20px;
+  margin-bottom: 20px;
 }
 
-.date,
-.time,
-.max-attendees,
-.public-status {
+.max-attendees , .public-status 
+{
+  flex: 1;
   display: flex;
   flex-direction: column;
-  width: 48%;
+  min-width: 0;
 }
 
-.enter-details {
-  font-size: 1.8em;
+.public-status 
+{
+  margin-bottom: 20px;
 }
-
-.location,
-.description,
-.image-url,
-.contact-info,
-.host-name,
-.event-title,
-.event-type-selection {
-  display: flex;
-  flex-direction: column;
-  font-size: 1.5em;
-}
-
-.create-save-button {
-  background-color: #2a5db7;
-  color: white;
-  font-size: 1.3rem;
-  text-decoration: none;
-  border-radius: 10px;
-  border: 1px;
-  padding-top: 2%;
-  padding-bottom: 2%;
-  padding-left: 2%;
-  padding-right: 2%;
-  margin: 0 auto;
-  margin-top: 7%;
-  width: 20%;
-  align-items: center;
-}
-
-.alert {
-  display: flex;
-  justify-content: center;
-  width: 95%;
-  background-color: #e2f1e0;
-  color: #00525f;
-  padding: 0.5rem;
-  border-radius: 0.5rem;
-  margin-top: 1rem;
-}
-
-@media (max-width: 768px) {
-  .create-form {
-    width: 100%;
-  }
-} */
