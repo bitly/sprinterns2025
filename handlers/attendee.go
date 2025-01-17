@@ -2,9 +2,9 @@ package handlers
 
 import (
     "net/http"
+	"log"
 
 	"github.com/gin-gonic/gin"
-	"google.golang.org/appengine/log"
 	eventsdb "main.go/internal/database"
 	"main.go/models"
 )
@@ -14,9 +14,9 @@ func CreateAttendee(c *gin.Context) {
 	setCors(c)
     var attendee models.Attendee
 
-    // Bind JSON to the attendee struct
+    // Bind JSON to the attendee struct and error handler
     if err := c.ShouldBindJSON(&attendee); err != nil {
-        log.Errorf(c, "ERROR: %+v", err)
+        log.Printf("ERROR: %+v", err)
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
     }
@@ -24,7 +24,7 @@ func CreateAttendee(c *gin.Context) {
     // Create the attendee in the database
     newAttendee, err := eventsdb.CreateAttendee(attendee)
 	if err != nil {
-		log.Errorf(c, "ERROR: %+v", err)
+		log.Printf("ERROR: %+v", err)
 		c.IndentedJSON(http.StatusInternalServerError, nil) //server error
 		return
 	}
@@ -32,3 +32,15 @@ func CreateAttendee(c *gin.Context) {
     // Return the newly created attendee
     c.JSON(http.StatusOK, newAttendee)
 }
+
+
+/*   test 
+curl -X POST http://localhost:3000/api/attendees \
+-H "Content-Type: application/json" \
+-d '{
+    "first_name": "Jane",
+    "last_name": "Smith",
+    "email": "jane.smith@example.com",
+    "phone_number": "0987654321",
+    "image_url": "http://example.com/jane.jpg"
+}'*/

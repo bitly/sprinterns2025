@@ -24,7 +24,9 @@ func main() {
 			})
 		})
 
+
 	}
+	
 
 	// EVENTS
 
@@ -62,7 +64,7 @@ func main() {
 	 // CREATE an attendee
 	 api.POST("/attendees", handlers.CreateAttendee)
 	 api.OPTIONS("/attendees", handlers.HandleCors)
-	 
+
 	// Start and run the server
 	router.Run(":3000")
 }
