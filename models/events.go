@@ -28,7 +28,7 @@ type RSVP struct {
 	Response    string `json:"rsvp_response"`
 }
 
-//host struct
+// host struct
 type Host struct {
 	HostID    int    `json:"host_id,omitempty"`
 	FirstName string `json:"first_name"`
@@ -37,12 +37,12 @@ type Host struct {
 	ImageURL  string `json:"image_url"`
 }
 
-//attendee struct
+// attendee struct
 type Attendee struct {
-    AttendeeID  int    `json:"attendee_id"`
-    FirstName   string `json:"first_name"`
-    LastName    string `json:"last_name"`
-    Email       string `json:"email"`
-    PhoneNumber string `json:"phone_number"`
-    ImageURL    string `json:"image_url"`
+	AttendeeID  int    `json:"attendee_id"`
+	FirstName   string `json:"first_name"`
+	LastName    string `json:"last_name"`
+	Email       string `json:"email"`
+	PhoneNumber string `json:"phone_number"`
+	ImageURL    string `json:"image_url"`
 }
