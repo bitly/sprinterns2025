@@ -33,6 +33,20 @@ func CreateAttendee(c *gin.Context) {
     c.JSON(http.StatusCreated, newAttendee)
 }
 
+//GET All Attendees
+func GetAllAttendee(c *gin.Context) {
+	setCors(c)
+
+	// Fetch all attendees from the database
+	getAttendeesAll, err := eventsdb.GetAllAttendees()
+	if err != nil {
+		log.Printf("ERROR: %+v", err)
+		c.IndentedJSON(http.StatusInternalServerError, nil) //server error
+		return
+	}
+	c.JSON(200, getAttendeesAll) //success - return the list of public events
+}
+
 
 /*   test 
 curl -X POST http://localhost:3000/api/attendees \

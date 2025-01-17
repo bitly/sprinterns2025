@@ -42,9 +42,9 @@ func CreateAttendee(attendee models.Attendee) (*models.Attendee, error) {
 func GetAllAttendees() ([]models.Attendee, error) {
 	var attendees []models.Attendee
 
-	// Query the database to fetch all attendees
-	rows, err := dbmap.Query(` // Query the database to fetch all attendees
-    SELECT attendee_id, first_name, last_name, email, phone_number, image_url
+    // Query the database to fetch all attendees
+    rows, err := dbmap.Query(` // Query the database to fetch all attendees
+    SELECT id, first_name, last_name, email, phone_number, image_url
     FROM attendees`)
 	if err != nil { // Check for errors
 		return nil, err
