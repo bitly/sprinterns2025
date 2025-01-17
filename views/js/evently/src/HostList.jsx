@@ -32,9 +32,6 @@ function HostList() {
       <div className="header">
         <h1>Discover New People</h1>
       </div>
-      <Link to="/create-host" className="host-button">
-          Join now
-      </Link>
 
      {/* <table>
         <thead>
@@ -74,10 +71,14 @@ function HostList() {
 */}
 
 
-        <div className="search-bar">
-        <button className="search-btn"> 🔍 </button>
-          <input type="text" placeholder="Start Your Search Here!" />
+
+      <div class="nav-bar-container">
+      <Link to="/create-host" className="host-button">Join now</Link>
+        <div class="account-search-bar">
+        <span class="account-search-btn"> 🔍</span>
+          <input class="account-search-input" type="text" placeholder="Start Your Search Here!" />
         </div>
+      </div>
 
 
         <div class="peopleSection">
@@ -87,10 +88,10 @@ function HostList() {
           <div class="accountInfo">
             <img src={profileImage1} alt="Profile picture" className="profile-image" />
           </div>
-            <p>John Doe</p>
+            <p>Attendee</p>
+            <h2>John Doe</h2>
+            <h2>fake@gmail.com</h2>
         </div>
-
-
         
         <div class="accountContainer">
           <div class="accountInfo">
@@ -113,9 +114,6 @@ function HostList() {
             <p>John Doe</p>
         </div>
 
-
-        
-
         <div class="accountContainer">
           <div class="accountInfo">
             <img src={profileImage1} alt="Profile picture" className="profile-image" />
@@ -128,6 +126,7 @@ function HostList() {
             <img src={profileImage1} alt="Profile picture" className="profile-image" />
           </div>
             <p>John Doe</p>
+            
         </div>
 
         <div class="accountContainer">
