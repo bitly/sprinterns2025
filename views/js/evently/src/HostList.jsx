@@ -70,8 +70,6 @@ function HostList() {
       </table>
 */}
 
-
-
       <div class="nav-bar-container">
       <Link to="/create-host" className="host-button">Join now</Link>
         <div class="account-search-bar">
@@ -80,10 +78,8 @@ function HostList() {
         </div>
       </div>
 
-
-        <div class="peopleSection">
-
-
+    <div class="peopleSection-container">
+      <div class="peopleSection">
         <div class="accountContainer">
           <div class="accountInfo">
             <img src={profileImage1} alt="Profile picture" className="profile-image" />
@@ -97,67 +93,80 @@ function HostList() {
           <div class="accountInfo">
             <img src={profileImage1} alt="Profile picture" className="profile-image" />
           </div>
-            <p>John Doe</p>
+            <p>Attendee</p>
+            <h2>John Doe</h2>
+            <h2>fake@gmail.com</h2>
         </div>
 
         <div class="accountContainer">
           <div class="accountInfo">
             <img src={profileImage1} alt="Profile picture" className="profile-image" />
           </div>
-            <p>John Doe</p>
+            <p>Attendee</p>
+            <h2>John Doe</h2>
+            <h2>fake@gmail.com</h2>
         </div>
 
         <div class="accountContainer">
           <div class="accountInfo">
             <img src={profileImage1} alt="Profile picture" className="profile-image" />
           </div>
-            <p>John Doe</p>
+            <p>Attendee</p>
+            <h2>John Doe</h2>
+            <h2>fake@gmail.com</h2>
         </div>
 
         <div class="accountContainer">
           <div class="accountInfo">
             <img src={profileImage1} alt="Profile picture" className="profile-image" />
           </div>
-            <p>John Doe</p>
+            <p>Attendee</p>
+            <h2>John Doe</h2>
+            <h2>fake@gmail.com</h2>
         </div>
 
         <div class="accountContainer">
           <div class="accountInfo">
             <img src={profileImage1} alt="Profile picture" className="profile-image" />
           </div>
-            <p>John Doe</p>
-            
+            <p>Attendee</p>
+            <h2>John Doe</h2>
+            <h2>fake@gmail.com</h2>
         </div>
 
         <div class="accountContainer">
           <div class="accountInfo">
             <img src={profileImage1} alt="Profile picture" className="profile-image" />
           </div>
-            <p>John Doe</p>
+            <p>Attendee</p>
+            <h2>John Doe</h2>
+            <h2>fake@gmail.com</h2>
         </div>
 
         <div class="accountContainer">
           <div class="accountInfo">
             <img src={profileImage1} alt="Profile picture" className="profile-image" />
           </div>
-            <p>John Doe</p>
+            <p>Attendee</p>
+            <h2>John Doe</h2>
+            <h2>fake@gmail.com</h2>
         </div>
 
         <div class="accountContainer">
           <div class="accountInfo">
             <img src={profileImage1} alt="Profile picture" className="profile-image" />
           </div>
-            <p>John Doe</p>
+            <p>Attendee</p>
+            <h2>John Doe</h2>
+            <h2>fake@gmail.com</h2>
         </div>
-
-
-
       </div>
 
 
 
 
     </div>
+  </div>
   );
   
 }
