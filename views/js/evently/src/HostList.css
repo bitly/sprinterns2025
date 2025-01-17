@@ -16,20 +16,22 @@ body {
 }
 
 .host-button {
-  display: inline-block; /* Ensures it doesn't stretch */
-  margin: 0 auto; /* Centers it if the parent has a fixed width */
-  text-align: center;
-  background-color: #0047ff;
-  color: #fff;
-  padding: 10px 20px;
-  font-size: 1rem;
+  background-color: #007bff; /* Button background color */
+  color: #fff; /* Button text color */
+  border: none; /* Remove border */
+  padding: 0.75rem 1rem; /* Adjust padding as needed */
   border: none;
-  border-radius: 5px;
+  border-radius: 5rem; /* Optional: Rounds the button edges */
+  font-size: 1.2rem;
+  outline: none;
+  margin: 2rem;
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background 0.25s;
   text-decoration: none;
 }
 
 .host-button:hover {
-  background-color: #0036cc;
+  background-color: #0056b3; /* Darker shade on hover */
 }
 
 table {
@@ -63,7 +65,7 @@ table th, table td {
   max-width: 1200px;
   margin: 20px auto; /* Centers the grid */
   background-color: #d9d9d9;
-  padding: 30px 10px 140px 20px;
+  background-attachment: fixed;
 }
 
 .accountContainer {
@@ -100,4 +102,49 @@ table th, table td {
   text-align: center; /* Centers text within container */
 }
 
+
+.nav-bar-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%; /* Full width */
+  background: #fff; /* Optional: Background color */
+  margin: 0; /* Remove default body margin if needed */
+}
+
+
+.account-search-bar {
+  --padding: 14px;
+
+  width: max-content;
+  display: flex;
+  align-items: center; /* Align items in the navbar vertically */
+  gap: 8px; /* Optional: Adds spacing between the button and the navbar content */
+  padding: var(--padding);
+  border-radius: 28px;
+  background: #f6f6f6;
+  transition: background 0.25s;
+}
+
+.account-search-bar:focus-within {
+  background: #f1f1f1;
+}
+
+.account-search-bar input {
+  font-size: 16px;
+  font-family: 'Lexend', sans-serif;
+  color: #333333;
+  margin-left: var(--padding);
+  outline: none;
+  border: none;
+  background: transparent;
+  flex: 1;
+  width: 300px;
+  padding: 0;
+  margin-bottom: 0;
+}
+
+.account-search-input::placeholder {
+  color: rgba(0, 0, 0, 0.2)
+}
 
