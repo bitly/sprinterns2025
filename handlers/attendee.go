@@ -30,7 +30,7 @@ func CreateAttendee(c *gin.Context) {
 	}
 
     // Return the newly created attendee
-    c.JSON(http.StatusOK, newAttendee)
+    c.JSON(http.StatusCreated, newAttendee)
 }
 
 
