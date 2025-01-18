@@ -146,20 +146,37 @@ function CreateEvent() {
                     <div 
                       className = "toggle-section"
                       id = "create-input-boxes" 
-                      value={PublicPrivate} 
+                      value={InvitesForm} 
                       onChange={(e) => setPublicPrivate(e.target.value)}
                       
                     >
-                        <button
-                          type = "button"
-                          className = "toggle-button"
-                          onClick={toggleState}
-                        >
-                          {isSelected ? "On" : "Off"}
-                        </button>
+                      <label className="switch">
+                        <input
+                           type="checkbox" 
+                           checked = {isSelected} //to see if checkbox is checked 
+                           onChange = {toggleState} // toggle to when it is checked
+                        />
+                        <span className = "slider"></span>
+                      </label>
                     </div>
                 </div>
 
+
+                 {/* Submit Button */}
+                <div className = "submit-button">
+                  <button 
+                    type="submit" 
+                    className="create-save-button">PUBLISH
+                  </button>
+
+                  {successMessage && (
+                  <div 
+                    role="alert" 
+                    className="alert">
+
+                  <div>{successMessage}</div>
+                </div>)}
+              </div>
 
                 <div className="public-status">
                   <h4>Public/Private</h4>
@@ -196,15 +213,9 @@ function CreateEvent() {
               </div>
 
 
-              {/* Submit Button */}
+              {/* End of Form */}
               <br />
-              <button type="submit" className="create-save-button">Publish</button>
             </form>
-           
-            {successMessage && (
-            <div role="alert" className="alert">
-              <div>{successMessage}</div>
-            </div>)}
           </div> 
       </div>
     )
