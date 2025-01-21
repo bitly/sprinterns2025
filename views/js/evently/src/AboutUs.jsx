@@ -16,6 +16,12 @@ function AboutUs() {
                 </div>
             </div>
 
+            <div className="meet us">
+                <div className="meet us-wrapper">
+                    <h1>Meet the 2025 Bitly Sprinterns!</h1>
+                </div>
+            </div>
+
             {/* Profile Sections */}
             <div className="profilesSection">
                 <div className="profileContainer">
