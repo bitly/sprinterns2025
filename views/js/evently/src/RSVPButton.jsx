@@ -90,7 +90,19 @@ function RSVPButton() {
           return <p>Loading...</p>;
         }
     };
-
+  console.log(rsvps)
+  const getEmoji = (rsvp_response) => {
+    switch (rsvp_response.toLowerCase()) {
+      case 'yes':
+        return '😊';
+      case 'maybe':
+        return '🤔';
+      case 'no':
+        return '😞';
+      default:
+        return '';
+    }
+  };
   return (
     <div className="rsvp-event">
       <div className="user-info">
@@ -156,8 +168,8 @@ function RSVPButton() {
           {rsvps.map((rsvp) => (
             <li key={rsvp.user_id} className="rsvp-item">
               <div className="rsvp-info-box">
-                <p className="rsvp-name">{rsvp.first_name} {rsvp.last_name} <span className="rsvp-said">said</span> {rsvp.response}
-                 </p>
+                <p className="rsvp-name">{
+                rsvp.first_name} {rsvp.last_name} <span className="rsvp-said">said</span> {rsvp.rsvp_response} {getEmoji(rsvp.rsvp_response)} </p>
                 <p className="rsvp-email">{rsvp.email}</p>
                 <p className="rsvp-phone">{rsvp.phone_number}</p>
                 <p className="rsvp-response">{rsvp.response}</p>
