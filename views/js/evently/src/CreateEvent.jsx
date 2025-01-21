@@ -15,8 +15,8 @@ function CreateEvent() {
   const [PublicPrivate, setPublicPrivate] = useState("");
   const [EventType, setEventType] = useState(""); //TS
   const [HostName, setHostName] = useState("HOST NAME");
-  const [ContactForm, setContactForm] = useState("Contact");
-  const [imageUrl, setImageUrl] = useState("Image URL");
+  const [ContactForm, setContactForm] = useState("Contact Info");
+  const [imageUrl, setImageUrl] = useState("IMAGE URL");
   const [successMessage, setSuccessMessage] = useState("")
 
   const navigate = useNavigate();
@@ -188,30 +188,32 @@ function CreateEvent() {
                 </div>
                 
                </div> 
-   
-              <div className='image-url'>
-                <img
-                  src = {image || defaultImage}
-                  alt = "Uploaded Preview"
-                  width = "500"
-                  height = "350"
-                />
+                
+              <div className='right-side-container'>
+                <div className='image-url'>
+                  <img
+                    src = {image || defaultImage}
+                    alt = "Uploaded Preview"
+                    width = "600"
+                    height = "400"
+                  />
 
-                <input 
-                  className = "img-input-boxes"
-                  type = "file"
-                  accept = "image"
-                  onChange = {handleImageChange}
-                />
-
-               <input value={imageUrl} className = "create-input-boxes" onChange={(e) => setImageUrl(e.target.value)}/>
+                  <input 
+                    className = "img-input-boxes"
+                    type = "file"
+                    accept = "image"
+                    onChange = {handleImageChange}
+                  
+                  />
+            
+                <input value={imageUrl} className = "create-input-boxes" onChange={(e) => setImageUrl(e.target.value)}/>
+                </div>
+    
+                              
+                <div className='contact-info'>
+                  <textarea value={ContactForm} className = "create-input-boxes" onChange={(e) => setContactForm(e.target.value)}/>
+                </div>
               </div>
-  
-                            
-              <div className='contact-info'>
-                <input value={ContactForm} className = "create-input-boxes" onChange={(e) => setContactForm(e.target.value)}/>
-              </div>
-
 
               {/* End of Form */}
               <br />
