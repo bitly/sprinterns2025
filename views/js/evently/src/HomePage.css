@@ -41,22 +41,30 @@ html {
 }
 
 .buttons {
-    background-color: #0A1F37;
-    color: white;
-    font-size: 1rem;
+    display: inline-flex;        /* Make the button a flex container to align text and icon horizontally */
+    align-items: center;         /* Vertically align text and icon */
+    background-color: #2a5bd7;   /* Button background color */
+    color: white;                /* Text color */
+    font-size: 1.1rem;
     font-family: 'Work Sans';
     font-weight: bold;
     text-decoration: none;
-    padding: .8rem 1.4rem;
+    padding: .5rem 1rem;
     border-radius: 20px;
     position: relative;
     top: -15px; 
-    
 
 }
 
+.buttons svg {
+    width: 35px;   /* Make the SVG smaller */
+    height: 35px;  /* Make the SVG smaller */
+    margin-left: 4px; /* Add space between text and icon */
+    fill: white;  /* Color the SVG white */  
+}
+
 .buttons:hover {
-    background-color: #2d4054; /* Darker shade of the button color for hover */
+    background-color: #0A1F37; /* Darker shade of the button color for hover */
     color: #fff; /* Ensures text stays white on hover */
     transform: scale(1.05); /* Slightly scale the button for a pop effect */
 }

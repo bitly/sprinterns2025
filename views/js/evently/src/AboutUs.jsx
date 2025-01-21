@@ -5,6 +5,8 @@ import profileImageJennifer from './jenniferPerez-Juarez_Profile.jpg';
 import profileImageTS from './Images/TS_headshot.png';
 import profileImageTran from './Images/tran-photo.jpeg';
 import profileImageSara from './Images/sara.jpg';
+import bitlyArrow from './Images/bitlyArrow.png';
+
 
 function AboutUs() {
     return (
@@ -15,6 +17,9 @@ function AboutUs() {
                     <p>Our mission is to curate unforgettable experiences by seamlessly connecting individuals and communities through innovative and diverse events. We strive to inspire and empower event organizers, fostering a platform that celebrates creativity, fosters meaningful connections, and leaves a lasting impact on every participant.</p>
                 </div>
             </div>
+            <div className="image-container">
+                                <img src={bitlyArrow} alt="Bitly Arrow" className="bitly-arrow" />
+                            </div>
 
             <div className="meet us">
                 <div className="meet us-wrapper">

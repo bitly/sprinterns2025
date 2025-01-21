@@ -15,13 +15,20 @@
 .missionStatement h1
 { 
     font-size: 30px;
+    padding-top: 3rem;
+    color: black;
+    font-family: "Pacifico";
+    font-size: 3.8rem; /* Increase the text size */
+    margin-top: -170px; 
+
 }
 
 .missionStatement-wrapper 
 {
     background-color: white;  /*makes mission statement bg white */
-    padding: 10px;
+    padding: 100px;
     border-radius: 25px;
+
 }
 
 .profileCard
@@ -73,7 +80,7 @@
 {
     perspective: 1000px;
     margin-top: 30px;
-    background-color:white; /*makes profile section bg white*/
+    background-color:rgb(255, 255, 255); /*makes profile section bg white*/
     display: grid;
     grid-template-columns: repeat(3, 1fr); 
     gap: 30px;
@@ -204,4 +211,10 @@
 {
     text-decoration: underline;
     color: #ffa569;
+}
+
+.bitly-arrow {
+    width: 15%;            /* Image width adjusted to 50% of container */
+    height: auto;          /* Maintain aspect ratio */
+    margin-top: -150px;
 }
