@@ -99,6 +99,8 @@
 .rsvp-list {
   margin-top: 20px;
   font-size: 20px;
+  max-height: 400px; 
+  overflow-y: auto;
 }
 
 .rsvp-list h3 {
@@ -130,3 +132,17 @@
   font-weight: normal;
   font-size: 20px
  }
+ .rsvp-item {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.rsvp-item:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
