@@ -80,7 +80,9 @@ function HostList() {
 
     <div class="peopleSection-container">
       <div class="peopleSection">
-        <div class="accountContainer">
+
+
+         <div class="accountContainer">
           <div class="accountInfo">
             <img src={profileImage1} alt="Profile picture" className="profile-image" />
           </div>
