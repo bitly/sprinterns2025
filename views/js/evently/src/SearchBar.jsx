@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import "./SearchBar.css";
 
 const SearchBar = () => {
-  const [DropdownVisible, setDropdownVisible] = useState(false);
+  const [dropDownVisible, setDropdownVisible] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState("");
 
 
   const toggleDropdown = () => {
-    setDropdownVisible(!DropdownVisible);
+    setDropdownVisible(!dropDownVisible);
   };
 
   const selectCategory = (category) => {
@@ -21,8 +21,8 @@ const SearchBar = () => {
             <div className="dropdown-text" onClick={toggleDropdown}>
                 <span>{selectedCategory || "Select a category"}</span>
             </div>
-                {DropdownVisible && (
-                    <ul className={`dropdown-list ${DropdownVisible ? "show" : ""}`}>
+                {dropDownVisible && (
+                    <ul className={`dropdown-list ${dropDownVisible ? "show" : ""}`}>
                         <li className="dropdown-list-item" onClick={() => selectCategory("All")}>  All </li>
                         <li className="dropdown-list-item" onClick={() => selectCategory("Social")}> Social </li>
                         <li className="dropdown-list-item" onClick={() => selectCategory("Business")}> Business </li>

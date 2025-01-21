@@ -36,24 +36,8 @@ function CommunityPage() {
 
   return (
     <>
-      {
       <h2 className="browse-title"> Browse Events</h2>
       
-      /* <div className="event-nav-container">
-        <h2 className="browse-title"> Browse Events</h2>
-        <div className="search-bar">
-          <input type="text" placeholder="Start Your Search Here!" />
-          <button className="search-btn"> 🔍 </button>
-        </div>
-
-        <div className="link-container">
-          <button className="btn"> All Events </button>
-          <button className="btn"> Social </button>
-          <button className="btn"> Business </button>
-          <button className="btn"> Education </button>
-          <button className="btn"> Arts & Recreation </button>
-        </div>
-      </div> */}
       <SearchBar/> 
 
       {error ? (
