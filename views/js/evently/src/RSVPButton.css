@@ -96,3 +96,37 @@
     width: 100%;
   }
 }
+.rsvp-list {
+  margin-top: 20px;
+  font-size: 20px;
+}
+
+.rsvp-list h3 {
+  text-align: center;
+  color: #333;
+}
+.rsvp-list ul {
+  padding: 0;
+  list-style-type: none;
+}
+.rsvp-info-box {
+  border: 1px solid #c6bfbf;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: #fff;
+}
+.rsvp-name {
+  font-weight: bold;
+  font-size: 23px;
+  margin-left: 30px;
+}
+
+.rsvp-email, .rsvp-phone, .rsvp-response {
+  font-size: 15px;
+  color: #555;
+  margin-left: 60px;
+}
+.rsvp-said {
+  font-weight: normal;
+  font-size: 20px
+ }
