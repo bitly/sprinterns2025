@@ -35,12 +35,7 @@ function Header() {
             </NavLink>
           </li>
           <li>
-            <NavLink
-              to="/community-page"
-              className={({ isActive }) => isActive ? 'nav-links active-link' : 'nav-links'}
-            >
-              Events
-            </NavLink>
+            <NavLink to="/community-page" className="nav-links">Events</NavLink>
           </li>
           <li>
             <NavLink
