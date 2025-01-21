@@ -33,16 +33,22 @@ function CreateHost() {
       return (
         
         <div className="create-host-container">
+
+          <div className='enter-details'>
+              <h2> Create Your Profile</h2>
+          </div>
+
           <form className="create-form" onSubmit={handleSubmit}>
-            <h2>Create Your Profile</h2>
       
             {/* Profile Image Section */}
-            <div className="form-group">
+            <div className="profile-img">
               <img 
                 src={profileImage1} 
                 alt="Profile picture" 
                 className="profile-image" 
               />
+
+          
               <label htmlFor="image-input">Enter image URL:</label>
               <input 
                 type="text" 
@@ -51,9 +57,10 @@ function CreateHost() {
                 onChange={(e) => setProfileImage(e.target.value)} 
               />
             </div>
-      
+           
+
             {/* Name Input */}
-            <div className="form-group">
+            <div className="name">
               <label htmlFor="name-input">Name:</label>
               <input 
                 type="text" 
@@ -64,7 +71,7 @@ function CreateHost() {
             </div>
       
             {/* Phone Number Input */}
-            <div className="form-group">
+            <div className="phone-number">
               <label htmlFor="phone-input">Phone Number:</label>
               <input 
                 type="text" 
@@ -75,7 +82,7 @@ function CreateHost() {
             </div>
       
             {/* Email Input */}
-            <div className="form-group">
+            <div className="email">
               <label htmlFor="email-input">Email:</label>
               <input 
                 type="text" 
@@ -86,7 +93,7 @@ function CreateHost() {
             </div>
 
             {/* Role Selection */}
-            <div className="form-group">
+            <div className="role">
               <label htmlFor="role-select">Are you an attendee or host?</label>
               <select id="role-select">
                 <option value="Attendee">Attendee</option>
@@ -96,7 +103,7 @@ function CreateHost() {
             </div>
 
             {/* Links Section */}
-            <div className="form-group">
+            <div className="links">
               <label htmlFor="link-input">Add any links (Optional):</label>
               <input 
                 type="text" 
@@ -109,7 +116,14 @@ function CreateHost() {
             {/* Submit Button */}
             <button className="button" type="submit">Create Account</button>
           </form>
-        </div>
+        </div> 
+
+          
+
+
+
+
+
       );
       
       

@@ -5,9 +5,9 @@ import { NavLink } from 'react-router-dom'; // Import NavLink instead of Link
 function Header() {
   return (
     <div className="Header">
-      <NavLink  to="/" className="EventlyLogoLink">
+      <NavLink to="/" className="EventlyLogoLink">
         <h1 className="logo">event.ly</h1>     
-      </NavLink >
+      </NavLink>
       <nav>
         <ul className="nav">
           <li>
