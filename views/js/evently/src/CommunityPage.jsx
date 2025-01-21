@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./CommunityPage.css";
+import SearchBar from "./SearchBar.jsx";
 import axios from "axios";
 import RSVPButton from "./RSVPButton";
 import { useNavigate, Link } from "react-router-dom";
@@ -35,7 +36,10 @@ function CommunityPage() {
 
   return (
     <>
-      <div className="event-nav-container">
+      {
+      <h2 className="browse-title"> Browse Events</h2>
+      
+      /* <div className="event-nav-container">
         <h2 className="browse-title"> Browse Events</h2>
         <div className="search-bar">
           <input type="text" placeholder="Start Your Search Here!" />
@@ -49,7 +53,8 @@ function CommunityPage() {
           <button className="btn"> Education </button>
           <button className="btn"> Arts & Recreation </button>
         </div>
-      </div>
+      </div> */}
+      <SearchBar/> 
 
       {error ? (
         <div className="error-display">
@@ -68,7 +73,6 @@ function CommunityPage() {
                 className="event-card"
                 onClick={() => handleEventClick(event)}
               >
-                <p className="event-card-title"> {event.title}</p>
                 <div className="event-img">
                   <img
                     src={
@@ -77,6 +81,7 @@ function CommunityPage() {
                     alt="User inputted description."
                   />
                 </div>
+                < p className="event-card-title"> {event.title}</p>
                 <div className="date-and-time-container">
                   <h4> Date: {event.date}</h4>
                   <h4> Time: {event.time}</h4>
