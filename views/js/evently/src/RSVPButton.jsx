@@ -90,7 +90,6 @@ function RSVPButton() {
           return <p>Loading...</p>;
         }
     };
-  console.log(rsvps)
   const getEmoji = (rsvp_response) => {
     switch (rsvp_response.toLowerCase()) {
       case 'yes':
