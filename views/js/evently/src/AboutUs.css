@@ -19,7 +19,7 @@
 
 .missionStatement-wrapper 
 {
-    background-color: white;  /* changed this */
+    background-color: white;  /*makes mission statement bg white */
     padding: 10px;
     border-radius: 25px;
 }
@@ -73,7 +73,7 @@
 {
     perspective: 1000px;
     margin-top: 30px;
-    background-color:white; /*change this */
+    background-color:white; /*makes profile section bg white*/
     display: grid;
     grid-template-columns: repeat(3, 1fr); 
     gap: 30px;
@@ -89,7 +89,7 @@
     align-items: center;
     padding:10px 20px;
     margin-left: 1rem;
-    background-color: hsl(28, 100%, 85%);
+    background-color: hsl(28, 100%, 85%); 
     transform: scale(1);
     transition: background-color 0.3s;
     border-radius: 60px;
@@ -128,7 +128,7 @@
     margin: 0;
     padding: 10px 40px;
     color: black;
-    background-color:white; /* changed this */
+    background-color:white; /* makes container for name bg white */
     border-radius: 50px;
     text-align: center;
     font-size: 1.5rem; 
