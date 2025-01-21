@@ -52,7 +52,7 @@ html {
     padding: .5rem 1rem;
     border-radius: 20px;
     position: relative;
-    top: -15px; 
+    top: -19px; 
 
 }
 
@@ -66,7 +66,6 @@ html {
 .buttons:hover {
     background-color: #0A1F37; /* Darker shade of the button color for hover */
     color: #fff; /* Ensures text stays white on hover */
-    transform: scale(1.05); /* Slightly scale the button for a pop effect */
 }
 
 .Text {
