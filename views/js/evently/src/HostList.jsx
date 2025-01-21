@@ -33,42 +33,61 @@ function HostList() {
   // };
 
   return (
-    <div>
-      <div className="header">
-        <h1>Discover New People</h1>
-        <Link to="/create-host" className="host-button">Join now</Link>
-      </div>  
-  
-      <table>
-        <thead className="column-names">
-          <tr>
-            <th>Profile</th>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Email</th> 
-          </tr>
-        </thead>
-        <tbody>
-          {hosts.map(host => (
-            <tr key={host.host_id}>
-              <td>
-                <div className="profile-img">
+    <>
+      {/* <div className="attendees-nav-container">
+        <h2 className="browse-title"> Browse Events</h2>
+        <div className="search-bar">
+          <input type="text" placeholder="Start Your Search Here!" />
+          <button className="search-btn"> 🔍 </button>
+        </div>
+
+        <div className="link-container">
+          <button className="btn"> All Events </button>
+          <button className="btn"> Social </button>
+          <button className="btn"> Business </button>
+          <button className="btn"> Education </button>
+          <button className="btn"> Arts & Recreation </button>
+        </div>
+      </div> */}
+
+      {error ? (
+        <div className="error-display">
+          <p> Error! Something went wrong loading attendeess. </p>
+          <p>Please try again!</p>
+          <Link to="/">
+            <p>Home</p>
+          </Link>
+        </div>
+      ) : (
+        <div className="public-attendees-container">
+          <div className="attendees-row">
+            {attendeeData.map((attendees) => (
+              <div
+                key={attendees.attendees_id} //Either attendees.attendees_id or attendee.id.
+                className="attendees-card"
+                // onClick={() => handleEventClick(attendees)}
+              >
+                <p className="attendees-card-name"> {attendees.first_name} {attendees.last_name}</p>
+                <div className="attendees-img">
                   <img
                     src={
-                      host.image_url !== "" ? host.image_url : "default.png"
+                      attendees.image_url !== "" ? attendees.image_url : "default.png"
                     }
-                    alt={`Image for ${host.first_name} ${host.last_name}`}
+                    alt="User inputed description."
                   />
                 </div>
-              </td>
-              <td>{host.first_name}</td>
-              <td>{host.last_name}</td>
-              <td>{host.email}</td>    
-            </tr>
-          ))}
-        </tbody>
-      </table>  
-    </div>
+                <div className="email-and-phone-number-container">
+                  <h4> Phone Number: {attendees.phone_number}</h4>
+                  <h4> Email: {attendees.email}</h4>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {/* {selectEvent && <RSVPButton attendees={selectEvent} />} */}
+    </>
   );
   
 }

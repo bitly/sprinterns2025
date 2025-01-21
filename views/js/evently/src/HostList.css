@@ -34,7 +34,7 @@ body {
 }
 
 .header h1 {
-  font-size: 2.5rem;
+  font-size: 3rem;
   color: #000;
 }
 
@@ -109,6 +109,10 @@ table th, table td {
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Optional shadow for card */
 }
 
+.accountContainer h2 {
+  margin: 10px;
+  font-size: 25px;
+}
 .accountInfo {
   width: 100px;
   height: 100px;
@@ -123,15 +127,6 @@ table th, table td {
   object-fit: cover; /* Ensures image fits nicely in circle */
 }
 
-.accountInfo p {
-  margin: 0;
-  padding: 0;
-  font-size: 14px; /* Adjusts text size */
-  color: #ffffff; /* Text color for better contrast */
-  text-align: center; /* Centers text within container */
-}
-
-
 .nav-bar-container {
   display: flex;
   justify-content: center;
@@ -140,7 +135,6 @@ table th, table td {
   background: #ffffff; /* Optional: Background color */
   margin: 0; /* Remove default body margin if needed */
 }
-
 
 .account-search-bar {
   --padding: 14px;
