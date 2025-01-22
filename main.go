@@ -69,6 +69,10 @@ func main() {
 	 api.POST("/attendees", handlers.CreateAttendee)
 	 api.OPTIONS("/attendees", handlers.HandleCors)
 
+	 //GET Attendee
+	api.GET("/attendees-all", handlers.GetAllAttendees)
+	api.OPTIONS("/attendees-all", handlers.HandleCors)
 	// Start and run the server
+	
 	router.Run(":3000")
 }
