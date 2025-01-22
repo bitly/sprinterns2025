@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import "./UpdateEventForm.css";
+import "./CreateEvent.css";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 
