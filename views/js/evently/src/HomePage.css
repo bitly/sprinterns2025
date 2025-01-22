@@ -52,7 +52,7 @@ html {
     padding: .5rem 1rem;
     border-radius: 20px;
     position: relative;
-    top: -19px; 
+    top: -25px; 
 
 }
 
@@ -66,6 +66,8 @@ html {
 .buttons:hover {
     background-color: #0A1F37; /* Darker shade of the button color for hover */
     color: #fff; /* Ensures text stays white on hover */
+    transition: all 0.3s ease; /* Add this line for hover transition */
+
 }
 
 .Text {
@@ -106,7 +108,7 @@ footer {
 /* Apply fade-in animation to the entire page */
 body {
     opacity: 0;
-    animation: fadeIn 2s forwards;  /* Adjust the duration (2s) as needed */
+    animation: fadeIn 2s forwards; /* Adjust the duration (2s) as needed */
 }
 
 /* Define the fadeIn keyframe animation */
@@ -119,18 +121,27 @@ body {
     }
 }
 
-/* Apply fade-in animation to specific elements like images, text, divs globally */
-.bitly-animals, p, h1, h2, div {
+/* Apply fade-in animation globally to specific elements */
+p, h1, h2, div {
     opacity: 0;
-    animation: fadeIn 2s forwards;
-    animation-delay: 0.00000001s; /* Delay can be adjusted */
+    animation: fadeIn 0.25s forwards;
 }
+
+/* Slower fade-in for HomePage elements */
+.HomePage #MainText, 
+.HomePage #MainText p, 
+.HomePage #MainText div, 
+.HomePage #MainText h2 {
+    opacity: 0;
+    animation: fadeIn 1.5s forwards; /* Slower fade-in for HomePage */
+}
+
 
 /* Exclude the profiles section in AboutUs.jsx from fade-in */
 .AboutUs .profilesSection, 
 .AboutUs .profilesSection div,
 .AboutUs .profilesSection .profileContainer,
 .AboutUs .profilesSection .profileCard {
-  opacity: 1;  /* Ensure these sections don't fade-in */
-  animation: none !important;  /* Disable any animation */
+  opacity: 1; /* Ensure these sections don't fade-in */
+  animation: none !important; /* Disable any animation */
 }
