@@ -3,20 +3,19 @@ import { useNavigate } from 'react-router-dom';
 import './CreateEvent.css';
 
 function CreateEvent() {
-  const [EventTitle, setEventTitle ] = useState("Untitled Event");
+  const [EventTitle, setEventTitle ] = useState("");
   const [image, setImage] = useState(null);
   const [isSelected, setIsSelected] = useState(false);
-  const [DateForm, setDateForm] = useState("Set a Date...");
-  const [TimeForm, setTimeForm] = useState("TIME");
-  const [LocationForm, setLocationForm] = useState("LOCATION");
-  const [DescriptionForm, setDescriptionForm] = useState("Description");
-  const [AttendeesForm, setAttendeesForm] = useState("MAX ATTENDEES");
-  const [InvitesForm, setInvitesForm] = useState("");
+  const [DateForm, setDateForm] = useState("");
+  const [TimeForm, setTimeForm] = useState("");
+  const [LocationForm, setLocationForm] = useState("");
+  const [DescriptionForm, setDescriptionForm] = useState("");
+  const [AttendeesForm, setAttendeesForm] = useState("");
   const [PublicPrivate, setPublicPrivate] = useState("");
   const [EventType, setEventType] = useState(""); //TS
-  const [HostName, setHostName] = useState("HOST NAME");
-  const [ContactForm, setContactForm] = useState("Contact Info");
-  const [imageUrl, setImageUrl] = useState("IMAGE URL");
+  const [HostName, setHostName] = useState("");
+  const [ContactForm, setContactForm] = useState("");
+  const [imageUrl, setImageUrl] = useState("");
   const [successMessage, setSuccessMessage] = useState("")
 
   const navigate = useNavigate();
@@ -28,7 +27,7 @@ function CreateEvent() {
         method: "POST",
         mode: "cors",
         body: JSON.stringify({
-          title: EventTitle, date: DateForm, time: TimeForm, invites:InvitesForm, location: LocationForm, host_name: HostName, description: DescriptionForm, contact_info: ContactForm, public_private: "public", event_type:EventType, max_attendees: parseInt(AttendeesForm), image_url: imageUrl,
+          title: EventTitle, date: DateForm, time: TimeForm, location: LocationForm, host_name: HostName, description: DescriptionForm, contact_info: ContactForm, public_private: "public", event_type:EventType, max_attendees: parseInt(AttendeesForm), image_url: imageUrl,
         }),
       });
       if (res.status === 201) {
@@ -73,16 +72,22 @@ function CreateEvent() {
       <div className="create-event"> 
           <div className = "create-form-container">
             <form className="create-form" onSubmit={handleSubmit}>
+
             <div className = "event-and-date">
               <div className='event-title'>
-              <input value={EventTitle} className = "create-input-boxes" onChange={(e) => {
-                  setEventTitle(e.target.value)}}/> 
+              <input 
+                value={EventTitle} 
+                className = "create-input-boxes" 
+                onChange={(e) => { setEventTitle(e.target.value)}}
+                placeholder = "Untitled Event"/> 
+
+                
                   <div className="date">
                     <input  
                       type="date" 
                       value={DateForm} 
                       className = "create-input-boxes" 
-                      placeholder= "(mm/dd/yyyy)" 
+                      placeholder= "Set a date..." 
                       onChange={(e) => setDateForm(e.target.value)}/> 
                   </div>
                </div> 
@@ -95,7 +100,7 @@ function CreateEvent() {
                     value={HostName} 
                     className = "create-input-boxes" 
                     onChange={(e) => setHostName(e.target.value)}
-                    placeholder = "Host Name"
+                    placeholder = "HOST NAME"
                   />
                 </div>
 
@@ -103,7 +108,8 @@ function CreateEvent() {
                   <input 
                     value={AttendeesForm} 
                     className = "create-input-boxes" 
-                    onChange={(e) => setInvitesForm(e.target.value)}
+                    onChange={(e) => setAttendeesForm(e.target.value)}
+                    placeholder= "MAX ATTENDEES"
                   />
                 </div>
                 
@@ -122,7 +128,7 @@ function CreateEvent() {
                       value={LocationForm} 
                       className = "create-input-boxes" 
                       onChange={(e) => setLocationForm(e.target.value)}
-                      placeholder= "Location"
+                      placeholder= "LOCATION"
                     />
                   </div>
 
@@ -139,29 +145,21 @@ function CreateEvent() {
               </div>
 
 
-              <div className="invites-private-public-container">
-                {/* Invites that are either on and off */}
-                <div className="invites">
-                  <h4>Invites</h4>
-                    <div 
-                      className = "toggle-section"
-                      id = "create-input-boxes" 
-                      value={InvitesForm} 
+              <div className="private-public-container">
+                <div className="public-status">
+                    <h4>PUBLIC/PRIVATE</h4>
+                    <select 
+                      className = "create-input-boxes" 
+                      value={PublicPrivate} 
                       onChange={(e) => setPublicPrivate(e.target.value)}
                       
                     >
-                      <label className="switch">
-                        <input
-                           type="checkbox" 
-                           checked = {isSelected} //to see if checkbox is checked 
-                           onChange = {toggleState} // toggle to when it is checked
-                        />
-                        <span className = "slider"></span>
-                      </label>
-                    </div>
-                </div>
-
-
+                      <option name="blank" value="blank" >    </option>
+                      <option name="public" value="public" > public</option>
+                      <option name="private" value="private" >private</option>
+                    </select>
+                  </div>
+                  
                  {/* Submit Button */}
                 <div className = "submit-button">
                   <button 
@@ -177,23 +175,15 @@ function CreateEvent() {
                   <div>{successMessage}</div>
                 </div>)}
               </div>
-
-                <div className="public-status">
-                  <h4>Public/Private</h4>
-                  <select className = "create-input-boxes" value={PublicPrivate} onChange={(e) => setPublicPrivate(e.target.value)}>
-                    <option name="blank" value="blank" >    </option>
-                    <option name="public" value="public" > public</option>
-                    <option name="private" value="private" >private</option>
-                  </select>
-                </div>
                 
-               </div> 
+              </div>
+
                 
               <div className='right-side-container'>
                 <div className='image-url'>
                   <img
                     src = {image || defaultImage}
-                    alt = "Uploaded Preview"
+                    alt = "Default Image of a Birthday Party"
                     width = "600"
                     height = "400"
                   />
@@ -201,17 +191,34 @@ function CreateEvent() {
                   <input 
                     className = "img-input-boxes"
                     type = "file"
-                    accept = "image"
+                    accept = "image/*"
+                    id = "file-input"
                     onChange = {handleImageChange}
-                  
                   />
+
+                  <label 
+                    for="file-input"
+                    class = "custom-file-input">
+                    EDIT
+                    </label>
             
-                <input value={imageUrl} className = "create-input-boxes" onChange={(e) => setImageUrl(e.target.value)}/>
+                <input 
+                  value={imageUrl} 
+                  className = "create-input-boxes" 
+                  onChange={(e) => setImageUrl(e.target.value)}
+                  placeholder= "IMAGE URL"
+                />
                 </div>
     
                               
                 <div className='contact-info'>
-                  <textarea value={ContactForm} className = "create-input-boxes" onChange={(e) => setContactForm(e.target.value)}/>
+                  <textarea 
+                    value={ContactForm} 
+                    className = "create-input-boxes" 
+                    id='contactInfo'
+                    onChange={(e) => setContactForm(e.target.value)}
+                    placeholder = "Contact Info"
+                  />
                 </div>
               </div>
 
