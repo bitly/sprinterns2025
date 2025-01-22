@@ -1,25 +1,9 @@
 import React, { useState } from "react";
 import "./SearchBar.css";
 
-const SearchBar = ({ events, onSearch }) => {
-  const [DropdownVisible, setDropdownVisible] = useState(false);
+const SearchBar = ({ onSearch }) => {
+  const [dropDownVisible, setDropdownVisible] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState("");
-  const [filteredEvents, setFilteredEvents] = useState([]);
-  const [searchValue, setSearchValue] = useState("");
-
-  
-  const handleInputChange = (e) => {
-    const value = e.target.value.toLowerCase();
-    setSearchValue(value);
-
-    // Filter events by title
-    const filtered = events.filter((event) =>
-      event.title.toLowerCase().includes(value)
-    );
-
-    // Pass the filtered events back to the parent component
-    onSearch(filtered);
-  };
 
   const toggleDropdown = () => {
     setDropdownVisible(!dropDownVisible);
@@ -28,6 +12,7 @@ const SearchBar = ({ events, onSearch }) => {
   const selectCategory = (category) => {
     setSelectedCategory(category);
     setDropdownVisible(false);
+    onSearch("", category)
   };
 
   return (
@@ -54,8 +39,7 @@ const SearchBar = ({ events, onSearch }) => {
           type="text"
           data-search
           placeholder={selectedCategory ? `Search ${selectedCategory}` : "Search"}
-          value={searchValue}
-          onChange={handleInputChange}
+          onChange={(e) => onSearch(e.target.value, selectedCategory)}
         />
         </div>
     </div>

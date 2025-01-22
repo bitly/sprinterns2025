@@ -4,20 +4,22 @@ import SearchBar from "./SearchBar.jsx";
 import axios from "axios";
 import RSVPButton from "./RSVPButton";
 import { useNavigate, Link } from "react-router-dom";
+import profileImageDefault from './Images/default.png';
 
 function CommunityPage() {
-  const [eventData, setEventDetails] = useState([]);
+  const [eventData, setEventData] = useState([]);
   const [error, setError] = useState("");
   const [selectEvent, setSelectEvent] = useState(null);
   const navigateTo = useNavigate();
-  const [filteredEvents, setFilteredEvents] = useState([]);
+  const [filteredData, setFilteredData] = useState([]); 
+
 
   useEffect(() => {
     axios
       .get(`http://localhost:3000/api/public-events`)
       .then((response) => {
-        setEventDetails(response.data);
-        setFilteredEvents(response.data);
+        setEventData(response.data);
+        setFilteredData(response.data);
       })
       .catch((error) => {
         setError(
@@ -35,9 +37,19 @@ function CommunityPage() {
       setError("Something went wrong connecting");
     }
   };
-
-  const handleSearch = (filteredEvents) => {
-    setFilteredEvents(filteredEvents);
+  const handleSearch = (searchTerm, searchCategory) => {
+    console.log("Search Category:", searchCategory);
+    let filtered = eventData;
+    if(
+      searchCategory && searchCategory !== "All"
+    ){
+      filtered = filtered.filter(item => item.event_type === searchCategory.toLowerCase())
+    }
+    filtered = filtered.filter((item) =>
+      item.title.toLowerCase().includes(searchTerm.toLowerCase())
+    ); // Filter events by title
+    console.log("Search term:", filtered);
+    setFilteredData(filtered); // Update filtered results
   };
 
   return (
@@ -45,7 +57,7 @@ function CommunityPage() {
       
       <h2 className="browse-title"> Browse Events</h2>
       
-      <SearchBar events={eventData} onSearch={handleSearch}/> 
+      <SearchBar onSearch={handleSearch} /> 
 
       {error ? (
         <div className="error-display">
@@ -56,9 +68,11 @@ function CommunityPage() {
           </Link>
         </div>
       ) : (
+            
         <div className="public-events-container">
+          {console.log("Currently displayed filtered data:", filteredData)}
           <div className="events-row">
-            {eventData.map((event) => (
+            {filteredData.map((event) => (
               <div
                 key={event.event_id}
                 className="event-card"
@@ -67,7 +81,7 @@ function CommunityPage() {
                 <div className="event-img">
                   <img
                     src={
-                      event.image_url !== "" ? event.image_url : "default.png"
+                      event.image_url !== "" ? event.image_url : profileImageDefault
                     }
                     alt="User inputted description."
                   />
@@ -82,7 +96,6 @@ function CommunityPage() {
           </div>
         </div>
       )}
-
       {selectEvent && <RSVPButton event={selectEvent} />}
     </>
   );

@@ -2,12 +2,12 @@
 
 .browse-title {
   margin-top: 50px;
-  text-align: center; 
-  font-size: 3rem; 
-  font-weight: bold; 
-  color: var(--purple); 
-  margin: 20px 0; 
-  font-family: 'Montserrat', sans-serif; 
+  text-align: center; /* Centers the text horizontally */
+  font-size: 3rem; /* Makes the font larger */
+  font-weight: bold; /* Ensures the font is bold */
+  color: var(--purple); /* Matches the theme color */
+  margin: 20px 0; /* Adds spacing above and below */
+  font-family: "Work sans" /* Ensures consistency with the overall design */
 }
 
 @media screen and (max-width: 1200px) {
@@ -65,7 +65,7 @@
 }
 
 .event-card-title {
-  font-family: "Arial", sans-serif;
+  font-family: "Work Sans", sans-serif;
   font-size: 1.5 rem;
   font-weight: bold;
   color: #000000;
