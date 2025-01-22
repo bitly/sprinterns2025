@@ -10,12 +10,14 @@ function CommunityPage() {
   const [error, setError] = useState("");
   const [selectEvent, setSelectEvent] = useState(null);
   const navigateTo = useNavigate();
+  const [filteredEvents, setFilteredEvents] = useState([]);
 
   useEffect(() => {
     axios
       .get(`http://localhost:3000/api/public-events`)
       .then((response) => {
         setEventDetails(response.data);
+        setFilteredEvents(response.data);
       })
       .catch((error) => {
         setError(
@@ -34,11 +36,16 @@ function CommunityPage() {
     }
   };
 
+  const handleSearch = (filteredEvents) => {
+    setFilteredEvents(filteredEvents);
+  };
+
   return (
     <>
+      
       <h2 className="browse-title"> Browse Events</h2>
       
-      <SearchBar/> 
+      <SearchBar events={eventData} onSearch={handleSearch}/> 
 
       {error ? (
         <div className="error-display">
