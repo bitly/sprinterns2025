@@ -22,6 +22,7 @@ export default function UpdateEventForm() {
   const [eventData, setEventData] = useState(null);
   const [error, setError] = useState("");
   const navigateTo = useNavigate();
+  const navigate = useNavigate();
 
   useEffect(() => {
     axios
@@ -37,7 +38,6 @@ export default function UpdateEventForm() {
       });
   }, [eventId]);
 
-  const navigate = useNavigate();
   const handleUpdateSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -62,8 +62,9 @@ export default function UpdateEventForm() {
           }),
         }
       );
+
       if (res.status === 201) {
-        setSuccessMessage("Update created!");
+        setSuccessMessage(" ");
         setTimeout(() =>
           {
              navigate (`/RSVP/${eventData.event_id}`);
@@ -214,16 +215,24 @@ export default function UpdateEventForm() {
                     type="submit" 
                     className="create-save-button">UPDATE
                   </button>
-
+                  
                   {successMessage && (
-                  <div 
-                    role="alert" 
-                    className="alert">
+                  <>
+                    {/* Background blur */}
+                    <div className="background-blur"></div>
 
-                  <div>{successMessage}</div>
-                </div>)}
+                    {/* Success message and congrats symbol */}
+                    <div role="alert" className="alert">
+                      <div>{successMessage}</div>
+                    </div>
+
+                    {/* Firework */}
+                    <div className="firework">
+                      <span className="emoji">🎉</span>
+                    </div>
+                  </>
+                )}
               </div>
-                
               </div>
 
                 

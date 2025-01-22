@@ -45,11 +45,11 @@ function CreateEvent() {
       if (res.status === 201) {
        const data = await res.json(); 
        console.log(data);
-       setSuccessMessage("Event created!")
+       setSuccessMessage(" ")
        setTimeout(() =>
        {
           navigate (`/RSVP/${data.event_id}`);
-       },1500);
+       },1000);
       }
     }
     catch (err){
@@ -194,12 +194,21 @@ function CreateEvent() {
                   </button>
 
                   {successMessage && (
-                  <div 
-                    role="alert" 
-                    className="alert">
+                  <>
+                    {/* Background blur */}
+                    <div className="background-blur"></div>
 
-                  <div>{successMessage}</div>
-                </div>)}
+                    {/* Success message and congrats symbol */}
+                    <div role="alert" className="alert">
+                      <div>{successMessage}</div>
+                    </div>
+
+                    {/* Firework */}
+                    <div className="firework">
+                      <span className="emoji">🎉</span>
+                    </div>
+                  </>
+                )}
               </div>
                 
               </div>
