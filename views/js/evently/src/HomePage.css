@@ -56,9 +56,9 @@ html {
 
 }
 
-.buttons svg {
-    width: 35px;   /* Make the SVG smaller */
-    height: 35px;  /* Make the SVG smaller */
+.buttons .plus {
+    width: 30px;   /* Make the SVG smaller */
+    height: 30px;  /* Make the SVG smaller */
     margin-left: 4px; /* Add space between text and icon */
     fill: white;  /* Color the SVG white */  
 }
