@@ -103,3 +103,34 @@ footer {
     margin-top: 2%;
 }
 
+/* Apply fade-in animation to the entire page */
+body {
+    opacity: 0;
+    animation: fadeIn 2s forwards;  /* Adjust the duration (2s) as needed */
+}
+
+/* Define the fadeIn keyframe animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Apply fade-in animation to specific elements like images, text, divs globally */
+.bitly-animals, p, h1, h2, div {
+    opacity: 0;
+    animation: fadeIn 2s forwards;
+    animation-delay: 0.00000001s; /* Delay can be adjusted */
+}
+
+/* Exclude the profiles section in AboutUs.jsx from fade-in */
+.AboutUs .profilesSection, 
+.AboutUs .profilesSection div,
+.AboutUs .profilesSection .profileContainer,
+.AboutUs .profilesSection .profileCard {
+  opacity: 1;  /* Ensure these sections don't fade-in */
+  animation: none !important;  /* Disable any animation */
+}
