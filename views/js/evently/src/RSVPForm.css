@@ -102,20 +102,23 @@
   font-family: "Bree Serif";
 }
 
-.delete-submit-btn:hover{
+.delete-submit-btn:hover
+{
   background-color: #387df5;
   cursor: pointer;
 }
-.alert {
-  display: flex;
+
+.alert 
+{
   justify-content: center;
-  width: 95%;
+  align-items: center;
+  width: 100%;
   background-color: #e2f1e0;
-  color: #00525f;
+  color: #ff0000;
   padding: 0.5rem;
   border-radius: 0.5rem;
   margin-top: 1rem;
-  font-family: "Bree Serif";
+  font-family: "Work Sans";
 }
 
 .error-alert {

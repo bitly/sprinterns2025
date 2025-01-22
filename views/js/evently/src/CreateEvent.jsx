@@ -37,7 +37,7 @@ function CreateEvent() {
        setTimeout(() =>
        {
           navigate (`/RSVP/${data.event_id}`);
-       },1000);
+       },2000);
       }
     }
     catch (err){
@@ -92,7 +92,7 @@ function CreateEvent() {
                   </div>
                </div> 
             </div>
-              
+            
 
               <div className="name-attendees-time-location-description-container">
                 <div className='host-name'>
@@ -103,6 +103,7 @@ function CreateEvent() {
                     placeholder = "HOST NAME"
                   />
                 </div>
+                
 
                 <div className="max-attendees">
                   <input 
@@ -157,6 +158,22 @@ function CreateEvent() {
                       <option name="blank" value="blank" >    </option>
                       <option name="public" value="public" > public</option>
                       <option name="private" value="private" >private</option>
+                    </select>
+                  </div>
+
+                  <div className="event-type-container">
+                    <h4> EVENT TYPE </h4>
+                    <select
+                      className="create-input-boxes"
+                      value={EventType}
+                      onChange={(e) => setEventType(e.target.value)}
+                    >
+                      <option value=""> </option>
+                      <option name="Social" value="Social"> Social </option>
+                      <option name="Business" value="Business"> Business </option>
+                      <option name="Education" value="Education"> Education </option>
+                      <option name="Arts & Recreation" value="Arts & Recreation"> Arts & Recreation</option>
+                      <option name="Other" value="Other">  Other </option>
                     </select>
                   </div>
                   
