@@ -1,74 +1,313 @@
-.create-event {
+.App
+{
+  height:90vh;
+}
+
+.create-event
+ {
   display: flex;
   flex-direction: column;
+  margin: 3rem 0;
+  font-family: 'Work Sans';
+  padding: 0 2.5rem;
+  overflow: hidden;
+  height: 100%; 
+  box-sizing: border-box;
+
+}
+
+.create-input-boxes
+{
+  font-family: 'Work Sans';
+  border: none;
+  background-color: #d9d9d986;
+  font-size: 1.4rem;
+  width: 100%;
+}
+
+.create-input-boxes::placeholder
+{
+  color: rgb(0, 0, 0);
+  
+}
+
+/* Event & Date Section */
+.event-and-date
+{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
   align-items: center;
-  margin: 4rem 0;
+  margin-bottom: 35px;
 }
 
-.create-form-container {
-  display: flex;
-  flex-direction: column;
+.event-title
+{
+  width: 700px;
+}
+
+.event-title input.create-input-boxes
+{
+  font-size:3rem;
+  padding: .5rem;
+}
+.date input.create-input-boxes
+{
+  margin-top: 0.5rem;
+  margin-left:-0.6rem;
+  font-size: 1rem;
+  color: #9d9d9d;
+}
+
+.date
+{
+  margin: 0px 55px 5px 10px;
+  width: 700px;
+}
+
+/* Host Name, Max Attendees, Date, Time, Location, and Description Section */
+.name-attendees-time-location-description-container
+{
+  width:670px;
+  margin-top: 10px;
+  
+}
+.name-attendees-time-location-description-container input.create-input-boxes
+{
+  font-size: 15px;
+  padding: 8px;
+}
+
+.host-name input.create-input-boxes,
+.max-attendees input.create-input-boxes,
+.time input.create-input-boxes,
+.location input.create-input-boxes
+{
+  margin-bottom: 0.2rem;
+  padding-left: 2.3rem;
+  width: 100%;
+  
+}
+
+.description textarea
+{
+  font-size: 15px;
+  padding: 8px;
+  padding-right: 30px;
+  color: #9d9d9d;
+  padding-bottom: 45px;
+  margin-bottom: 40px;
+}
+
+.description textarea.create-input-boxes
+{
+  padding-left: 1rem;
+  width: 100%;
+}
+
+
+/*  Public/Private Section */
+
+.public-status h4
+{
+  font-weight: 400;
+  width: 100%;
+  margin-bottom: 5px;
+  padding-left: 2rem;
   align-items: center;
-}
-.create-form {
-  background-color: #f8f8f8;
-  display: flex;
-  flex-direction: column;
   justify-content: center;
-  padding: 2rem;
-  width: 35rem;
-  border-radius: 1rem;
+  margin-top: 8px;
 }
 
-.create-input-boxes {
+.private-public-container
+{
+  display: flex;
+  justify-content: space-evenly;
+  gap:30px;
+  margin-bottom: 20px;
+  width: 50%;
+}
+
+.private-public-container .submit-button :nth-last-child(1)
+{
+  transform: translateY(-35px) translateX(-40px); 
+}
+
+.public-status 
+{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  width: 100%;
+  align-items: stretch;
+  position: relative;
+  left: 2rem;
+  bottom: .53rem;
+}
+
+.public-status select.create-input-boxes
+{
+  font-size: 1rem;
+  align-items: center;
+  font-family: "Work Sans";
+  position: relative;
+  background-color:#F6C158 ;
+  border-radius: 6rem;
+  width: 65%;
+  padding:.8rem 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+  border-color: #000000;
+  border-style: solid;
+  border-width: 1.3px;
+}
+
+
+.submit-button 
+.public-status 
+{
+  padding-right: 3.5rem;
+  padding-left: 2rem;
+}
+
+/* Right Side of the Webpage */
+.right-side-container
+{
+  align-items: center;
+  position: relative;
+  left: 51rem;
+  bottom: 39rem;
+}
+
+.image-url input.create-input-boxes
+{
+  margin-bottom: 30px;
+  width: 40%;
+  position: relative;
+  top: 25px;
+  right: 655px;
+  font-size: 15px;
+  padding: 8px;
+  padding-left: 30px;
+  cursor: pointer;
+}
+
+.image-url img
+{
+  width: 600px;
+  height: auto;
+}
+
+
+.custom-file-input
+{
+  align-items: center;
+  background-color: #ccccccbf;
+  padding: 10px;
+  border-radius: 50px;
+  position: relative;
+  right: 580px;
+  bottom: 20px;
+  
+}
+
+.input.img-input-boxes
+{
+  color: #91DADE;
+}
+
+.contact-info textarea
+{
+  font-size: 15px;
+  padding: 13px;
+  color: #9d9d9d;
+}
+
+#contactInfo
+{
+  width:573px;
+  height: 110px;
+}
+
+.img-input-boxes 
+{
+  display: none;
+}
+
+.contact-info textarea.create-input-boxes
+{
+  padding-left: 1rem;
+  width: 100%;
+}
+
+/* Submit Button  */
+
+
+.submit-button
+{
   display: flex;
   justify-content: center;
-  padding: 0.5rem;
-  border-radius: 10px;
-  border: 1px;
-  border-color: none;
-  font-size: 0.8em;
+  text-decoration: none;
+  margin-top: 7%;
+  width: 20%;
+  align-items: center;
+  position: relative;
+  top: 5px;
 }
 
-.time-input {
-  padding: 0.417rem;
+.create-save-button
+{
+  font-size: 1rem;
+  align-items: center;
+  font-family: "Work Sans";
+  font-weight: 300;
+  position: relative;
+  background-color:#B4A9EF ;
+  border-radius: 6rem;
+  padding:1rem 3.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+  border-color: #030303;
+  border-style: solid;
+  border-width: 1.3px;
 }
 
-.date-time-container,
-.max-attendees-private-public-container {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 5%;
-  font-size: 1.5em;
+.event-type-container h4
+{
+  font-weight: normal;
+  position: relative;
+  width: 100px;
+  left: 50px;
+  margin-bottom: 3px;
+
 }
 
-.date,
-.time,
-.max-attendees,
-.public-status {
-  display: flex;
-  flex-direction: column;
-  width: 48%;
+.event-type-container
+{
+  position: relative;
+  right: 70px;
+  bottom: 20px;
+  width: 200px;
 }
 
-.enter-details {
-  font-size: 1.8em;
+.event-type-container select.create-input-boxes
+{
+  font-size: 1rem;
+  align-items: center;
+  font-family: "Work Sans";
+  position: relative;
+  background-color:#91DADE ;
+  border-radius: 6rem;
+  width: 100%;
+  padding:.8rem 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+  border-color: #000000;
+  border-style: solid;
+  border-width: 1.3px;
 }
 
-.location,
-.description,
-.image-url,
-.contact-info,
-.host-name,
-.event-title,
-.event-type-selection {
-  display: flex;
-  flex-direction: column;
-  font-size: 1.5em;
-}
-
-.create-save-button {
-  background-color: #2a5db7;
+.update-button {
+  background-color: #ff6116;
   color: white;
   font-size: 1.3rem;
   text-decoration: none;
@@ -82,21 +321,10 @@
   margin-top: 7%;
   width: 20%;
   align-items: center;
+  font-family: "Bree Serif";
 }
 
-.alert {
-  display: flex;
-  justify-content: center;
-  width: 95%;
-  background-color: #e2f1e0;
-  color: #00525f;
-  padding: 0.5rem;
-  border-radius: 0.5rem;
-  margin-top: 1rem;
-}
-
-@media (max-width: 768px) {
-  .create-form {
-    width: 100%;
-  }
+.update-button:hover {
+  background-color: #fc5000;
+  cursor: pointer;
 }

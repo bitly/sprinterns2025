@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import "./UpdateEventForm.css";
+import "./CreateEvent.css";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 
@@ -9,6 +9,7 @@ export default function UpdateEventForm() {
   const [eventTitle, setEventTitle] = useState("");
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
+  const [image, setImage] = useState(null);
   const [location, setLocation] = useState("");
   const [description, setDescription] = useState("");
   const [attendees, setAttendees] = useState("");
@@ -21,6 +22,7 @@ export default function UpdateEventForm() {
   const [eventData, setEventData] = useState(null);
   const [error, setError] = useState("");
   const navigateTo = useNavigate();
+  const navigate = useNavigate();
 
   useEffect(() => {
     axios
@@ -60,9 +62,13 @@ export default function UpdateEventForm() {
           }),
         }
       );
+
       if (res.status === 201) {
-        setSuccessMessage("Update created!");
-        setTimeout(window.location.replace(`/RSVP/${eventData.event_id}`), 4000);
+        setSuccessMessage(" ");
+        setTimeout(() =>
+          {
+             navigate (`/RSVP/${eventData.event_id}`);
+          },1000);
       }
     } catch (err) {
       console.log(err);
@@ -75,140 +81,203 @@ export default function UpdateEventForm() {
     navigateTo(`/RSVP/${eventData.event_id}`)
   }
 
+    //Default Image
+    const defaultImage = 'https://images.pexels.com/photos/16220888/pexels-photo-16220888/free-photo-of-birthday-party-catering.jpeg';
+
+    //Function that handles if user wants to change image
+    const handleImageChange = (e) => 
+    {
+      const file = e.target.files[0];
+      if (file)
+      {
+        const reader = new FileReader();
+        reader.onloadend = () =>
+        {
+          setImage(reader.result);
+        };
+        reader.readAsDataURL(file);
+      }
+    };
+
   return (
     <>
-      <div className="update-event">
-        <div className="update-form-container">
-          <div className="enter-details">
-            <h2 className="update-event-heading"> Update Your Event Here!</h2>
-          </div>
+ <div className="create-event"> 
+          <div className = "create-form-container">
+            <form className="create-form" onSubmit={handleUpdateSubmit }>
 
-          <form className="create-form" onSubmit={handleUpdateSubmit}>
-            <span className="exit-click" onClick={handleEventDetailsNavigation}> X </span>
+            <div className = "event-and-date">
+              <div className='event-title'>
+              <input 
+                value={eventTitle} 
+                className = "create-input-boxes" 
+                onChange={(e) => { setEventTitle(e.target.value)}}
+                placeholder = "Untitled Event"/> 
+
+                
+                  <div className="date">
+                    <input  
+                      type="date" 
+                      value={date} 
+                      className = "create-input-boxes" 
+                      placeholder= "Set a date..." 
+                      onChange={(e) => setDate(e.target.value)}/> 
+                  </div>
+               </div> 
+            </div>
             
 
-            <div className="event-title-id">
-              <div className="update-event-title">
-              <h4>Event title</h4>
-              <input
-                value={eventTitle}
-                className="create-input-boxes"
-                onChange={(e) => {
-                  setEventTitle(e.target.value);
-                }}
-              />
-              </div>
-            </div>
+              <div className="name-attendees-time-location-description-container">
+                <div className='host-name'>
+                  <input 
+                    value={hostName} 
+                    className = "create-input-boxes" 
+                    onChange={(e) => setHostName(e.target.value)}
+                    placeholder = "HOST NAME"
+                  />
+                </div>
+                
 
-            <div className="date-time-container">
-              <div className="date">
-                <h4>Date</h4>
-                <input
-                  type="date"
-                  value={date}
-                  className="create-input-boxes"
-                  placeholder="(mm/dd/yyyy)"
-                  onChange={(e) => setDate(e.target.value)}
+                <div className="max-attendees">
+                  <input 
+                    value={attendees} 
+                    className = "create-input-boxes" 
+                    onChange={(e) => setAttendees(e.target.value)}
+                    placeholder= "MAX ATTENDEES"
+                  />
+                </div>
+                
+                  <div className="time">
+                    <input 
+                      type="time" 
+                      value={time}
+                      className = "create-input-boxes time-input" 
+                      onChange={(e) => setTime(e.target.value)}
+                      placeholder = "Time"
+                    />
+                  </div>
+
+                  <div className='location'>
+                    <input 
+                      value={location} 
+                      className = "create-input-boxes" 
+                      onChange={(e) => setLocation(e.target.value)}
+                      placeholder= "LOCATION"
+                    />
+                  </div>
+
+                  <div className='description'>
+                    <textarea
+                      value={description} 
+                      className = "create-input-boxes"
+                      onChange={(e) => setDescription(e.target.value)}
+                      rows = "5"
+                      cols = "50"
+                      placeholder= "Description"
+                    />
+                </div>
+              </div>
+
+
+              <div className="private-public-container">
+                <div className="public-status">
+                    <h4>PUBLIC/PRIVATE</h4>
+                    <select 
+                      className = "create-input-boxes" 
+                      value={publicPrivate} 
+                      onChange={(e) => setPublicPrivate(e.target.value)}
+                      
+                    >
+                      <option name="blank" value="blank" >    </option>
+                      <option name="public" value="public" > public</option>
+                      <option name="private" value="private" >private</option>
+                    </select>
+                  </div>
+
+                  <div className="event-type-container">
+                    <h4> EVENT TYPE </h4>
+                    <select
+                      className="create-input-boxes"
+                      value={eventType}
+                      onChange={(e) => setEventType(e.target.value)}
+                    >
+                      <option value=""> </option>
+                      <option name="Social" value="Social"> Social </option>
+                      <option name="Business" value="Business"> Business </option>
+                      <option name="Education" value="Education"> Education </option>
+                      <option name="Arts & Recreation" value="Arts & Recreation"> Arts & Recreation</option>
+                      <option name="Other" value="Other">  Other </option>
+                    </select>
+                  </div>
+                  
+                 {/* Submit Button */}
+                <div className = "submit-button">
+                  <button 
+                    type="submit" 
+                    className="create-save-button">UPDATE
+                  </button>
+                  
+                  {successMessage && (
+                  <>
+                    {/* Background blur */}
+                    <div className="background-blur"></div>
+
+                    {/* Success message and congrats symbol */}
+                    <div role="alert" className="alert">
+                      <div>{successMessage}</div>
+                    </div>
+
+                    {/* Firework */}
+                    <div className="firework">
+                      <span className="emoji">🎉</span>
+                    </div>
+                  </>
+                )}
+              </div>
+              </div>
+
+                
+              <div className='right-side-container'>
+                <div className='image-url'>
+                  <img
+                    src = {image || defaultImage}
+                    alt = "Default Image of a Birthday Party"
+                    width = "600"
+                    height = "400"
+                  />
+
+                  <input 
+                    className = "img-input-boxes"
+                    type = "file"
+                    accept = "image/*"
+                    id = "file-input"
+                    onChange = {handleImageChange}
+                  />
+
+                  <label 
+                    for="file-input"
+                    class = "custom-file-input">
+                    EDIT
+                    </label>
+            
+                <input 
+                  value={imageUrl} 
+                  className = "create-input-boxes" 
+                  onChange={(e) => setImageUrl(e.target.value)}
+                  placeholder= "IMAGE URL"
                 />
+                </div>
+    
+                              
+                <div className='contact-info'>
+                  <textarea 
+                    value={contactInfo} 
+                    className = "create-input-boxes" 
+                    id='contactInfo'
+                    onChange={(e) => setContactInfo(e.target.value)}
+                    placeholder = "Contact Info"
+                  />
+                </div>
               </div>
-              <div className="time">
-                <h4>Time</h4>
-                <input
-                  type="time"
-                  value={time}
-                  className="create-input-boxes time-input"
-                  onChange={(e) => setTime(e.target.value)}
-                />
-              </div>
-            </div>
-
-            <div className="location">
-              <h4>Location</h4>
-              <input
-                value={location}
-                className="create-input-boxes"
-                onChange={(e) => setLocation(e.target.value)}
-              />
-            </div>
-
-            <div className="description">
-              <h4>Description</h4>
-              <input
-                value={description}
-                className="create-input-boxes"
-                onChange={(e) => setDescription(e.target.value)}
-              />
-            </div>
-
-            <div className="max-attendees-private-public-container">
-              <div className="max-attendees">
-                <h4>Max attendees</h4>
-                <input
-                  value={attendees}
-                  className="create-input-boxes"
-                  onChange={(e) => setAttendees(e.target.value)}
-                />
-              </div>
-
-              <div className="public-status">
-                <h4>Public/Private</h4>
-                <select
-                  className="create-input-boxes"
-                  value={publicPrivate}
-                  onChange={(e) => setPublicPrivate(e.target.value)}
-                >
-                  <option value=""> </option>
-                  <option name="public" value="public"> public </option>
-                  <option name="private" value="private"> private </option>
-                </select>
-              </div>
-            </div>
-
-            <div className="event-type-container">
-              <h4> Event Type: </h4>
-              <select
-                className="create-input-boxes"
-                value={eventType}
-                onChange={(e) => setEventType(e.target.value)}
-              >
-                <option value=""> </option>
-                <option name="Social" value="Social"> Social </option>
-                <option name="Business" value="Business"> Business </option>
-                <option name="Education" value="Education"> Education </option>
-                <option name="Arts & Recreation" value="Arts & Recreation"> Arts & Recreation</option>
-                <option name="Other" value="Other">  Other </option>
-              </select>
-            </div>
-
-            <div className="host-name">
-              <h4>Host name</h4>
-              <input
-                value={hostName}
-                className="create-input-boxes"
-                onChange={(e) => setHostName(e.target.value)}
-              />
-            </div>
-
-            <div className="contact-info">
-              <h4>Contact info</h4>
-              <input
-                value={contactInfo}
-                className="create-input-boxes"
-                onChange={(e) => setContactInfo(e.target.value)}
-              />
-            </div>
-
-            <div className="image-url">
-              <h4>Image URL</h4>
-              <input
-                value={imageUrl}
-                className="create-input-boxes"
-                onChange={(e) => setImageUrl(e.target.value)}
-              />
-            </div>
-
-            <br />
-            <button type="submit" className="update-button"> Update </button>
           </form>
 
           {error ? (
