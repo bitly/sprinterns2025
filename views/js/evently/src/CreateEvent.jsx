@@ -16,18 +16,30 @@ function CreateEvent() {
   const [HostName, setHostName] = useState("");
   const [ContactForm, setContactForm] = useState("");
   const [imageUrl, setImageUrl] = useState("");
+  const [isTransitioning, setIsTransitioning] = useState (false);
   const [successMessage, setSuccessMessage] = useState("")
 
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault()
+    setIsTransitioning(true);
     try {
       let res = await fetch("http://localhost:3000/api/events", {
         method: "POST",
         mode: "cors",
         body: JSON.stringify({
-          title: EventTitle, date: DateForm, time: TimeForm, location: LocationForm, host_name: HostName, description: DescriptionForm, contact_info: ContactForm, public_private: "public", event_type:EventType, max_attendees: parseInt(AttendeesForm), image_url: imageUrl,
+          title: EventTitle, 
+          date: DateForm,
+          time: TimeForm, 
+          location: LocationForm, 
+          host_name: HostName, 
+          description: DescriptionForm, 
+          contact_info: ContactForm, 
+          public_private: "public", 
+          event_type:EventType,
+           max_attendees: parseInt(AttendeesForm), 
+          image_url: imageUrl,
         }),
       });
       if (res.status === 201) {
@@ -37,11 +49,12 @@ function CreateEvent() {
        setTimeout(() =>
        {
           navigate (`/RSVP/${data.event_id}`);
-       },2000);
+       },1500);
       }
     }
     catch (err){
       console.log(err);
+      setIsTransitioning(false);
     }
   }
   
@@ -63,10 +76,6 @@ function CreateEvent() {
     }
   };
 
-  const toggleState = () =>
-  {
-    setIsSelected(prevState => !prevState);
-  }
 
     return (
       <div className="create-event"> 
