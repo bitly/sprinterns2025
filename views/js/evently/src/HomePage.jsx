@@ -29,7 +29,6 @@ const HomePage: React.FC = () => {
                     
                    
                 </div>
-                <b />
             </div>
             <footer> All Rights Reserved - 2025 © Bitly | Designed by Bitly Sprinterns </footer>
         </div>
