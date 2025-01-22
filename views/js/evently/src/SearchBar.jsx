@@ -16,7 +16,7 @@ const SearchBar = ({ onSearch }) => {
   };
 
   return (
-    <div className="search-bar">
+    <div className="search-bar-community">
         <div className="dropdown">
             <div className="dropdown-text" onClick={toggleDropdown}>
                 <span>{selectedCategory || "Select a category"}</span>
@@ -37,7 +37,6 @@ const SearchBar = ({ onSearch }) => {
         <div className="search-box">
         <input
           type="text"
-          data-search
           placeholder={selectedCategory ? `Search ${selectedCategory}` : "Search"}
           onChange={(e) => onSearch(e.target.value, selectedCategory)}
         />

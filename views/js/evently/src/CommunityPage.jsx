@@ -75,7 +75,7 @@ function CommunityPage() {
             {filteredData.map((event) => (
               <div
                 key={event.event_id}
-                className="event-card"
+                className="event-card-community"
                 onClick={() => handleEventClick(event)}
               >
                 <div className="event-img">

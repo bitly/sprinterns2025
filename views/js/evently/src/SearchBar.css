@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500&display=swap");
 
 :root {
     --blue: #9ab3f5;
@@ -5,8 +6,9 @@
     --white: hsl(0, 0%, 100%);
     --shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
 }
+
  
-.search-bar {
+.search-bar-community {
     margin-top: 50px;
     margin-left: auto;
     margin-right: auto;
@@ -45,7 +47,7 @@
     font-weight: 500;
     color: var(--white);
     padding: 0.7rem;
-    font-family: 'Work Sans', sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .dropdown-list {
@@ -122,38 +124,3 @@
     background-color: var(--white);
     height: 5vh;
 }  
-
-@media (max-width: 768px) {
-    .search-bar {
-        flex-direction: column;
-        max-width: 100%;
-        padding: 10px 20px;
-    }
-
-    .dropdown {
-        margin-right: 0;
-        margin-bottom: 10px;
-        width: 100%;
-    }
-
-    .search-box {
-        width: 100%;
-        padding: 0;
-    }
-
-    .search-box input {
-        font-size: 12px;
-        padding: 10px;
-    }
-}
-
-@media (max-width: 480px) {
-    .dropdown-text {
-        font-size: 0.9rem;
-    }
-
-    .search-box input {
-        font-size: 12px;
-        padding: 8px;
-    }
-}
