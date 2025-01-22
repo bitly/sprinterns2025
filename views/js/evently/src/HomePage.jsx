@@ -5,6 +5,7 @@ import {
 import './App.css'
 import './HomePage.css'
 import bitlyAnimals from './Images/bitlyAnimals.png';
+import PlusSymbol from './plus.svg';
 
 
 const HomePage: React.FC = () => {
@@ -20,10 +21,14 @@ const HomePage: React.FC = () => {
                     <img src={bitlyAnimals} alt="Bitly Animals" className="bitly-animals" />
                 </div>
                <div className="HostEvent">
-                    <Link to="/create-event" className="buttons">Create Event</Link>
-                    <b />
-                </div>
+                    <Link to="/create-event" className="buttons">
+                    Create Event
+                    <img src={PlusSymbol} alt="Plus Symbol" className= "plus" />
 
+                    </Link>
+                    
+                   
+                </div>
             </div>
             <footer> All Rights Reserved - 2025 © Bitly | Designed by Bitly Sprinterns </footer>
         </div>

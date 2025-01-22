@@ -41,24 +41,33 @@ html {
 }
 
 .buttons {
-    background-color: #0A1F37;
-    color: white;
-    font-size: 1rem;
+    display: inline-flex;        /* Make the button a flex container to align text and icon horizontally */
+    align-items: center;         /* Vertically align text and icon */
+    background-color: #2a5bd7;   /* Button background color */
+    color: white;                /* Text color */
+    font-size: 1.1rem;
     font-family: 'Work Sans';
     font-weight: bold;
     text-decoration: none;
-    padding: .8rem 1.4rem;
+    padding: .5rem 1rem;
     border-radius: 20px;
     position: relative;
-    top: -15px; 
-    
+    top: -25px; 
 
 }
 
+.buttons .plus {
+    width: 30px;   /* Make the SVG smaller */
+    height: 30px;  /* Make the SVG smaller */
+    margin-left: 4px; /* Add space between text and icon */
+    fill: white;  /* Color the SVG white */  
+}
+
 .buttons:hover {
-    background-color: #2d4054; /* Darker shade of the button color for hover */
+    background-color: #0A1F37; /* Darker shade of the button color for hover */
     color: #fff; /* Ensures text stays white on hover */
-    transform: scale(1.05); /* Slightly scale the button for a pop effect */
+    transition: all 0.3s ease; /* Add this line for hover transition */
+
 }
 
 .Text {
@@ -96,3 +105,43 @@ footer {
     margin-top: 2%;
 }
 
+/* Apply fade-in animation to the entire page */
+body {
+    opacity: 0;
+    animation: fadeIn 2s forwards; /* Adjust the duration (2s) as needed */
+}
+
+/* Define the fadeIn keyframe animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Apply fade-in animation globally to specific elements */
+p, h1, h2, div {
+    opacity: 0;
+    animation: fadeIn 0.25s forwards;
+}
+
+/* Slower fade-in for HomePage elements */
+.HomePage #MainText, 
+.HomePage #MainText p, 
+.HomePage #MainText div, 
+.HomePage #MainText h2 {
+    opacity: 0;
+    animation: fadeIn 1.5s forwards; /* Slower fade-in for HomePage */
+}
+
+
+/* Exclude the profiles section in AboutUs.jsx from fade-in */
+.AboutUs .profilesSection, 
+.AboutUs .profilesSection div,
+.AboutUs .profilesSection .profileContainer,
+.AboutUs .profilesSection .profileCard {
+  opacity: 1; /* Ensure these sections don't fade-in */
+  animation: none !important; /* Disable any animation */
+}
