@@ -1,93 +1,174 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from 'react';
 import "./HostList.css";
-import axios from "axios";
+import axios from 'axios';
 import { useNavigate, Link } from "react-router-dom";
+import profileImage1 from "./profile_img.jpg"
 
 function HostList() {
-  const [attendeeData, setAttendeeData] = useState([]);
+  const [hosts, setHosts] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
-  // const [selectEvent, setSelectEvent] = useState(null);
-  const navigateTo = useNavigate();
-
   useEffect(() => {
+    setIsLoading(true);
     axios
-      .get(`http://localhost:3000/api/attendees-all`)
+    // Fetch hosts when the component mounts
+      .get(`http://localhost:3000/api/get-all-hosts`)
       .then((response) => {
-        setAttendeeData(response.data);
+        setHosts(response.data);
+        setIsLoading(false);
       })
       .catch((error) => {
         setError(
-          "The server ran into an error getting the attendees, please try again!"
+          "The server ran into an error getting the events, please try again!"
         );
         setError(error);
+        setIsLoading(false);
       });
   }, []);
-
-  // const handleEventClick = (attendee) => {
-  //   try {
-  //     setSelectEvent(attendee);
-  //     navigateTo(`/RSVP/${attendees.attendees_id}`);
-  //   } catch {
-  //     setError("Something went wrong connecting");
-  //   }
-  // };
+    
 
   return (
-    <>
-      {/* <div className="attendees-nav-container">
-        <h2 className="browse-title"> Browse Events</h2>
-        <div className="search-bar">
-          <input type="text" placeholder="Start Your Search Here!" />
-          <button className="search-btn"> 🔍 </button>
-        </div>
+    <div className="all-hosts-container">
+      <div className="header">
+        <h1>Discover New People</h1>
+      </div>
 
-        <div className="link-container">
-          <button className="btn"> All Events </button>
-          <button className="btn"> Social </button>
-          <button className="btn"> Business </button>
-          <button className="btn"> Education </button>
-          <button className="btn"> Arts & Recreation </button>
-        </div>
-      </div> */}
-
-      {error ? (
-        <div className="error-display">
-          <p> Error! Something went wrong loading attendeess. </p>
-          <p>Please try again!</p>
-          <Link to="/">
-            <p>Home</p>
-          </Link>
-        </div>
-      ) : (
-        <div className="public-attendees-container">
-          <div className="attendees-row">
-            {attendeeData.map((attendees) => (
-              <div
-                key={attendees.attendees_id} //Either attendees.attendees_id or attendee.id.
-                className="attendees-card"
-                // onClick={() => handleEventClick(attendees)}
-              >
-                <p className="attendees-card-name"> {attendees.first_name} {attendees.last_name}</p>
-                <div className="attendees-img">
+     {/* <table>
+        <thead>
+          <tr>
+            <th>Profile</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+          </tr>
+        </thead>
+        <tbody>
+          {hosts.length > 0 ? (
+            hosts.map((host) => (
+              <tr key={host.host_id}>
+                <td className="profile-img">
                   <img
                     src={
-                      attendees.image_url !== "" ? attendees.image_url : "default.png"
+                      host.image_url !== "" ? host.image_url : "default.png"
                     }
-                    alt="User inputed description."
+                    alt={`Image for ${host.first_name} ${host.last_name}`}
                   />
-                </div>
-                <div className="email-and-phone-number-container">
-                  <h4> Phone Number: {attendees.phone_number}</h4>
-                  <h4> Email: {attendees.email}</h4>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      )}
+                </td>
+                <td>{host.first_name}</td>
+                <td>{host.last_name}</td>
+                <td>{host.email}</td>
+              </tr>
+            ))
+          ) : (
+            <tr>
+              <td colSpan="4" style={{ textAlign: "center" }}>
+                No hosts available
+              </td>
+            </tr>
+          )}
+        </tbody>
+      </table>
+*/}
 
-      {/* {selectEvent && <RSVPButton attendees={selectEvent} />} */}
-    </>
+      <div class="nav-bar-container">
+      <Link to="/create-host" className="host-button">Join now</Link>
+        <div class="account-search-bar">
+        <span class="account-search-btn"> 🔍</span>
+          <input class="account-search-input" type="text" placeholder="Start Your Search Here!" />
+        </div>
+      </div>
+
+    <div class="peopleSection-container">
+      <div class="peopleSection">
+
+
+         <div class="accountContainer">
+          <div class="accountInfo">
+            <img src={profileImage1} alt="Profile picture" className="profile-image" />
+          </div>
+            <p>Attendee</p>
+            <h2>John Doe</h2>
+            <h2>fake@gmail.com</h2>
+        </div>
+        
+        <div class="accountContainer">
+          <div class="accountInfo">
+            <img src={profileImage1} alt="Profile picture" className="profile-image" />
+          </div>
+            <p>Attendee</p>
+            <h2>John Doe</h2>
+            <h2>fake@gmail.com</h2>
+        </div>
+
+        <div class="accountContainer">
+          <div class="accountInfo">
+            <img src={profileImage1} alt="Profile picture" className="profile-image" />
+          </div>
+            <p>Attendee</p>
+            <h2>John Doe</h2>
+            <h2>fake@gmail.com</h2>
+        </div>
+
+        <div class="accountContainer">
+          <div class="accountInfo">
+            <img src={profileImage1} alt="Profile picture" className="profile-image" />
+          </div>
+            <p>Attendee</p>
+            <h2>John Doe</h2>
+            <h2>fake@gmail.com</h2>
+        </div>
+
+        <div class="accountContainer">
+          <div class="accountInfo">
+            <img src={profileImage1} alt="Profile picture" className="profile-image" />
+          </div>
+            <p>Attendee</p>
+            <h2>John Doe</h2>
+            <h2>fake@gmail.com</h2>
+        </div>
+
+        <div class="accountContainer">
+          <div class="accountInfo">
+            <img src={profileImage1} alt="Profile picture" className="profile-image" />
+          </div>
+            <p>Attendee</p>
+            <h2>John Doe</h2>
+            <h2>fake@gmail.com</h2>
+        </div>
+
+        <div class="accountContainer">
+          <div class="accountInfo">
+            <img src={profileImage1} alt="Profile picture" className="profile-image" />
+          </div>
+            <p>Attendee</p>
+            <h2>John Doe</h2>
+            <h2>fake@gmail.com</h2>
+        </div>
+
+        <div class="accountContainer">
+          <div class="accountInfo">
+            <img src={profileImage1} alt="Profile picture" className="profile-image" />
+          </div>
+            <p>Attendee</p>
+            <h2>John Doe</h2>
+            <h2>fake@gmail.com</h2>
+        </div>
+
+        <div class="accountContainer">
+          <div class="accountInfo">
+            <img src={profileImage1} alt="Profile picture" className="profile-image" />
+          </div>
+            <p>Attendee</p>
+            <h2>John Doe</h2>
+            <h2>fake@gmail.com</h2>
+        </div>
+      </div>
+
+
+
+
+    </div>
+  </div>
   );
   
 }

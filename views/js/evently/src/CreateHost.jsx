@@ -138,12 +138,8 @@ function CreateHost() {
             <button className="button" type="submit">Create Account</button>
           </form>
         </div> 
-
-          
-        </div>
-
-
-
+    
+    </div>
 
       );
       
