@@ -1,34 +1,87 @@
-.create-host-container {
+.create-account {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 4rem 0;
+}
+
+
+.profile-header{
+  font-size: 1.8em;
+}
+
+
+.create-account-container {
+  display: flex;
+  flex-direction: column; /* Ensures vertical stacking */
+  align-items: center; /* Centers content horizontally */
+  /*justify-content: center; /* Centers content vertically */
+  /*padding: 20px;
+  text-align: center;*/
   }
-  
-  .row {
+
+  .create-an-account-form {
+    font-family: "Bree Serif";
+    background: #f8f8f8;
     display: flex;
-    justify-content: space-between;
-    gap: 20px;
+    flex-direction: column;
+    justify-content: center;
+    padding: 5rem;
+    width: 35rem;
+    border-radius: 1rem;
+    box-shadow: 2px 8px 4px #d8d8d8;
+    margin-bottom: 10%;
   }
   
-  .column {
-    flex: 1;
-  }
-  
-  .account-layout, .input-form {
-    padding: 20px;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  .profile-image {
-    width: 100px;
-    height: 100px;
+  .profile-img-change {
+    display: flex;
+    justify-content: center; /* Centers the image horizontally */
+    align-items: center; /* Centers content vertically if needed */
+    width: 100%; /* Ensure it spans the full width of the container */
+    margin-bottom: 20px; /* Add space below the image */
+    flex-direction: column; /* Stack items vertically if needed */
+}
+
+.ppl-form-profile-image {
+    height: 150px;
+    width: 150px;
     border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto; /* Ensures the div itself is centered if flex fails */
+}
+
+.ppl-form-profile-image img {
+    height: 100%;
+    width: 100%;
     object-fit: cover;
-    margin-bottom: 10px;
-  }
-  
+}
+
+.profile-img-change label {
+  display:block;
+  background-color: #007bff; /* Button background color */
+  color: #fff; /* Button text color */
+  border: none; /* Remove border */
+  padding: 0.75rem 1rem; /* Adjust padding as needed */
+  border: none;
+  border-radius: 20px; /* Optional: Rounds the button edges */
+  font-size: 1.2rem;
+  outline: none;
+  margin: 2rem;
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background 0.25s;
+  text-decoration: none;
+  width: auto;
+  font: 1em sans-serif;
+}
+
+.profile-img-change input {
+  display: none;
+}
+
+.profile-img-change label:hover {
+  background-color: #1943af;
+}
+
   label {
     display: block;
     font-weight: bold;
@@ -38,31 +91,70 @@
   input, select {
     width: 100%;
     padding: 8px;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
+    margin-top: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    box-sizing: border-box;
   }
   
   .button {
     display: block;
     width: 100%;
     padding: 10px;
-<<<<<<< HEAD
     margin-top: 1rem;
-}
-
-
-=======
-    background-color: #4CAF50;
-    color: white;
+    background-color: #2A5BD7;
+  color: white;
     border: none;
     border-radius: 5px;
     font-size: 16px;
     cursor: pointer;
+    margin-bottom: 30px;
+    margin-top: 10px;
   }
   
   .button:hover {
-    background-color: #45a049;
+    background-color: #1943af;
   }
   
->>>>>>> d3c9750 (Worked on frontend for people page + form page to play around with design implmenetation)
+  .account-name,
+  .account-phone-number,
+  .account-email,
+  .account-role,
+  .account-links {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.5em;
+  }
+
+
+  
+  
+   input {
+    display: flex;
+    justify-content: center;
+    padding: 0.5rem;
+    border-radius: 10px;
+    border: 1px;
+    border-color: none;
+    font-size: 0.8em;
+  }
+  
+  
+  
+  .create-save-button {
+    background-color: #2a5db7;
+    color: white;
+    font-size: 1.3rem;
+    text-decoration: none;
+    border-radius: 10px;
+    border: 1px;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    padding-left: 2%;
+    padding-right: 2%;
+    margin: 0 auto;
+    margin-top: 7%;
+    width: 20%;
+    align-items: center;
+  }

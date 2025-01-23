@@ -22,7 +22,6 @@
 
 /* General Reset */
 body {
-  font-family: Arial, sans-serif;
   background-color: #ffffff; /* Matches the off-white background */
 }
 
@@ -36,6 +35,7 @@ body {
 .header h1 {
   font-size: 3rem;
   color: #000;
+  font-family: "Work Sans";
 }
 
 .host-button {
@@ -106,6 +106,7 @@ table th, table td {
   background-color: #F2ECE8;
   border-radius: 80px;
   text-align: center;
+  font-family: "Work Sans";
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Optional shadow for card */
 }
 
@@ -134,6 +135,7 @@ table th, table td {
   width: 100%; /* Full width */
   background: #ffffff; /* Optional: Background color */
   margin: 0; /* Remove default body margin if needed */
+  font-family: "Work Sans";
 }
 
 .account-search-bar {
@@ -155,7 +157,7 @@ table th, table td {
 
 .account-search-bar input {
   font-size: 16px;
-  font-family: 'Lexend', sans-serif;
+  font-family: "Work Sans";
   color: #333333;
   margin-left: var(--padding);
   outline: none;

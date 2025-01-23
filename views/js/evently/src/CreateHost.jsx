@@ -22,7 +22,8 @@ function CreateHost() {
           });
           if (res.status === 201) {
             setSuccessMessage("Host Profile created!")
-            setTimeout(window.location.replace("/create-event"), 4000);
+            setTimeout(() => window.location.replace("/create-event"), 4000);
+
            }
          }
         catch (err){
@@ -30,37 +31,57 @@ function CreateHost() {
         }
       }
 
+      const handleImageChange = (e) => {
+        const file = e.target.files[0];
+        if (file) {
+          setProfileImage(URL.createObjectURL(file));
+        }
+      };
+      
+
       return (
         
-        <div className="create-host-container">
 
-          <div className='enter-details'>
+      <div className="create-account">
+        
+        <div className="create-account-container">
+
+          <div className='profile-header'>
               <h2> Create Your Profile</h2>
           </div>
 
-          <form className="create-form" onSubmit={handleSubmit}>
+          <form className="create-an-account-form" onSubmit={handleSubmit}>
       
-            {/* Profile Image Section */}
-            <div className="profile-img">
+
+          <div className='profile-img-change'>
+            <div className="ppl-form-profile-image">
               <img 
-                src={profileImage1} 
+                src={ProfileImage || profileImage1} 
                 alt="Profile picture" 
                 className="profile-image" 
               />
+            </div>
+            <label htmlFor="input-file">Upload image</label>
+            <input 
+              type="file" 
+              accept="image/jpeg, image/png, image/jpg" 
+              id="input-file" 
+              onChange={handleImageChange} 
+            />
+        </div>
 
           
-              <label htmlFor="image-input">Enter image URL:</label>
+             {/* <label htmlFor="image-input">Enter image URL:</label> 
               <input 
                 type="text" 
                 id="image-input" 
                 value={ProfileImage} 
                 onChange={(e) => setProfileImage(e.target.value)} 
               />
-            </div>
-           
-
+            */}
+            
             {/* Name Input */}
-            <div className="name">
+            <div className="account-name">
               <label htmlFor="name-input">Name:</label>
               <input 
                 type="text" 
@@ -71,7 +92,7 @@ function CreateHost() {
             </div>
       
             {/* Phone Number Input */}
-            <div className="phone-number">
+            <div className="account-phone-number">
               <label htmlFor="phone-input">Phone Number:</label>
               <input 
                 type="text" 
@@ -82,7 +103,7 @@ function CreateHost() {
             </div>
       
             {/* Email Input */}
-            <div className="email">
+            <div className="account-email">
               <label htmlFor="email-input">Email:</label>
               <input 
                 type="text" 
@@ -93,7 +114,7 @@ function CreateHost() {
             </div>
 
             {/* Role Selection */}
-            <div className="role">
+            <div className="account-role">
               <label htmlFor="role-select">Are you an attendee or host?</label>
               <select id="role-select">
                 <option value="Attendee">Attendee</option>
@@ -103,7 +124,7 @@ function CreateHost() {
             </div>
 
             {/* Links Section */}
-            <div className="links">
+            <div className="account-links">
               <label htmlFor="link-input">Add any links (Optional):</label>
               <input 
                 type="text" 
@@ -119,7 +140,7 @@ function CreateHost() {
         </div> 
 
           
-
+        </div>
 
 
 
