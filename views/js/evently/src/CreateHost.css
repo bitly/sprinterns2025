@@ -82,13 +82,13 @@
   background-color: #1943af;
 }
 
-  label {
+  .account-fill-in-info label {
     display: block;
     font-weight: bold;
     margin-bottom: 5px;
   }
   
-  input, select {
+  .account-fill-in-info input, select {
     width: 100%;
     padding: 8px;
     margin-bottom: 20px;
@@ -98,7 +98,7 @@
     box-sizing: border-box;
   }
   
-  .button {
+  .account-fill-in-info button {
     display: block;
     width: 100%;
     padding: 10px;
@@ -113,7 +113,7 @@
     margin-top: 10px;
   }
   
-  .button:hover {
+  .account-fill-in-info button:hover {
     background-color: #1943af;
   }
   
@@ -127,7 +127,7 @@
     font-size: 1.5em;
   }
 
-   input {
+  .account-fill-in-info input {
     display: flex;
     justify-content: center;
     padding: 0.5rem;

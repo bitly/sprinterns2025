@@ -80,6 +80,8 @@ function CreateHost() {
               />
             */}
             
+
+          <div className="account-fill-in-info">
             {/* Name Input */}
             <div className="account-name">
               <label htmlFor="name-input">Name:</label>
@@ -136,6 +138,7 @@ function CreateHost() {
 
             {/* Submit Button */}
             <button className="button" type="submit">Create Account</button>
+              </div>
           </form>
         </div> 
     
