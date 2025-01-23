@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import "./SearchBar.css";
 
-const SearchBar = () => {
+const SearchBar = ({ onSearch }) => {
   const [dropDownVisible, setDropdownVisible] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState("");
-
 
   const toggleDropdown = () => {
     setDropdownVisible(!dropDownVisible);
@@ -13,10 +12,11 @@ const SearchBar = () => {
   const selectCategory = (category) => {
     setSelectedCategory(category);
     setDropdownVisible(false);
+    onSearch("", category)
   };
 
   return (
-    <div className="search-bar">
+    <div className="search-bar-community">
         <div className="dropdown">
             <div className="dropdown-text" onClick={toggleDropdown}>
                 <span>{selectedCategory || "Select a category"}</span>
@@ -36,8 +36,9 @@ const SearchBar = () => {
       {/* Search Input Section */}
         <div className="search-box">
         <input
-            type="text"
-            placeholder={selectedCategory ? `Search ${selectedCategory}` : "Search"}
+          type="text"
+          placeholder={selectedCategory ? `Search ${selectedCategory}` : "Search"}
+          onChange={(e) => onSearch(e.target.value, selectedCategory)}
         />
         </div>
     </div>
