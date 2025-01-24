@@ -22,7 +22,8 @@ function CreateHost() {
           });
           if (res.status === 201) {
             setSuccessMessage("Host Profile created!")
-            setTimeout(window.location.replace("/create-event"), 4000);
+            setTimeout(() => window.location.replace("/create-event"), 4000);
+
            }
          }
         catch (err){
@@ -30,66 +31,122 @@ function CreateHost() {
         }
       }
 
-    return (
-
- <div className='create-host-container'> 
-
-     <div className='row'>
-
-      <form className="create-Form" onSubmit={handleSubmit}>
-          <div className='column'>
-              <div className='account-layout'>
-                  <img src={profileImage1}
-                  alt="Profile picture" className="profile-image" />
-                  <br />
-                  <label> Enter image url: </label>
-                  <input type="text" className='image-input' value = {ProfileImage} onChange={(e) => setProfileImage(e.target.value)}/>
-                  <br />
-                  <label>Do you want to add any links?</label>
-                  <br />
-                  <label> (Optional) </label>
-                  <input type="text" className='link-input' value = {Link} onChange={(e) => setLink(e.target.value)}/>
-                  <br />
-                  
-              </div>
-          </div>
+      const handleImageChange = (e) => {
+        const file = e.target.files[0];
+        if (file) {
+          setProfileImage(URL.createObjectURL(file));
+        }
+      };
       
-              <div className='column'>
-                  <div className='input-form'>
-                      <h4>Are you an individual or an organization?</h4>
-                      <select>
-                          <option value="Individual">Individual</option>
-                          <option value="Organization">Organization</option>
-                      </select>
-                      <br />
-                      <label> Name: </label>
-                      <input type="text" className='name-input' value = {Name} onChange={(e) => setName(e.target.value)}/>
-                      <label> Phone Number: </label>
-                      <input type="text" className='phone-input' value = {Phone} onChange={(e) => setPhone(e.target.value)}/>
 
-                      <h4>Do you want to make your phone number public?</h4>
-                      <select>
-                          <option value="Yes">Yes</option>
-                          <option value="No">No</option>
-                      </select>
-                      <br />
-                      <label> Email: </label>
-                      <input type="text" className='email-input' value = {Email} onChange={(e) => setEmail(e.target.value)}/>
+      return (
+        
 
-                      <h4>Do you want to make your email public?</h4>
-                      <select>
-                          <option value="Yes">Yes</option>
-                          <option value="No">No</option>
-                      </select>
-                      <button className= "button" type="submit">Create account</button>
-                  </div>
+      <div className="create-account">
+        
+        <div className="create-account-container">
+
+          <div className='profile-header'>
+              <h2> Create Your Profile</h2>
+          </div>
+
+          <form className="create-an-account-form" onSubmit={handleSubmit}>
+      
+
+          <div className='profile-img-change'>
+            <div className="ppl-form-profile-image">
+              <img 
+                src={ProfileImage || profileImage1} 
+                alt="Profile picture" 
+                className="profile-image" 
+              />
+            </div>
+            <label htmlFor="input-file">Upload image</label>
+            <input 
+              type="file" 
+              accept="image/jpeg, image/png, image/jpg" 
+              id="input-file" 
+              onChange={handleImageChange} 
+            />
+        </div>
+
+          
+             {/* <label htmlFor="image-input">Enter image URL:</label> 
+              <input 
+                type="text" 
+                id="image-input" 
+                value={ProfileImage} 
+                onChange={(e) => setProfileImage(e.target.value)} 
+              />
+            */}
+            
+
+          <div className="account-fill-in-info">
+            {/* Name Input */}
+            <div className="account-name">
+              <label htmlFor="name-input">Name:</label>
+              <input 
+                type="text" 
+                id="name-input" 
+                value={Name} 
+                onChange={(e) => setName(e.target.value)} 
+              />
+            </div>
+      
+            {/* Phone Number Input */}
+            <div className="account-phone-number">
+              <label htmlFor="phone-input">Phone Number:</label>
+              <input 
+                type="text" 
+                id="phone-input" 
+                value={Phone} 
+                onChange={(e) => setPhone(e.target.value)} 
+              />
+            </div>
+      
+            {/* Email Input */}
+            <div className="account-email">
+              <label htmlFor="email-input">Email:</label>
+              <input 
+                type="text" 
+                id="email-input" 
+                value={Email} 
+                onChange={(e) => setEmail(e.target.value)} 
+              />
+            </div>
+
+            {/* Role Selection */}
+            <div className="account-role">
+              <label htmlFor="role-select">Are you an attendee or host?</label>
+              <select id="role-select">
+                <option value="Attendee">Attendee</option>
+                <option value="Host">Host</option>
+                <option value="Both">Both</option>
+              </select>
+            </div>
+
+            {/* Links Section */}
+            <div className="account-links">
+              <label htmlFor="link-input">Add any links (Optional):</label>
+              <input 
+                type="text" 
+                id="link-input" 
+                value={Link} 
+                onChange={(e) => setLink(e.target.value)} 
+              />
+            </div>
+
+            {/* Submit Button */}
+            <button className="button" type="submit">Create Account</button>
               </div>
-      </form>
+          </form>
+        </div> 
+    
     </div>
 
-</div>
+      );
       
-    )
+      
 }
 
 export default CreateHost;

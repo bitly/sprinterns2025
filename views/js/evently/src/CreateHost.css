@@ -1,50 +1,140 @@
-.row {
+.create-account {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 4rem 0;
+}
+
+
+.profile-header{
+  font-size: 1.8em;
+}
+
+
+.create-account-container {
+  display: flex;
+  flex-direction: column; /* Ensures vertical stacking */
+  align-items: center; /* Centers content horizontally */
+  /*justify-content: center; /* Centers content vertically */
+  /*padding: 20px;
+  text-align: center;*/
+  }
+
+  .create-an-account-form {
+    font-family: "Bree Serif";
+    background: #f8f8f8;
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    flex-direction: row; 
-    
-}
-
-.column {
-    float: left;
-    width: 50%;
-    padding-right: 17rem;
-    padding-top: 2rem;
-    padding-left: 14rem;
-}
-
-.input-form {
+    padding: 5rem;
+    width: 35rem;
+    border-radius: 1rem;
+    box-shadow: 2px 8px 4px #d8d8d8;
+    margin-bottom: 10%;
+  }
+  
+  .profile-img-change {
     display: flex;
-    flex-direction: column;
+    justify-content: center; /* Centers the image horizontally */
+    align-items: center; /* Centers content vertically if needed */
+    width: 100%; /* Ensure it spans the full width of the container */
+    margin-bottom: 20px; /* Add space below the image */
+    flex-direction: column; /* Stack items vertically if needed */
 }
 
-.create-host-container {
-    display: flex;
-    flex-direction: column;
+.ppl-form-profile-image {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto; /* Ensures the div itself is centered if flex fails */
 }
 
-.profile-image {
-    width: 10rem;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    margin: auto;
-    border-radius: 100%;
+.ppl-form-profile-image img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
 }
 
-.account-layout {
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-    align-self: baseline;
+.profile-img-change label {
+  display:block;
+  background-color: #007bff; /* Button background color */
+  color: #fff; /* Button text color */
+  border: none; /* Remove border */
+  padding: 0.75rem 1rem; /* Adjust padding as needed */
+  border: none;
+  border-radius: 20px; /* Optional: Rounds the button edges */
+  font-size: 1.2rem;
+  outline: none;
+  margin: 2rem;
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background 0.25s;
+  text-decoration: none;
+  width: auto;
+  font: 1em sans-serif;
 }
 
-.button {
-    color: white;
-    background-color: #2A5DB7;
-    border-radius: 10px;
+.profile-img-change input {
+  display: none;
+}
+
+.profile-img-change label:hover {
+  background-color: #1943af;
+}
+
+  .account-fill-in-info label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .account-fill-in-info input, select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+  
+  .account-fill-in-info button {
+    display: block;
+    width: 100%;
     padding: 10px;
     margin-top: 1rem;
-}
+    background-color: #2A5BD7;
+  color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 30px;
+    margin-top: 10px;
+  }
+  
+  .account-fill-in-info button:hover {
+    background-color: #1943af;
+  }
+  
+  .account-name,
+  .account-phone-number,
+  .account-email,
+  .account-role,
+  .account-links {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.5em;
+  }
 
-
+  .account-fill-in-info input {
+    display: flex;
+    justify-content: center;
+    padding: 0.5rem;
+    border-radius: 10px;
+    border: 1px;
+    border-color: none;
+    font-size: 0.8em;
+  }
+  
+  
