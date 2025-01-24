@@ -18,6 +18,7 @@
     box-sizing: border-box;
     display: flex;
     height: 5.5vh;
+    z-index: 9999;
 }
 
 
@@ -37,6 +38,7 @@
     background-color: var(--purple);
     box-shadow: var(--shadow);
     cursor: pointer;
+    
 }
 
 .dropdown-text {
@@ -61,7 +63,7 @@
     list-style: none;
     padding: 0;
     margin: 0;
-    z-index: 1000;
+    
     max-height: 200px; /* Limit height for scrolling */
     overflow-y: auto; /* Enable scroll for overflow */
     transition: all 0.3s ease; /* Smooth opening animation */
@@ -76,6 +78,7 @@
     text-align: left;
     border-radius: 10px; /* Rounded corners for items */
     transition: background-color 0.2s ease, transform 0.2s ease; /* Add hover effects */
+
 }
 
 .dropdown-list-item:hover {

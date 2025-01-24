@@ -43,7 +43,7 @@ function CommunityPage() {
     if(
       searchCategory && searchCategory !== "All"
     ){
-      filtered = filtered.filter(item => item.event_type === searchCategory.toLowerCase())
+      filtered = filtered.filter(item => item.event_type.toLowerCase() === searchCategory.toLowerCase())
     }
     filtered = filtered.filter((item) =>
       item.title.toLowerCase().includes(searchTerm.toLowerCase())

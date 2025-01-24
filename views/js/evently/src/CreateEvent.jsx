@@ -37,8 +37,8 @@ function CreateEvent() {
           description: DescriptionForm, 
           contact_info: ContactForm, 
           public_private: "public", 
-          event_type:EventType,
-           max_attendees: parseInt(AttendeesForm), 
+          event_type: EventType,
+          max_attendees: parseInt(AttendeesForm), 
           image_url: imageUrl,
         }),
       });
