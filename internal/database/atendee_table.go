@@ -3,8 +3,7 @@ package eventsdb
 import (
 	"database/sql"
 
-	"main.go/models"
-
+	"github.com/bitly/sprinterns2025/models"
 	_ "github.com/go-sql-driver/mysql"
 )
 
@@ -42,8 +41,8 @@ func CreateAttendee(attendee models.Attendee) (*models.Attendee, error) {
 func GetAllAttendees() ([]models.Attendee, error) {
 	var attendees []models.Attendee
 
-    // Query the database to fetch all attendees
-    rows, err := dbmap.Query(`
+	// Query the database to fetch all attendees
+	rows, err := dbmap.Query(`
     SELECT id, first_name, last_name, email, phone_number, image_url
     FROM attendees`)
 	if err != nil { // Check for errors

@@ -6,9 +6,9 @@ import (
 
 	"log"
 
+	eventsdb "github.com/bitly/sprinterns2025/internal/database"
+	"github.com/bitly/sprinterns2025/models"
 	"github.com/gin-gonic/gin"
-	eventsdb "main.go/internal/database"
-	"main.go/models"
 )
 
 func setCors(c *gin.Context) {
