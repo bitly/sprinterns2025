@@ -3,9 +3,9 @@ package main
 import (
 	"net/http"
 
+	"github.com/bitly/sprinterns2025/handlers"
 	"github.com/gin-gonic/contrib/static"
 	"github.com/gin-gonic/gin"
-	"main.go/handlers"
 )
 
 func main() {
@@ -24,9 +24,7 @@ func main() {
 			})
 		})
 
-
 	}
-	
 
 	// EVENTS
 
@@ -65,14 +63,14 @@ func main() {
 	api.DELETE("/event/:eventID/delete", handlers.DeleteEvent) // api calls delete to an individual event by calling :eventID (path parameter) & /event/:eventID is a path to a specific event
 	api.OPTIONS("/event/:eventID/delete", handlers.HandleCors) // context works with api.DeLEte and does cool stuff
 
-	 // CREATE an attendee
-	 api.POST("/attendees", handlers.CreateAttendee)
-	 api.OPTIONS("/attendees", handlers.HandleCors)
+	// CREATE an attendee
+	api.POST("/attendees", handlers.CreateAttendee)
+	api.OPTIONS("/attendees", handlers.HandleCors)
 
-	 //GET Attendee
+	//GET Attendee
 	api.GET("/attendees-all", handlers.GetAllAttendees)
 	api.OPTIONS("/attendees-all", handlers.HandleCors)
 	// Start and run the server
-	
+
 	router.Run(":3000")
 }

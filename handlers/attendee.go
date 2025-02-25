@@ -1,39 +1,39 @@
 package handlers
 
 import (
-    "net/http"
 	"log"
+	"net/http"
 
+	eventsdb "github.com/bitly/sprinterns2025/internal/database"
+	"github.com/bitly/sprinterns2025/models"
 	"github.com/gin-gonic/gin"
-	eventsdb "main.go/internal/database"
-	"main.go/models"
 )
 
 // create new attendee
 func CreateAttendee(c *gin.Context) {
 	setCors(c)
-    var attendee models.Attendee
+	var attendee models.Attendee
 
-    // Bind JSON to the attendee struct and error handler
-    if err := c.ShouldBindJSON(&attendee); err != nil {
-        log.Printf("ERROR: %+v", err)
+	// Bind JSON to the attendee struct and error handler
+	if err := c.ShouldBindJSON(&attendee); err != nil {
+		log.Printf("ERROR: %+v", err)
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
-    }
+	}
 
-    // Create the attendee in the database
-    newAttendee, err := eventsdb.CreateAttendee(attendee)
+	// Create the attendee in the database
+	newAttendee, err := eventsdb.CreateAttendee(attendee)
 	if err != nil {
 		log.Printf("ERROR: %+v", err)
 		c.IndentedJSON(http.StatusInternalServerError, nil) //server error
 		return
 	}
 
-    // Return the newly created attendee
-    c.JSON(http.StatusCreated, newAttendee)
+	// Return the newly created attendee
+	c.JSON(http.StatusCreated, newAttendee)
 }
 
-//GET All Attendees
+// GET All Attendees
 func GetAllAttendees(c *gin.Context) {
 	setCors(c)
 
@@ -47,8 +47,7 @@ func GetAllAttendees(c *gin.Context) {
 	c.JSON(200, getAttendeesAll) //success - return the list of public events
 }
 
-
-/*   test 
+/*   test
 curl -X POST http://localhost:3000/api/attendees \
 -H "Content-Type: application/json" \
 -d '{

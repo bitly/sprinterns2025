@@ -1,7 +1,7 @@
 package eventsdb
 
 import (
-	"main.go/models"
+	"github.com/bitly/sprinterns2025/models"
 )
 
 func CreateEvent(event models.Event) (*models.Event, error) {

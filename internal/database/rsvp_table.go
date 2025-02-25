@@ -1,8 +1,9 @@
 package eventsdb
 
 import (
-	"main.go/models"
+	"github.com/bitly/sprinterns2025/models"
 )
+
 // Creating the RSVP Function
 // the rsvp struct created in the models is passed in as a parameter
 // we want to return the data that is in our struct
@@ -37,7 +38,6 @@ func CreateRSVP(rsvp models.RSVP) (*models.RSVP, error) {
 	return &rsvps[0], nil
 }
 
-
 // create a function for getting RSVPS by eventID
 // we are passing in eventID in as a paramter
 // we want an array of the RSVP model to be returned, as well as an error if we encounter one
@@ -69,7 +69,7 @@ func GetRSVPsByEventId(eventID int) ([]models.RSVP, error) {
 	return rsvps, nil
 }
 
-//Get RSVP
+// Get RSVP
 func GetRsvp(rsvpID int) (*models.RSVP, error) {
 	var rsvps []models.RSVP
 	rsvprow, err := dbmap.Query(
