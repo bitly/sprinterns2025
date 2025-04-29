@@ -13,6 +13,7 @@
 @media screen and (max-width: 1200px) {
   .event-card {
     width: calc(50% - 10px);
+
   }
 
   .date-time-container {
@@ -50,6 +51,7 @@
   margin: 0 auto;
   border-radius: 5px;
   transition: transform 0.2s ease-in-out;
+
 }
 
 .event-card-community:hover {
@@ -81,6 +83,7 @@
   flex-wrap: wrap;
   gap: 20px;
   padding: 20px;
+
 }
 
 .events-row {
