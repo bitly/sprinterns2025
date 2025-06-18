@@ -5,7 +5,7 @@ import {
   Routes,
   Route
 } from "react-router-dom";
-import Header from './header.js';
+import Header from './header.jsx';
 import HomePage from './HomePage.jsx'; 
 import CreateEvent from './CreateEvent.jsx'; 
 import CommunityPage from './CommunityPage.jsx';
