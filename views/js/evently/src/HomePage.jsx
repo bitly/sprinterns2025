@@ -8,7 +8,7 @@ import bitlyAnimals from './Images/bitlyAnimals.png';
 import PlusSymbol from './plus.svg';
 
 
-const HomePage: React.FC = () => {
+const HomePage = () => {
     return (
         
         <div className = "HomePage">
