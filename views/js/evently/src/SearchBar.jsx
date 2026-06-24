@@ -27,7 +27,7 @@ const SearchBar = ({ onSearch }) => {
                         <li className="dropdown-list-item" onClick={() => selectCategory("Social")}> Social </li>
                         <li className="dropdown-list-item" onClick={() => selectCategory("Business")}> Business </li>
                         <li className="dropdown-list-item" onClick={() => selectCategory("Education")}> Education </li>
-                        <li className="dropdown-list-item" onClick={() => selectCategory("Recreation")}> Recreation </li>
+                        <li className="dropdown-list-item" onClick={() => selectCategory("Arts & Recreation")}> Arts & Recreation </li>
                     </ul>
                 )}
             </div>
